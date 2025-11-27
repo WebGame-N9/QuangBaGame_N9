@@ -14,5 +14,5 @@
 
 ## 📖 Hướng dẫn cài đặt
 1. Clone dự án về máy:
-   `git clone https://github.com/...`
+   https://github.com/WebGame-N9/QuangBaGame_N9.git
 2. Mở file `index.html` để chạy trang web.
