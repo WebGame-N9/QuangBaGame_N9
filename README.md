@@ -13,8 +13,11 @@
 - JavaScript, jQuery, AJAX
 
 ## 📖 Hướng dẫn cài đặt
-1. Clone dự án về máy:git clone https://github.com/WebGame-N9/QuangBaGame_N9.git
-2. Mở file `index.html` để chạy trang web.
+1. Clone dự án về máy:
+```text
+ git clone https://github.com/WebGame-N9/QuangBaGame_N9.git
+```
+3. Mở file `index.html` để chạy trang web.
 
 🔴 **DEMO ONLINE:** [Bấm vào đây để xem web chạy thật](https://webgame-n9.github.io/QuangBaGame_N9/)
 
