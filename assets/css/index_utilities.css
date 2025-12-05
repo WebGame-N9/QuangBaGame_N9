@@ -1,0 +1,82 @@
+/* Classes dùng chung */
+.index_bg-card {
+    background-color: var(--index_bg-card);
+}
+
+.index_bg-dark {
+    background-color: var(--index_bg-dark);
+}
+
+.index_text-accent {
+    color: var(--index_text-accent);
+}
+
+/* Nút chính */
+.index_btn-primary {
+    background: linear-gradient(90deg, var(--index_btn-start) 0%, var(--index_btn-end) 100%);
+    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.index_btn-primary:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+/* Link xem tất cả */
+.index_link-all {
+    font-size: 0.75rem;
+    color: #60a5fa;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    transition: color 0.2s ease-in-out;
+}
+
+.index_link-all:hover {
+    color: #93c5fd;
+}
+
+/* Grid 4 cột */
+.index_grid-4-cols {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+@media (min-width: 640px) {
+    .index_grid-4-cols {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 1024px) {
+    .index_grid-4-cols {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+
+/* Grid 3 cột */
+.index_grid-3-cols {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+@media (min-width: 768px) {
+    .index_grid-3-cols {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+/* Grid 2 cột */
+.index_grid-2-cols {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+@media (min-width: 768px) {
+    .index_grid-2-cols {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}

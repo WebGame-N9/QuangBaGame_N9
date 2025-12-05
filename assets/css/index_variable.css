@@ -1,0 +1,18 @@
+:root {
+    /* Nền */
+    --index_bg-body: #0b0c15;
+    --index_bg-dark: #0f1020;
+    --index_bg-card: #1a1c35;
+
+    /* Chữ */
+    --index_text-default: #ffffff;
+    --index_text-accent: #8b5cf6;
+
+    /* Nút chính */
+    --index_btn-start: #6366f1;
+    --index_btn-end: #8b5cf6;
+
+    /* Khác */
+    --index_border-default: #1f2937;
+    --index_img-placeholder-bg: #f97316;
+}
