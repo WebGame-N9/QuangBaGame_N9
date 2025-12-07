@@ -25,13 +25,14 @@ function renderStars(rating) {
 // Tạo card game liên quan
 // dynamic_game_loader.js (Phiên bản ĐÃ SỬA)
 function createRelatedCard(game) {
+    const imgSrc = game.thumbnail;
     // Thêm kiểm tra an toàn: Đảm bảo game.categories là một mảng trước khi gọi join()
     const categories = Array.isArray(game.genres) ? game.genres : ['Chưa phân loại'];
     
     return `
         <div class="game-card" onclick="window.location.href='game_detail_template.html?id=${game.id}'" data-aos="fade-up">
             <div class="game-image">
-                <img src="assets/img/game${game.id}.png" alt="${game.name}" onerror="this.src='assets/img/default_game.png'">
+                <img src="${imgSrc}" alt="${game.name}" onerror="this.src='assets/img/default_game.png'">
             </div>
             <div class="game-content">
                 <h4 class="game-title">${game.name}</h4>
