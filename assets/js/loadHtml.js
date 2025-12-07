@@ -1,27 +1,30 @@
 function loadHTML(url, elementId) {
-    const placeholder = document.getElementById(elementId);
-    if (!placeholder) {
-        console.error(`Lỗi: Không tìm thấy phần tử có ID '${elementId}'`);
-        return;
-    }
-
     fetch(url)
         .then(response => {
             if (!response.ok) {
-                throw new Error(`Không thể tải ${url}. Mã lỗi: ${response.status}`);
+                throw new Error(`HTTP error! status: ${response.status}`);
             }
             return response.text();
         })
-        .then(html => {
-            placeholder.outerHTML = html;
+        .then(data => {
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(data, 'text/html');
+            let content;
+            if (url === 'index.html') {
+                content = doc.querySelector('main');
+            } else if (url === 'footer.html') {
+                content = doc.querySelector('footer');
+            }
 
-            // Khởi tạo lại AOS (Animate On Scroll) cho các phần tử mới được thêm vào
-            if (window.AOS) {
-                AOS.init();
+            // Chèn nội dung vào placeholder
+            if (content) {
+                const element = document.getElementById(elementId);
+                element.innerHTML = ''; 
+                element.appendChild(content);
+                console.log(`Loaded content from ${url} successfully!`); // Debug
+            } else {
+                console.error(`Không tìm thấy nội dung cần thiết trong ${url}`);
             }
         })
-        .catch(error => {
-            console.error(`Lỗi khi tải chân trang từ ${url}:`, error);
-            placeholder.innerHTML = '<footer style="text-align:center; color: #DC2626; padding: 20px; background-color: #1a1c35;">Lỗi khi tải chân trang. Vui lòng kiểm tra console.</footer>';
-        });
+        .catch(error => console.error('Lỗi khi tải:', error));
 }

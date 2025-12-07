@@ -4,217 +4,284 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DT9 - Giới thiệu về Nhóm Phát triển</title>
+
+    <title>GameStore - Tải Game Miễn Phí</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/game.css">
-    <link rel="stylesheet" href="assets/css/gameID.css">
+
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="assets/js/jquery-3.7.1.min.js"></script>
-    <style>
-        /* [Phần Style CSS giữ nguyên] */
-        :root {
-            /* Tái định nghĩa biến để đảm bảo style nội bộ sử dụng được */
-            --bg-dark: #0f172a;
-            --card-bg: #1e293b;
-            --primary-color: #6366f1;
-            --secondary-color: #a78bfa;
-            --text-light: #f1f5f9;
-            --text-muted: #94a3b8;
-            --border-color: #334155;
-            --slate-600: #475569;
-            --slate-700: #334155;
-            --yellow-400: #facc15;
-            --green-400: #4ade80;
-        }
+    <link rel="stylesheet" href="assets/css/index_base.css">
+    <link rel="stylesheet" href="assets/css/index_components.css">
+    <link rel="stylesheet" href="assets/css/index_utilities.css">
+    <link rel="stylesheet" href="assets/css/index_variable.css">
+    
+    <link rel="stylesheet" href="assets/css/footer.css">
 
-        .content-card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 32px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
-            width: 100%;
-        }
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
-        .content-card h2 {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 10px;
-        }
-
-        .content-card h3 {
-            font-size: 18px;
-            font-weight: 600;
-            margin-top: 24px;
-            margin-bottom: 10px;
-            color: var(--text-light);
-        }
-
-        .content-card p,
-        .content-card ul {
-            font-size: 16px;
-            line-height: 1.6;
-            color: var(--text-muted);
-            margin-bottom: 15px;
-        }
-        
-        /* [Các style cho danh sách thành viên giữ nguyên] */
-        .content-card ul { list-style: none; padding-left: 0; }
-        .content-card ul li { padding: 8px 0; border-bottom: 1px dashed var(--border-color); }
-        .content-card ul li:last-child { border-bottom: none; }
-        .role-bold { font-weight: 700; color: var(--green-400); margin-right: 8px; }
-        .mssv-text { color: var(--secondary-color); }
-
-
-        /* Style chính thức cho Form QR */
-        #qrForm input[type="number"],
-        #qrForm input[type="text"] {
-            width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-            border-radius: 8px; /* Tăng border radius cho đẹp hơn */
-            border: 1px solid var(--border-color);
-            background-color: var(--bg-dark);
-            color: var(--text-light);
-            box-sizing: border-box;
-            transition: border-color 0.2s;
-        }
-        #qrForm input[type="number"]:focus,
-        #qrForm input[type="text"]:focus {
-            outline: none;
-            border-color: var(--primary-color);
-        }
-        
-        /* Style MỚI cho nút phụ (Quick Buttons) */
-        .btn-secondary-form {
-            background-color: var(--slate-700);
-            color: var(--text-light);
-            border: none; /* Bỏ border để trông liền mạch hơn */
-            padding: 8px 12px;
-            border-radius: 8px; 
-            cursor: pointer;
-            font-weight: 600;
-            transition: background-color 0.2s, transform 0.1s;
-            flex-grow: 1;
-        }
-
-        .btn-secondary-form:hover {
-            background-color: var(--slate-600);
-            transform: translateY(-1px);
-        }
-
-    </style>
 </head>
 
-<body>
-    <div class="main-wrapper">
-        <div class="header-section" data-aos="fade-down">
-            <h1 class="header-title">GIỚI THIỆU VỀ NHÓM</h1>
-        </div>
+<body id="index_main" class="index-body text-white">
+    <main class="index_main-content index_app-container">
+        <section class="relative group" data-aos="zoom-in" data-aos-duration="1000">
+            <div
+                class="w-full h-[300px] rounded-2xl index_img-placeholder text-3xl shadow-lg border border-gray-700 md:h-[400px]">
+                BANNER CHÍNH (Thay hình vào đây)
+            </div>
+            <button
+                class="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 hover:bg-purple-600 flex items-center justify-center backdrop-blur-sm transition duration-300 transform hover:scale-105">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <button
+                class="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 hover:bg-purple-600 flex items-center justify-center backdrop-blur-sm transition duration-300 transform hover:scale-105">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+            <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+                <div class="w-2 h-2 rounded-full bg-white transition duration-300"></div>
+                <div class="w-2 h-2 rounded-full bg-gray-500 hover:bg-white transition duration-300"></div>
+                <div class="w-2 h-2 rounded-full bg-gray-500 hover:bg-white transition duration-300"></div>
+                <div class="w-2 h-2 rounded-full bg-gray-500 hover:bg-white transition duration-300"></div>
+            </div>
+        </section>
 
-        <div class="content-card" data-aos="fade-up">
-            <h2>Giới thiệu Nhóm Thiết kế Web DT9</h2>
-            <p>
-                Đây là dự án môn học <b>Thiết kế Web</b> được thực hiện bởi Nhóm 9, sinh viên lớp UTC2, dưới sự hướng dẫn
-                của thầy <b>Nguyễn Thiện Dương</b>. Dự án nhằm mục đích xây dựng một giao diện trang thông tin game demo
-                với tiêu chí hiện đại, responsive và tuân thủ các nguyên tắc thiết kế web cơ bản.
-            </p>
+        <section>
+            <div class="index_section-header-bar" data-aos="fade-right">
+                <h2 class="index_section-title-pill index_bg-card">
+                    Game Mới Cập Nhật
+                </h2>
+                <a href="#" class="index_link-all">
+                    Xem tất cả <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                </a>
+            </div>
 
-            <h3>Thông tin thành viên Nhóm 9</h3>
-            <ul>
-                <li><span class="role-bold">Trưởng nhóm:</span> <b>Nguyễn Ngọc Tiên</b> - MSSV: <span class="mssv-text">6551071079</span></li>
-                <li><span class="role-bold">Thành viên:</span> <b>Hà Tiên Tiến</b> - MSSV: <span class="mssv-text">6551071081</span></li>
-                <li><span class="role-bold">Thành viên:</span> <b>Ngô Thanh Tiến</b> - MSSV: <span class="mssv-text">6551071082</span></li>
-                <li><span class="role-bold">Thành viên:</span> <b>Cao Trung Tính</b> - MSSV: <span class="mssv-text">6551071085</span></li>
-                <li><span class="role-bold">Thành viên:</span> <b>Trương Ngọc Danh</b> - MSSV: <span class="mssv-text">6551071013</span></li>
-            </ul>
+            <div class="index_grid-4-cols">
+                <div class="index_bg-card index_card-base index_card-vertical" data-aos="fade-up" data-aos-delay="0">
+                    <div class="h-48 index_img-placeholder">IMG Game 1</div>
+                    <div class="index_card-content-inner">
+                        <div>
+                            <h3 class="index_game-title">Black Myth Wukong</h3>
+                            <p class="index_game-category">Hành động • Đồ họa đẹp</p>
 
-            <h3>Mục tiêu của Dự án</h3>
-            <p>
-                Mục tiêu chính của dự án này là áp dụng kiến thức về <b>HTML5</b>, <b>CSS3</b> và <b>JavaScript</b> để xây dựng một website
-                tĩnh (landing page/chi tiết game) hoàn chỉnh, từ thiết lập bố cục, áp dụng style responsive, đến tích hợp
-                các hiệu ứng cuộn (AOS) và cơ chế tải nội dung (nhúng footer).
-            </p>
+                            <div class="index_bg-dark index_card-stat-box">
+                                <span title="Dung lượng">
+                                    <i class="fa-solid fa-hard-drive text-gray-500"></i> 130 GB
+                                </span>
+                                <span title="Lượt tải">
+                                    <i class="fa-solid fa-download text-green-500"></i> 1.2M
+                                </span>
+                            </div>
+                        </div>
 
-            <h3>Hỗ trợ Dự án (Tạo QR Chuyển khoản)</h3>
-            <form id="qrForm" action="#" style="max-width: 400px; margin: 0 auto; padding-top: 10px;">
-                <label for="qrAmount">
-                    <span>Số tiền chuyển (VND):</span>
-                    <br>
-                    <input type="number" min="1000" id="qrAmount" class="soTien" placeholder="Nhập số tiền" required>
-                </label>
-                
-                <div style="margin-top: 10px; display: flex; gap: 10px;">
-                    <button type="button" class="quick-amount-btn btn-secondary-form" data-amount="20000">20.000 đ</button>
-                    <button type="button" class="quick-amount-btn btn-secondary-form" data-amount="50000">50.000 đ</button>
-                    <button type="button" class="quick-amount-btn btn-secondary-form" data-amount="100000">100.000 đ</button>
+                        <button class="w-full py-2 rounded-lg index_btn-primary text-sm font-semibold">
+                            <i class="fa-solid fa-download mr-1"></i> Tải ngay
+                        </button>
+                    </div>
                 </div>
 
-                <label for="qrContent" style="margin-top: 15px; display: block;">
-                    <span>Nội dung chuyển khoản:</span>
-                    <br>
-                    <input type="text" id="qrContent" class="noidung" value="UTCHD" placeholder="UTCHD (Mặc định)">
-                </label>
-                <br>
-                <button type="button" id="qrButton" class="oke btn-primary btn-secondary-form" style="width: 100%; height: 45px; margin-top: 15px;">Tạo QR</button>
-                
-                <br>
-                <div id="qrImageContainer" class="anhQR" style="margin-top: 25px; text-align: center; border: 1px dashed var(--border-color); border-radius: 8px; padding: 15px;">
-                    <p style="text-align: center; opacity: 0.5; margin: 0;">Ảnh QR sẽ hiển thị ở đây</p>
+                <div class="index_bg-card index_card-base index_card-vertical" data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-48 index_img-placeholder">IMG Game 2</div>
+                    <div class="index_card-content-inner">
+                        <div>
+                            <h3 class="index_game-title">Fortnite</h3>
+                            <p class="index_game-category">Battle Royale • Online</p>
+
+                            <div class="index_bg-dark index_card-stat-box">
+                                <span title="Dung lượng">
+                                    <i class="fa-solid fa-hard-drive text-gray-500"></i> 26 GB
+                                </span>
+                                <span title="Lượt tải">
+                                    <i class="fa-solid fa-download text-green-500"></i> 10M+
+                                </span>
+                            </div>
+                        </div>
+
+                        <button class="w-full py-2 rounded-lg index_btn-primary text-sm font-semibold">
+                            <i class="fa-solid fa-download mr-1"></i> Tải ngay
+                        </button>
+                    </div>
                 </div>
-            </form>
 
-            <h3 style="margin-top: 40px;">Liên hệ</h3>
-            <p>
-                Mọi thắc mắc hoặc góp ý về dự án, xin vui lòng liên hệ với Trưởng nhóm qua email (nếu có) hoặc kênh liên lạc chính thức của <b>DT9</b>.
-            </p>
-        </div>
-    </div>
+                <div class="index_bg-card index_card-base index_card-vertical" data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-48 index_img-placeholder">IMG Game 3</div>
+                    <div class="index_card-content-inner">
+                        <div>
+                            <h3 class="index_game-title">EA Sports FC 25</h3>
+                            <p class="index_game-category">Thể thao • Bóng đá</p>
 
-    <div id="footer-placeholder"></div>
+                            <div class="index_bg-dark index_card-stat-box">
+                                <span title="Dung lượng">
+                                    <i class="fa-solid fa-hard-drive text-gray-500"></i> 50 GB
+                                </span>
+                                <span title="Lượt tải">
+                                    <i class="fa-solid fa-download text-green-500"></i> 850K
+                                </span>
+                            </div>
+                        </div>
+
+                        <button class="w-full py-2 rounded-lg index_btn-primary text-sm font-semibold">
+                            <i class="fa-solid fa-download mr-1"></i> Tải ngay
+                        </button>
+                    </div>
+                </div>
+
+                <div class="index_bg-card index_card-base index_card-vertical" data-aos="fade-up" data-aos-delay="300">
+                    <div class="h-48 index_img-placeholder">IMG Game 4</div>
+                    <div class="index_card-content-inner">
+                        <div>
+                            <h3 class="index_game-title">Minecraft</h3>
+                            <p class="index_game-category">Phiêu lưu • Sáng tạo</p>
+
+                            <div class="index_bg-dark index_card-stat-box">
+                                <span title="Dung lượng">
+                                    <i class="fa-solid fa-hard-drive text-gray-500"></i> 1 GB
+                                </span>
+                                <span title="Lượt tải">
+                                    <i class="fa-solid fa-download text-green-500"></i> 25M+
+                                </span>
+                            </div>
+                        </div>
+
+                        <button class="w-full py-2 rounded-lg index_btn-primary text-sm font-semibold">
+                            <i class="fa-solid fa-download mr-1"></i> Tải ngay
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="index_section-header-bar" data-aos="fade-right">
+                <h2 class="index_section-title-pill index_bg-card">
+                    Tải Nhiều & Thịnh Hành
+                </h2>
+                <a href="#" class="index_link-all">
+                    Xem tất cả <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                </a>
+            </div>
+
+            <div class="index_grid-3-cols">
+                <div class="index_bg-card index_hot-card-horizontal group" data-aos="fade-up" data-aos-delay="0">
+                    <div class="index_hot-card-thumb index_img-placeholder text-xs">IMG</div>
+                    <div class="index_hot-card-details">
+                        <div>
+                            <h4 class="index_hot-card-title group-hover:text-purple-400">Spider-Man 2</h4>
+                            <p class="index_hot-card-meta">Hành động • Thế giới mở</p>
+                            <div class="index_hot-card-rating">
+                                <div class="text-yellow-500">
+                                    <i class="fa-solid fa-star text-[10px] mr-1"></i> 4.9
+                                </div>
+                                <span class="text-gray-500">|</span>
+                                <div class="text-gray-300 text-[10px]">
+                                    <i class="fa-solid fa-hard-drive mr-0.5"></i> 98GB
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-between items-end mt-2">
+                            <span class="text-[10px] text-gray-500"><i class="fa-solid fa-download"></i> 2.1M lượt
+                                tải</span>
+                            <button class="index_hot-card-download-btn">
+                                <i class="fa-solid fa-download text-[10px]"></i> Tải
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="index_bg-card index_hot-card-horizontal group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="index_hot-card-thumb index_img-placeholder text-xs">IMG</div>
+                    <div class="index_hot-card-details">
+                        <div>
+                            <h4 class="index_hot-card-title group-hover:text-purple-400">Grand Theft Auto V</h4>
+                            <p class="index_hot-card-meta">Hành động • Thế giới mở</p>
+                            <div class="index_hot-card-rating">
+                                <div class="text-yellow-500">
+                                    <i class="fa-solid fa-star text-[10px] mr-1"></i> 4.8
+                                </div>
+                                <span class="text-gray-500">|</span>
+                                <div class="text-gray-300 text-[10px]">
+                                    <i class="fa-solid fa-hard-drive mr-0.5"></i> 110GB
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-between items-end mt-2">
+                            <span class="text-[10px] text-gray-500"><i class="fa-solid fa-download"></i> 160M lượt
+                                tải</span>
+                            <button class="index_hot-card-download-btn">
+                                <i class="fa-solid fa-download text-[10px]"></i> Tải
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="index_bg-card index_hot-card-horizontal group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="index_hot-card-thumb index_img-placeholder text-xs">IMG</div>
+                    <div class="index_hot-card-details">
+                        <div>
+                            <h4 class="index_hot-card-title group-hover:text-purple-400">Dragon Ball: Fighting</h4>
+                            <p class="index_hot-card-meta">Chiến đấu • 3D</p>
+                            <div class="index_hot-card-rating">
+                                <div class="text-yellow-500">
+                                    <i class="fa-solid fa-star text-[10px] mr-1"></i> 4.4
+                                </div>
+                                <span class="text-gray-500">|</span>
+                                <div class="text-gray-300 text-[10px]">
+                                    <i class="fa-solid fa-hard-drive mr-0.5"></i> 40GB
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-between items-end mt-2">
+                            <span class="text-[10px] text-gray-500"><i class="fa-solid fa-download"></i> 500K lượt
+                                tải</span>
+                            <button class="index_hot-card-download-btn">
+                                <i class="fa-solid fa-download text-[10px]"></i> Tải
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="index_section-header-bar" data-aos="fade-right">
+                <h2 class="index_section-title-pill index_bg-card">
+                    Sự Kiện Hot Trong Game
+                </h2>
+                <a href="#" class="index_link-all">
+                    Xem tất cả <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                </a>
+            </div>
+
+            <div class="index_grid-2-cols">
+                <div class="index_img-placeholder index_event-card-base group" data-aos="flip-up" data-aos-delay="0">
+                    <div class="index_event-card-overlay"></div>
+                    <span class="index_event-card-text font-extrabold tracking-wider">ĐUA TOP NHẬN QUÀ</span>
+                    <span class="index_event-card-text text-sm font-normal mt-1 opacity-80">Chiến server mới ngay</span>
+                    <i
+                        class="fa-solid fa-gift absolute top-4 right-4 text-orange-400 text-3xl opacity-50 group-hover:opacity-80 transition-opacity"></i>
+                </div>
+                <div class="index_img-placeholder index_event-card-base group" data-aos="flip-up" data-aos-delay="200">
+                    <div class="index_event-card-overlay"></div>
+                    <span class="index_event-card-text font-extrabold tracking-wider">GIẢI ĐẤU MÙA HÈ</span>
+                    <span class="index_event-card-text text-sm font-normal mt-1 opacity-80">Tổng giải thưởng 100M</span>
+                    <i
+                        class="fa-solid fa-trophy absolute top-4 right-4 text-yellow-400 text-3xl opacity-50 group-hover:opacity-80 transition-opacity"></i>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>AOS.init();</script>
-    <script src="assets/js/gameID.js"></script>
-    <script src="assets/js/rating.js" defer></script>
+    <script src="assets/js/index.js"></script>
 
+    <div id="footer-placeholder">
+    </div>
     <script src="assets/js/loadHtml.js"></script>
-    
-    <script>
-        loadHTML('footer.html', 'footer-placeholder');
-    </script>
-
-    <script>
-        $(document).ready(function () {
-            // 1. Logic tạo QR (Sử dụng ID)
-            $("#qrButton").click(function () { 
-                let tien = $("#qrAmount").val();
-                let nd = $("#qrContent").val();
-
-                if (!tien || tien < 1000) {
-                    alert('Vui lòng nhập số tiền hợp lệ (tối thiểu 1,000 VND).');
-                    $("#qrImageContainer").html('<p style="text-align: center; opacity: 0.5; margin: 0;">Ảnh QR sẽ hiển thị ở đây</p>');
-                    return;
-                }
-
-                let s = "<img src='https://qr.sepay.vn/img?acc=101882731006&bank=ICB"; 
-                s += "&amount=" + tien + "&des=" + nd + "' style='width: 100%; max-width: 250px; height: auto; border-radius: 4px;'/>";
-                
-                $("#qrImageContainer").html(s);
-            });
-
-            // 2. Logic cho các nút click nhanh
-            $(".quick-amount-btn").click(function () {
-                let amount = $(this).data('amount');
-                $("#qrAmount").val(amount);
-                $("#qrButton").click(); // Tự động tạo QR
-            });
-
-        });
-    </script>
+    <script> loadHTML('footer.html', 'footer-placeholder')</script>
+>>>>>>> a89e703d4e6b39e91b8a3586f0f23d8e11aab95c
 </body>
 
 </html>
