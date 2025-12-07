@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>GameStore - Tải Game Miễn Phí</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -15,7 +14,7 @@
     <link rel="stylesheet" href="assets/css/index_components.css">
     <link rel="stylesheet" href="assets/css/index_utilities.css">
     <link rel="stylesheet" href="assets/css/index_variable.css">
-    
+
     <link rel="stylesheet" href="assets/css/footer.css">
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
@@ -25,9 +24,8 @@
 <body id="index_main" class="index-body text-white">
     <main class="index_main-content index_app-container">
         <section class="relative group" data-aos="zoom-in" data-aos-duration="1000">
-            <div
+            <div id="index_main-banner-container"
                 class="w-full h-[300px] rounded-2xl index_img-placeholder text-3xl shadow-lg border border-gray-700 md:h-[400px]">
-                BANNER CHÍNH (Thay hình vào đây)
             </div>
             <button
                 class="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 hover:bg-purple-600 flex items-center justify-center backdrop-blur-sm transition duration-300 transform hover:scale-105">
@@ -37,11 +35,7 @@
                 class="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 hover:bg-purple-600 flex items-center justify-center backdrop-blur-sm transition duration-300 transform hover:scale-105">
                 <i class="fa-solid fa-chevron-right"></i>
             </button>
-            <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-                <div class="w-2 h-2 rounded-full bg-white transition duration-300"></div>
-                <div class="w-2 h-2 rounded-full bg-gray-500 hover:bg-white transition duration-300"></div>
-                <div class="w-2 h-2 rounded-full bg-gray-500 hover:bg-white transition duration-300"></div>
-                <div class="w-2 h-2 rounded-full bg-gray-500 hover:bg-white transition duration-300"></div>
+            <div id="index_banner-dots-container" class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
             </div>
         </section>
 
@@ -55,98 +49,34 @@
                 </a>
             </div>
 
+            <!-- phần này chèn code ở đây -->
             <div class="index_grid-4-cols">
-                <div class="index_bg-card index_card-base index_card-vertical" data-aos="fade-up" data-aos-delay="0">
-                    <div class="h-48 index_img-placeholder">IMG Game 1</div>
-                    <div class="index_card-content-inner">
-                        <div>
-                            <h3 class="index_game-title">Black Myth Wukong</h3>
-                            <p class="index_game-category">Hành động • Đồ họa đẹp</p>
-
-                            <div class="index_bg-dark index_card-stat-box">
-                                <span title="Dung lượng">
-                                    <i class="fa-solid fa-hard-drive text-gray-500"></i> 130 GB
-                                </span>
-                                <span title="Lượt tải">
-                                    <i class="fa-solid fa-download text-green-500"></i> 1.2M
-                                </span>
-                            </div>
-                        </div>
-
-                        <button class="w-full py-2 rounded-lg index_btn-primary text-sm font-semibold">
-                            <i class="fa-solid fa-download mr-1"></i> Tải ngay
-                        </button>
-                    </div>
+                <!-- Mẫu ---------------------------------------------------------------------------------------------->
+                <div class="h-48 overflow-hidden rounded-t-xl relative">
+                    <img src="#" alt="#"
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                 </div>
+                <div class="index_card-content-inner">
+                    <div>
+                        <h3 class="index_game-title truncate" title="#">TenGame</h3>
+                        <p class="index_game-category truncate" title="#">TenThuVien</p>
 
-                <div class="index_bg-card index_card-base index_card-vertical" data-aos="fade-up" data-aos-delay="100">
-                    <div class="h-48 index_img-placeholder">IMG Game 2</div>
-                    <div class="index_card-content-inner">
-                        <div>
-                            <h3 class="index_game-title">Fortnite</h3>
-                            <p class="index_game-category">Battle Royale • Online</p>
-
-                            <div class="index_bg-dark index_card-stat-box">
-                                <span title="Dung lượng">
-                                    <i class="fa-solid fa-hard-drive text-gray-500"></i> 26 GB
-                                </span>
-                                <span title="Lượt tải">
-                                    <i class="fa-solid fa-download text-green-500"></i> 10M+
-                                </span>
-                            </div>
+                        <div class="index_bg-dark index_card-stat-box">
+                            <span title="Dung lượng">
+                                <i class="fa-solid fa-hard-drive text-gray-500"></i>Size
+                            </span>
+                            <span title="Lượt tải">
+                                <i class="fa-solid fa-download text-green-500"></i> SoLuongTai
+                            </span>
                         </div>
-
-                        <button class="w-full py-2 rounded-lg index_btn-primary text-sm font-semibold">
-                            <i class="fa-solid fa-download mr-1"></i> Tải ngay
-                        </button>
                     </div>
+
+                    <a href="#"
+                        class="w-full py-2 rounded-lg index_btn-primary text-sm font-semibold block text-center mt-2 hover:opacity-90 transition">
+                        <i class="fa-solid fa-download mr-1"></i> Tải ngay
+                    </a>
                 </div>
-
-                <div class="index_bg-card index_card-base index_card-vertical" data-aos="fade-up" data-aos-delay="200">
-                    <div class="h-48 index_img-placeholder">IMG Game 3</div>
-                    <div class="index_card-content-inner">
-                        <div>
-                            <h3 class="index_game-title">EA Sports FC 25</h3>
-                            <p class="index_game-category">Thể thao • Bóng đá</p>
-
-                            <div class="index_bg-dark index_card-stat-box">
-                                <span title="Dung lượng">
-                                    <i class="fa-solid fa-hard-drive text-gray-500"></i> 50 GB
-                                </span>
-                                <span title="Lượt tải">
-                                    <i class="fa-solid fa-download text-green-500"></i> 850K
-                                </span>
-                            </div>
-                        </div>
-
-                        <button class="w-full py-2 rounded-lg index_btn-primary text-sm font-semibold">
-                            <i class="fa-solid fa-download mr-1"></i> Tải ngay
-                        </button>
-                    </div>
-                </div>
-
-                <div class="index_bg-card index_card-base index_card-vertical" data-aos="fade-up" data-aos-delay="300">
-                    <div class="h-48 index_img-placeholder">IMG Game 4</div>
-                    <div class="index_card-content-inner">
-                        <div>
-                            <h3 class="index_game-title">Minecraft</h3>
-                            <p class="index_game-category">Phiêu lưu • Sáng tạo</p>
-
-                            <div class="index_bg-dark index_card-stat-box">
-                                <span title="Dung lượng">
-                                    <i class="fa-solid fa-hard-drive text-gray-500"></i> 1 GB
-                                </span>
-                                <span title="Lượt tải">
-                                    <i class="fa-solid fa-download text-green-500"></i> 25M+
-                                </span>
-                            </div>
-                        </div>
-
-                        <button class="w-full py-2 rounded-lg index_btn-primary text-sm font-semibold">
-                            <i class="fa-solid fa-download mr-1"></i> Tải ngay
-                        </button>
-                    </div>
-                </div>
+                 <!-- Mẫu ---------------------------------------------------------------------------------------------->
             </div>
         </section>
 
