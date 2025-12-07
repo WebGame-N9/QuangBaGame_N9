@@ -10,11 +10,27 @@
     <link rel="stylesheet" href="assets/css/game.css">
     <link rel="stylesheet" href="assets/css/gameID.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
     <style>
-        /* Style cho trang nội dung giới thiệu */
+        /* [Phần Style CSS giữ nguyên] */
+        :root {
+            /* Tái định nghĩa biến để đảm bảo style nội bộ sử dụng được */
+            --bg-dark: #0f172a;
+            --card-bg: #1e293b;
+            --primary-color: #6366f1;
+            --secondary-color: #a78bfa;
+            --text-light: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border-color: #334155;
+            --slate-600: #475569;
+            --slate-700: #334155;
+            --yellow-400: #facc15;
+            --green-400: #4ade80;
+        }
+
         .content-card {
-            background-color: var(--card-bg, #1e293b);
-            border: 1px solid var(--border-color, #334155);
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
             border-radius: 12px;
             padding: 32px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
@@ -24,9 +40,9 @@
         .content-card h2 {
             font-size: 24px;
             font-weight: 700;
-            color: var(--primary-color, #6366f1);
+            color: var(--primary-color);
             margin-bottom: 20px;
-            border-bottom: 1px solid var(--border-color, #334155);
+            border-bottom: 1px solid var(--border-color);
             padding-bottom: 10px;
         }
 
@@ -35,39 +51,60 @@
             font-weight: 600;
             margin-top: 24px;
             margin-bottom: 10px;
-            color: var(--text-light, #f1f5f9);
+            color: var(--text-light);
         }
 
         .content-card p,
         .content-card ul {
             font-size: 16px;
             line-height: 1.6;
-            color: var(--text-muted, #94a3b8);
+            color: var(--text-muted);
             margin-bottom: 15px;
         }
+        
+        /* [Các style cho danh sách thành viên giữ nguyên] */
+        .content-card ul { list-style: none; padding-left: 0; }
+        .content-card ul li { padding: 8px 0; border-bottom: 1px dashed var(--border-color); }
+        .content-card ul li:last-child { border-bottom: none; }
+        .role-bold { font-weight: 700; color: var(--green-400); margin-right: 8px; }
+        .mssv-text { color: var(--secondary-color); }
 
-        .content-card ul {
-            list-style: none; /* Bỏ dấu chấm mặc định */
-            padding-left: 0;
+
+        /* Style chính thức cho Form QR */
+        #qrForm input[type="number"],
+        #qrForm input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 8px; /* Tăng border radius cho đẹp hơn */
+            border: 1px solid var(--border-color);
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            box-sizing: border-box;
+            transition: border-color 0.2s;
+        }
+        #qrForm input[type="number"]:focus,
+        #qrForm input[type="text"]:focus {
+            outline: none;
+            border-color: var(--primary-color);
         }
         
-        .content-card ul li {
-            padding: 8px 0;
-            border-bottom: 1px dashed var(--border-color, #334155);
+        /* Style MỚI cho nút phụ (Quick Buttons) */
+        .btn-secondary-form {
+            background-color: var(--slate-700);
+            color: var(--text-light);
+            border: none; /* Bỏ border để trông liền mạch hơn */
+            padding: 8px 12px;
+            border-radius: 8px; 
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.2s, transform 0.1s;
+            flex-grow: 1;
         }
 
-        .content-card ul li:last-child {
-            border-bottom: none;
-        }
-        
-        .role-bold {
-            font-weight: 700;
-            color: var(--green-400, #4ade80);
-            margin-right: 8px;
-        }
-
-        .mssv-text {
-            color: var(--secondary-color, #a78bfa);
+        .btn-secondary-form:hover {
+            background-color: var(--slate-600);
+            transform: translateY(-1px);
         }
 
     </style>
@@ -83,7 +120,7 @@
             <h2>Giới thiệu Nhóm Thiết kế Web DT9</h2>
             <p>
                 Đây là dự án môn học <b>Thiết kế Web</b> được thực hiện bởi Nhóm 9, sinh viên lớp UTC2, dưới sự hướng dẫn
-                của thầy **Nguyễn Thiện Dương**. Dự án nhằm mục đích xây dựng một giao diện trang thông tin game demo
+                của thầy <b>Nguyễn Thiện Dương</b>. Dự án nhằm mục đích xây dựng một giao diện trang thông tin game demo
                 với tiêu chí hiện đại, responsive và tuân thủ các nguyên tắc thiết kế web cơ bản.
             </p>
 
@@ -100,26 +137,83 @@
             <p>
                 Mục tiêu chính của dự án này là áp dụng kiến thức về <b>HTML5</b>, <b>CSS3</b> và <b>JavaScript</b> để xây dựng một website
                 tĩnh (landing page/chi tiết game) hoàn chỉnh, từ thiết lập bố cục, áp dụng style responsive, đến tích hợp
-                các hiệu ứng, Ajax, API.
+                các hiệu ứng cuộn (AOS) và cơ chế tải nội dung (nhúng footer).
             </p>
 
-            <h3>Liên hệ</h3>
+            <h3>Hỗ trợ Dự án (Tạo QR Chuyển khoản)</h3>
+            <form id="qrForm" action="#" style="max-width: 400px; margin: 0 auto; padding-top: 10px;">
+                <label for="qrAmount">
+                    <span>Số tiền chuyển (VND):</span>
+                    <br>
+                    <input type="number" min="1000" id="qrAmount" class="soTien" placeholder="Nhập số tiền" required>
+                </label>
+                
+                <div style="margin-top: 10px; display: flex; gap: 10px;">
+                    <button type="button" class="quick-amount-btn btn-secondary-form" data-amount="20000">20.000 đ</button>
+                    <button type="button" class="quick-amount-btn btn-secondary-form" data-amount="50000">50.000 đ</button>
+                    <button type="button" class="quick-amount-btn btn-secondary-form" data-amount="100000">100.000 đ</button>
+                </div>
+
+                <label for="qrContent" style="margin-top: 15px; display: block;">
+                    <span>Nội dung chuyển khoản:</span>
+                    <br>
+                    <input type="text" id="qrContent" class="noidung" value="UTCHD" placeholder="UTCHD (Mặc định)">
+                </label>
+                <br>
+                <button type="button" id="qrButton" class="oke btn-primary btn-secondary-form" style="width: 100%; height: 45px; margin-top: 15px;">Tạo QR</button>
+                
+                <br>
+                <div id="qrImageContainer" class="anhQR" style="margin-top: 25px; text-align: center; border: 1px dashed var(--border-color); border-radius: 8px; padding: 15px;">
+                    <p style="text-align: center; opacity: 0.5; margin: 0;">Ảnh QR sẽ hiển thị ở đây</p>
+                </div>
+            </form>
+
+            <h3 style="margin-top: 40px;">Liên hệ</h3>
             <p>
-                Mọi thắc mắc hoặc góp ý về dự án, xin vui lòng liên hệ với Trưởng nhóm qua email hoặc kênh liên lạc chính thức của <b>DT9</b>.
+                Mọi thắc mắc hoặc góp ý về dự án, xin vui lòng liên hệ với Trưởng nhóm qua email (nếu có) hoặc kênh liên lạc chính thức của <b>DT9</b>.
             </p>
         </div>
     </div>
 
     <div id="footer-placeholder"></div>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init();</script>
     <script src="assets/js/gameID.js"></script>
     <script src="assets/js/rating.js" defer></script>
 
     <script src="assets/js/loadHtml.js"></script>
     
     <script>
-        // Hàm loadHTML được định nghĩa trong assets/js/loadHtml.js
         loadHTML('footer.html', 'footer-placeholder');
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            // 1. Logic tạo QR (Sử dụng ID)
+            $("#qrButton").click(function () { 
+                let tien = $("#qrAmount").val();
+                let nd = $("#qrContent").val();
+
+                if (!tien || tien < 1000) {
+                    alert('Vui lòng nhập số tiền hợp lệ (tối thiểu 1,000 VND).');
+                    $("#qrImageContainer").html('<p style="text-align: center; opacity: 0.5; margin: 0;">Ảnh QR sẽ hiển thị ở đây</p>');
+                    return;
+                }
+
+                let s = "<img src='https://qr.sepay.vn/img?acc=101882731006&bank=ICB"; 
+                s += "&amount=" + tien + "&des=" + nd + "' style='width: 100%; max-width: 250px; height: auto; border-radius: 4px;'/>";
+                
+                $("#qrImageContainer").html(s);
+            });
+
+            // 2. Logic cho các nút click nhanh
+            $(".quick-amount-btn").click(function () {
+                let amount = $(this).data('amount');
+                $("#qrAmount").val(amount);
+                $("#qrButton").click(); // Tự động tạo QR
+            });
+
+        });
     </script>
 </body>
 
