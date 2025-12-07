@@ -1,6 +1,6 @@
 // --- CẤU HÌNH API (Sao chép từ game.js) ---
 // Thay thế bằng BIN_ID và Master Key thực tế của bạn từ JSONBin.io
-const BIN_ID = '69330d5943b1c97be9da0ef1'; // ID Bin của bạn
+const BIN_ID = '6935590d43b1c97be9dd6572'; // ID Bin của bạn
 const API_URL = `https://api.jsonbin.io/v3/b/${BIN_ID}`;
 const API_KEY = '$2a$10$dAGf830CRlXglDv0cce8IOz5ayJDKDIW8.uPxvWVXMgR7Wm.UG.7G';
 let allGamesData = [];

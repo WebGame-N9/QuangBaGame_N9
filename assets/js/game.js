@@ -1,6 +1,6 @@
 // --- CẤU HÌNH API ---
 // Thay thế bằng BIN_ID và Master Key thực tế của bạn từ JSONBin.io
-const BIN_ID = '693527d0ae596e708f88df8b'; // ID Bin của bạn
+const BIN_ID = '6935590d43b1c97be9dd6572'; // ID Bin của bạn
 const API_URL = `https://api.jsonbin.io/v3/b/${BIN_ID}`;
 const API_KEY = '$2a$10$dAGf830CRlXglDv0cce8IOz5ayJDKDIW8.uPxvWVXMgR7Wm.UG.7G';
 

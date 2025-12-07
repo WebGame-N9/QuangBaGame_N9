@@ -1,5 +1,5 @@
 // dynamic_game_loader.js
-const BIN_ID = '693527d0ae596e708f88df8b';
+const BIN_ID = '6935590d43b1c97be9dd6572';
 const API_URL = `https://api.jsonbin.io/v3/b/${BIN_ID}/latest`;
 const API_KEY = '$2a$10$dAGf830CRlXglDv0cce8IOz5ayJDKDIW8.uPxvWVXMgR7Wm.UG.7G';
 
