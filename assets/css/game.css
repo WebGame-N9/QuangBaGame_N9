@@ -1,0 +1,367 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0b0c15;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+}
+
+.app-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 1.5rem 1rem;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.header h1 {
+    font-size: 1.875rem;
+    font-weight: 900;
+}
+
+.hamburger-btn {
+    font-size: 1.25rem;
+    padding: 0.5rem;
+    border-radius: 50%;
+    border: none;
+    background: none;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    display: none;
+}
+
+.hamburger-btn:hover {
+    background-color: #374151;
+}
+
+.main-grid {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 1.5rem;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.sidebar-card {
+    background-color: #1a1c35;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    border: 1px solid #1f2937;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.sidebar-card h2 {
+    font-size: 1.125rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.search-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background-color: #0f1020;
+    border: 1px solid #1f2937;
+    border-radius: 0.5rem;
+    color: #ffffff;
+    transition: border-color 0.2s;
+    font-size: 1rem;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #8b5cf6;
+}
+
+.filters-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    font-size: 0.875rem;
+    color: #9ca3af;
+}
+
+.filter-label {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 0;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.filter-label:hover {
+    color: #8b5cf6;
+}
+
+.filter-label input[type="checkbox"],
+.filter-label input[type="radio"] {
+    width: 1rem;
+    height: 1rem;
+    accent-color: #8b5cf6;
+}
+
+.button-group {
+    display: flex;
+    gap: 1rem;
+}
+
+.button-group button {
+    flex: 1;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-filter {
+    background: linear-gradient(90deg, #6366f1 0%, #8b5cf6 100%);
+    color: white;
+}
+
+.btn-filter:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+.btn-clear {
+    background-color: #dc2626;
+    color: white;
+}
+
+.btn-clear:hover {
+    background-color: #b91c1c;
+}
+
+.mobile-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 40;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.mobile-overlay.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.mobile-sidebar-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 80%;
+    max-width: 350px;
+    height: 100%;
+    z-index: 50;
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+    padding-top: 5rem;
+    overflow-y: auto;
+    background-color: #0b0c15;
+}
+
+.mobile-sidebar-menu.open {
+    transform: translateX(0);
+}
+
+.close-btn {
+    display: none;
+    font-size: 1.25rem;
+    padding: 0.5rem;
+    border-radius: 50%;
+    border: none;
+    background: none;
+    color: #ffffff;
+    cursor: pointer;
+    justify-content: flex-end;
+    padding-right: 1rem;
+    margin-bottom: 1rem;
+}
+
+.game-section h3 {
+    font-size: 0.875rem;
+    color: #9ca3af;
+    margin-bottom: 1rem;
+}
+
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.game-card {
+    background-color: #1a1c35;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    border: 1px solid #1f2937;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.game-card:hover {
+    /* transform: scale(1.02); */
+    border-color: #8b5cf6;
+}
+
+.game-image {
+    height: 12rem;
+    background-color: #f97316; /* fallback nếu ảnh bị lỗi */
+    overflow: hidden;
+    border-top-left-radius: 0.75rem;
+    border-top-right-radius: 0.75rem;
+}
+
+.game-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top; /* CHÍNH: hiển thị phần trên của ảnh */
+    display: block;
+}
+
+.game-content {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.game-title {
+    font-weight: bold;
+    font-size: 1.125rem;
+    margin-bottom: 0.25rem;
+}
+
+.game-category {
+    font-size: 0.75rem;
+    color: #9ca3af;
+    margin-bottom: 0.75rem;
+}
+
+.game-rating {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #f59e0b;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.game-rating i {
+    margin-right: 0.25rem;
+}
+
+.btn-download {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    background: linear-gradient(90deg, #6366f1 0%, #8b5cf6 100%);
+    color: white;
+    border: none;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-download:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+.btn-download i {
+    margin-right: 0.25rem;
+}
+
+.no-results {
+    text-align: center;
+    padding: 2.5rem;
+    display: none;
+}
+
+.no-results i {
+    font-size: 2.25rem;
+    color: #6b7280;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.no-results p {
+    font-size: 1.25rem;
+    color: #9ca3af;
+}
+
+.no-results.visible {
+    display: block;
+}
+
+@media (max-width: 1023px) {
+    .main-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hamburger-btn {
+        display: block;
+    }
+
+    .game-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .close-btn {
+        display: flex;
+    }
+
+    .mobile-sidebar-menu {
+        padding: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .game-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .mobile-sidebar-menu {
+        position: static;
+        width: auto;
+        max-width: none;
+        height: auto;
+        transform: translateX(0);
+        padding-top: 0;
+        overflow-y: visible;
+        background-color: transparent;
+        z-index: auto;
+    }
+}

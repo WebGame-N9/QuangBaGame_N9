@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DT9 - Giới thiệu về Nhóm Phát triển</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/game.css">
+    <link rel="stylesheet" href="assets/css/gameID.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        /* Style cho trang nội dung giới thiệu */
+        .content-card {
+            background-color: var(--card-bg, #1e293b);
+            border: 1px solid var(--border-color, #334155);
+            border-radius: 12px;
+            padding: 32px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+            width: 100%;
+        }
+
+        .content-card h2 {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color, #6366f1);
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border-color, #334155);
+            padding-bottom: 10px;
+        }
+
+        .content-card h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-top: 24px;
+            margin-bottom: 10px;
+            color: var(--text-light, #f1f5f9);
+        }
+
+        .content-card p,
+        .content-card ul {
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--text-muted, #94a3b8);
+            margin-bottom: 15px;
+        }
+
+        .content-card ul {
+            list-style: none; /* Bỏ dấu chấm mặc định */
+            padding-left: 0;
+        }
+        
+        .content-card ul li {
+            padding: 8px 0;
+            border-bottom: 1px dashed var(--border-color, #334155);
+        }
+
+        .content-card ul li:last-child {
+            border-bottom: none;
+        }
+        
+        .role-bold {
+            font-weight: 700;
+            color: var(--green-400, #4ade80);
+            margin-right: 8px;
+        }
+
+        .mssv-text {
+            color: var(--secondary-color, #a78bfa);
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="main-wrapper">
+        <div class="header-section" data-aos="fade-down">
+            <h1 class="header-title">GIỚI THIỆU VỀ NHÓM</h1>
+        </div>
+
+        <div class="content-card" data-aos="fade-up">
+            <h2>Giới thiệu Nhóm Thiết kế Web DT9</h2>
+            <p>
+                Đây là dự án môn học <b>Thiết kế Web</b> được thực hiện bởi Nhóm 9, sinh viên lớp UTC2, dưới sự hướng dẫn
+                của thầy **Nguyễn Thiện Dương**. Dự án nhằm mục đích xây dựng một giao diện trang thông tin game demo
+                với tiêu chí hiện đại, responsive và tuân thủ các nguyên tắc thiết kế web cơ bản.
+            </p>
+
+            <h3>Thông tin thành viên Nhóm 9</h3>
+            <ul>
+                <li><span class="role-bold">Trưởng nhóm:</span> <b>Nguyễn Ngọc Tiên</b> - MSSV: <span class="mssv-text">6551071079</span></li>
+                <li><span class="role-bold">Thành viên:</span> <b>Hà Tiên Tiến</b> - MSSV: <span class="mssv-text">6551071081</span></li>
+                <li><span class="role-bold">Thành viên:</span> <b>Ngô Thanh Tiến</b> - MSSV: <span class="mssv-text">6551071082</span></li>
+                <li><span class="role-bold">Thành viên:</span> <b>Cao Trung Tính</b> - MSSV: <span class="mssv-text">6551071085</span></li>
+                <li><span class="role-bold">Thành viên:</span> <b>Trương Ngọc Danh</b> - MSSV: <span class="mssv-text">6551071013</span></li>
+            </ul>
+
+            <h3>Mục tiêu của Dự án</h3>
+            <p>
+                Mục tiêu chính của dự án này là áp dụng kiến thức về <b>HTML5</b>, <b>CSS3</b> và <b>JavaScript</b> để xây dựng một website
+                tĩnh (landing page/chi tiết game) hoàn chỉnh, từ thiết lập bố cục, áp dụng style responsive, đến tích hợp
+                các hiệu ứng, Ajax, API.
+            </p>
+
+            <h3>Liên hệ</h3>
+            <p>
+                Mọi thắc mắc hoặc góp ý về dự án, xin vui lòng liên hệ với Trưởng nhóm qua email hoặc kênh liên lạc chính thức của <b>DT9</b>.
+            </p>
+        </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/gameID.js"></script>
+    <script src="assets/js/rating.js" defer></script>
+
+    <script src="assets/js/loadHtml.js"></script>
+    
+    <script>
+        // Hàm loadHTML được định nghĩa trong assets/js/loadHtml.js
+        loadHTML('footer.html', 'footer-placeholder');
+    </script>
+</body>
+
+</html>

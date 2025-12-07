@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameStore - Danh Sách Game</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/game.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="mobile-overlay" class="mobile-overlay" onclick="closeSidebar()"></div>
+
+    <main class="app-container">
+        <button class="hamburger-btn" onclick="openSidebar()" aria-label="Mở bộ lọc">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <div class="main-grid">
+            <aside id="filter-sidebar" class="sidebar mobile-sidebar-menu" data-aos="fade-right">
+                <button id="close-btn" class="close-btn" onclick="closeSidebar()">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+                <div class="sidebar-card">
+                    <h2>Tìm kiếm game</h2>
+                    <input type="text" id="search-input" placeholder="Nhập tên game..." class="search-input">
+                </div>
+
+                <div class="sidebar-card">
+                    <h2>Danh mục</h2>
+                    <div class="filters-group">
+                        <label class="filter-label">
+                            <input type="checkbox" name="category" value="Hành động" checked>
+                            Game hành động
+                        </label>
+                        <label class="filter-label">
+                            <input type="checkbox" name="category" value="Phiêu lưu" checked>
+                            Game phiêu lưu
+                        </label>
+                        <label class="filter-label">
+                            <input type="checkbox" name="category" value="Thể thao">
+                            Game thể thao
+                        </label>
+                        <label class="filter-label">
+                            <input type="checkbox" name="category" value="Chiến thuật">
+                            Game chiến thuật
+                        </label>
+                    </div>
+                </div>
+
+                <div class="sidebar-card">
+                    <h2>Nền tảng</h2>
+                    <div class="filters-group">
+                        <label class="filter-label">
+                            <input type="checkbox" name="platform" value="PC" checked>
+                            PC
+                        </label>
+                        <label class="filter-label">
+                            <input type="checkbox" name="platform" value="PlayStation">
+                            PlayStation
+                        </label>
+                        <label class="filter-label">
+                            <input type="checkbox" name="platform" value="Xbox">
+                            Xbox
+                        </label>
+                        <label class="filter-label">
+                            <input type="checkbox" name="platform" value="Mobile">
+                            Mobile
+                        </label>
+                    </div>
+                </div>
+
+                <div class="sidebar-card">
+                    <h2>Số sao (Tối thiểu)</h2>
+                    <div class="filters-group">
+                        <label class="filter-label">
+                            <input type="radio" name="rating_range" value="0" checked>
+                            Tất cả
+                        </label>
+                        <label class="filter-label">
+                            <input type="radio" name="rating_range" value="4.5">
+                            4.5 sao trở lên
+                        </label>
+                        <label class="filter-label">
+                            <input type="radio" name="rating_range" value="4.0">
+                            4.0 sao trở lên
+                        </label>
+                        <label class="filter-label">
+                            <input type="radio" name="rating_range" value="3.5">
+                            3.5 sao trở lên
+                        </label>
+                    </div>
+                </div>
+
+                <div class="button-group">
+                    <button id="apply-filters-btn" class="btn-filter">
+                        <i class="fa-solid fa-filter"></i> Lọc Game
+                    </button>
+                    <button id="clear-filters-btn" class="btn-clear">
+                        <i class="fa-solid fa-xmark"></i> Xóa
+                    </button>
+                </div>
+            </aside>
+
+            <section class="game-section">
+                <h3 data-aos="fade-down">Hiển thị <span id="game-count">1 - 4</span> sản phẩm</h3>
+                <div id="game-list" class="game-grid"></div>
+                <div id="no-results" class="no-results">
+                    <i class="fa-solid fa-magnifying-glass-minus"></i>
+                    <p>Không tìm thấy game nào phù hợp với bộ lọc.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+    <div id="footer-placeholder"></div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/game.js"></script>
+    <script src="assets/js/loadHtml.js"></script>
+    <script>
+        loadHTML('footer.html', 'footer-placeholder');
+    </script>
+</body>
+
+</html>
