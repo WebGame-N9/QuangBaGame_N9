@@ -7,9 +7,9 @@
     <title>DT9 - Giới thiệu về Nhóm Phát triển</title>
     <link rel="stylesheet" href="assets/css/game.css">
     <link rel="stylesheet" href="assets/css/gameID.css">
-    
-    <link rel="stylesheet" href="assets/css/header.css"> 
-    
+
+    <link rel="stylesheet" href="assets/css/header.css">
+
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="assets/js/jquery-3.7.1.min.js"></script>
     <style>
@@ -62,13 +62,31 @@
             color: var(--text-muted);
             margin-bottom: 15px;
         }
-        
+
         /* [Các style cho danh sách thành viên giữ nguyên] */
-        .content-card ul { list-style: none; padding-left: 0; }
-        .content-card ul li { padding: 8px 0; border-bottom: 1px dashed var(--border-color); }
-        .content-card ul li:last-child { border-bottom: none; }
-        .role-bold { font-weight: 700; color: var(--green-400); margin-right: 8px; }
-        .mssv-text { color: var(--secondary-color); }
+        .content-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .content-card ul li {
+            padding: 8px 0;
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        .content-card ul li:last-child {
+            border-bottom: none;
+        }
+
+        .role-bold {
+            font-weight: 700;
+            color: var(--green-400);
+            margin-right: 8px;
+        }
+
+        .mssv-text {
+            color: var(--secondary-color);
+        }
 
 
         /* Style chính thức cho Form QR */
@@ -77,26 +95,29 @@
             width: 100%;
             padding: 10px;
             margin-top: 5px;
-            border-radius: 8px; /* Tăng border radius cho đẹp hơn */
+            border-radius: 8px;
+            /* Tăng border radius cho đẹp hơn */
             border: 1px solid var(--border-color);
             background-color: var(--bg-dark);
             color: var(--text-light);
             box-sizing: border-box;
             transition: border-color 0.2s;
         }
+
         #qrForm input[type="number"]:focus,
         #qrForm input[type="text"]:focus {
             outline: none;
             border-color: var(--primary-color);
         }
-        
+
         /* Style MỚI cho nút phụ (Quick Buttons) */
         .btn-secondary-form {
             background-color: var(--slate-700);
             color: var(--text-light);
-            border: none; /* Bỏ border để trông liền mạch hơn */
+            border: none;
+            /* Bỏ border để trông liền mạch hơn */
             padding: 8px 12px;
-            border-radius: 8px; 
+            border-radius: 8px;
             cursor: pointer;
             font-weight: 600;
             transition: background-color 0.2s, transform 0.1s;
@@ -107,7 +128,6 @@
             background-color: var(--slate-600);
             transform: translateY(-1px);
         }
-
     </style>
 </head>
 
@@ -115,7 +135,7 @@
     <header class="main-header">
         <a href="index.html" class="header-logo-link" data-page="index.html">
             <div class="header-logo">
-                <img src="assets/img/logo.png" alt="DT9 Logo" class="logo-image"> 
+                <img src="assets/img/logo.png" alt="DT9 Logo" class="logo-image">
                 <span class="logo-text">DT9</span>
             </div>
         </a>
@@ -137,7 +157,7 @@
             <button class="action-btn download-btn-header">
                 <i class="fas fa-download"></i> <span class="btn-text">Tải Về</span>
             </button>
-            
+
             <button class="action-btn account-btn">
                 <i class="fas fa-user-circle"></i> <span class="btn-text">Tài Khoản</span>
             </button>
@@ -147,134 +167,178 @@
             </button>
         </div>
     </header>
-    <main>    
-    <div class="mobile-overlay" id="mobile-overlay"></div>
-    <div class="mobile-sidebar" id="mobile-sidebar">
-        <button class="hamburger-btn" style="position: absolute; top: 15px; right: 15px; background-color: #334155;" id="close-sidebar-btn">
-            <i class="fas fa-times"></i>
-        </button>
-        
-        <h3 class="text-xl font-bold mb-4 mt-2" style="color: #00bcd4;">Menu</h3>
-
-        <a href="index.html" class="mobile-nav-item" data-page="index.html">Trang chủ</a>
-        <a href="game.html" class="mobile-nav-item" data-page="game.html">Trò chơi</a>
-        <a href="news.html" class="mobile-nav-item" data-page="news.html">Tin tức</a>
-        <a href="gioi-thieu.html" class="mobile-nav-item" data-page="gioi-thieu.html">Giới thiệu</a>
-        <a href="contact.html" class="mobile-nav-item" data-page="contact.html">Liên hệ</a>
-
-        <div class="mobile-nav-actions">
-            <button class="action-btn download-btn-header">
-                <i class="fas fa-download"></i> Tải Về
+    <main>
+        <div class="mobile-overlay" id="mobile-overlay"></div>
+        <div class="mobile-sidebar" id="mobile-sidebar">
+            <button class="hamburger-btn" style="position: absolute; top: 15px; right: 15px; background-color: #334155;"
+                id="close-sidebar-btn">
+                <i class="fas fa-times"></i>
             </button>
-            <button class="action-btn account-btn">
-                <i class="fas fa-user-circle"></i> Tài Khoản
-            </button>
+
+            <h3 class="text-xl font-bold mb-4 mt-2" style="color: #00bcd4;">Menu</h3>
+
+            <a href="index.html" class="mobile-nav-item" data-page="index.html">Trang chủ</a>
+            <a href="game.html" class="mobile-nav-item" data-page="game.html">Trò chơi</a>
+            <a href="news.html" class="mobile-nav-item" data-page="news.html">Tin tức</a>
+            <a href="gioi-thieu.html" class="mobile-nav-item" data-page="gioi-thieu.html">Giới thiệu</a>
+            <a href="contact.html" class="mobile-nav-item" data-page="contact.html">Liên hệ</a>
+
+            <div class="mobile-nav-actions">
+                <button class="action-btn download-btn-header">
+                    <i class="fas fa-download"></i> Tải Về
+                </button>
+                <button class="action-btn account-btn">
+                    <i class="fas fa-user-circle"></i> Tài Khoản
+                </button>
+            </div>
+
+            <div class="mt-8">
+                <p class="text-sm text-center" style="color: #94a3b8;">© 2025 DT9.VN</p>
+            </div>
         </div>
-        
-        <div class="mt-8">
-            <p class="text-sm text-center" style="color: #94a3b8;">© 2025 DT9.VN</p>
-        </div>
-    </div>
-    <div class="main-wrapper">
-        <div class="content-card" data-aos="fade-up">
-            <h2>Giới thiệu Nhóm Thiết kế Web DT9</h2>
-            <p>
-                Đây là dự án môn học <b>Thiết kế Web</b> được thực hiện bởi Nhóm 9, sinh viên lớp UTC2, dưới sự hướng dẫn
-                của thầy <b>Nguyễn Thiện Dương</b>. Dự án nhằm mục đích xây dựng một giao diện trang thông tin game demo
-                với tiêu chí hiện đại, responsive và tuân thủ các nguyên tắc thiết kế web cơ bản.
-            </p>
+        <div class="main-wrapper">
+            <div class="content-card" data-aos="fade-up">
+                <h2>Giới thiệu Nhóm Thiết kế Web DT9</h2>
+                <p>
+                    Đây là dự án môn học <b>Thiết kế Web</b> được thực hiện bởi Nhóm 9, sinh viên lớp UTC2, dưới sự
+                    hướng dẫn
+                    của thầy <b>Nguyễn Thiện Dương</b>. Dự án nhằm mục đích xây dựng một giao diện trang thông tin game
+                    demo
+                    với tiêu chí hiện đại, responsive và tuân thủ các nguyên tắc thiết kế web cơ bản.
+                </p>
 
-            <h3>Thông tin thành viên Nhóm 9</h3>
-            <ul>
-                <li><span class="role-bold">Trưởng nhóm:</span> <b>Nguyễn Ngọc Tiên</b> - MSSV: <span class="mssv-text">6551071079</span></li>
-                <li><span class="role-bold">Thành viên:</span> <b>Hà Tiên Tiến</b> - MSSV: <span class="mssv-text">6551071081</span></li>
-                <li><span class="role-bold">Thành viên:</span> <b>Ngô Thanh Tiến</b> - MSSV: <span class="mssv-text">6551071082</span></li>
-                <li><span class="role-bold">Thành viên:</span> <b>Cao Trung Tính</b> - MSSV: <span class="mssv-text">6551071085</span></li>
-                <li><span class="role-bold">Thành viên:</span> <b>Trương Ngọc Danh</b> - MSSV: <span class="mssv-text">6551071013</span></li>
-            </ul>
+                <h3>Thông tin thành viên Nhóm 9</h3>
+                <ul>
+                    <li><span class="role-bold">Trưởng nhóm:</span> <b>Nguyễn Ngọc Tiên</b> - MSSV: <span
+                            class="mssv-text">6551071079</span></li>
+                    <li><span class="role-bold">Thành viên:</span> <b>Hà Tiên Tiến</b> - MSSV: <span
+                            class="mssv-text">6551071081</span></li>
+                    <li><span class="role-bold">Thành viên:</span> <b>Ngô Thanh Tiến</b> - MSSV: <span
+                            class="mssv-text">6551071082</span></li>
+                    <li><span class="role-bold">Thành viên:</span> <b>Cao Trung Tính</b> - MSSV: <span
+                            class="mssv-text">6551071085</span></li>
+                    <li><span class="role-bold">Thành viên:</span> <b>Trương Ngọc Danh</b> - MSSV: <span
+                            class="mssv-text">6551071013</span></li>
+                </ul>
 
-            <h3>Mục tiêu của Dự án</h3>
-            <p>
-                Mục tiêu chính của dự án này là áp dụng kiến thức về <b>HTML5</b>, <b>CSS3</b> và <b>JavaScript</b> để xây dựng một website
-                tĩnh (landing page/chi tiết game) hoàn chỉnh, từ thiết lập bố cục, áp dụng style responsive, đến tích hợp
-                các hiệu ứng cuộn (AOS) và cơ chế tải nội dung (nhúng footer).
-            </p>
+                <h3>Mục tiêu của Dự án</h3>
+                <p>
+                    Mục tiêu chính của dự án này là áp dụng kiến thức về <b>HTML5</b>, <b>CSS3</b> và <b>JavaScript</b>
+                    để xây dựng một website
+                    tĩnh (landing page/chi tiết game) hoàn chỉnh, từ thiết lập bố cục, áp dụng style responsive, đến
+                    tích hợp
+                    các hiệu ứng cuộn (AOS) và cơ chế tải nội dung (nhúng footer).
+                </p>
 
-            <h3>Hỗ trợ Dự án (Tạo QR Chuyển khoản)</h3>
-            <form id="qrForm" action="#" style="max-width: 400px; margin: 0 auto; padding-top: 10px;">
-                <label for="qrAmount">
-                    <span>Số tiền chuyển (VND):</span>
+                <h3>Hỗ trợ Dự án (Tạo QR Chuyển khoản)</h3>
+                <form id="qrForm" action="#" style="max-width: 400px; margin: 0 auto; padding-top: 10px;">
+                    <label for="qrAmount">
+                        <span>Số tiền chuyển (VND):</span>
+                        <br>
+                        <input type="number" min="1000" id="qrAmount" class="soTien" placeholder="Nhập số tiền"
+                            required>
+                    </label>
+
+                    <div style="margin-top: 10px; display: flex; gap: 10px;">
+                        <button type="button" class="quick-amount-btn btn-secondary-form" data-amount="20000">20.000
+                            đ</button>
+                        <button type="button" class="quick-amount-btn btn-secondary-form" data-amount="50000">50.000
+                            đ</button>
+                        <button type="button" class="quick-amount-btn btn-secondary-form" data-amount="100000">100.000
+                            đ</button>
+                    </div>
+
+                    <label for="qrContent" style="margin-top: 15px; display: block;">
+                        <span>Nội dung chuyển khoản:</span>
+                        <br>
+                        <input type="text" id="qrContent" class="noidung" value="UTCHD" placeholder="UTCHD (Mặc định)">
+                    </label>
                     <br>
-                    <input type="number" min="1000" id="qrAmount" class="soTien" placeholder="Nhập số tiền" required>
-                </label>
-                
-                <div style="margin-top: 10px; display: flex; gap: 10px;">
-                    <button type="button" class="quick-amount-btn btn-secondary-form" data-amount="20000">20.000 đ</button>
-                    <button type="button" class="quick-amount-btn btn-secondary-form" data-amount="50000">50.000 đ</button>
-                    <button type="button" class="quick-amount-btn btn-secondary-form" data-amount="100000">100.000 đ</button>
-                </div>
+                    <button type="button" id="qrButton" class="oke btn-primary btn-secondary-form"
+                        style="width: 100%; height: 45px; margin-top: 15px;">Tạo QR</button>
 
-                <label for="qrContent" style="margin-top: 15px; display: block;">
-                    <span>Nội dung chuyển khoản:</span>
                     <br>
-                    <input type="text" id="qrContent" class="noidung" value="UTCHD" placeholder="UTCHD (Mặc định)">
-                </label>
-                <br>
-                <button type="button" id="qrButton" class="oke btn-primary btn-secondary-form" style="width: 100%; height: 45px; margin-top: 15px;">Tạo QR</button>
-                
-                <br>
-                <div id="qrImageContainer" class="anhQR" style="margin-top: 25px; text-align: center; border: 1px dashed var(--border-color); border-radius: 8px; padding: 15px;">
-                    <p style="text-align: center; opacity: 0.5; margin: 0;">Ảnh QR sẽ hiển thị ở đây</p>
-                </div>
-            </form>
+                    <div id="qrImageContainer" class="anhQR"
+                        style="margin-top: 25px; text-align: center; border: 1px dashed var(--border-color); border-radius: 8px; padding: 15px;">
+                        <p style="text-align: center; opacity: 0.5; margin: 0;">Ảnh QR sẽ hiển thị ở đây</p>
+                    </div>
+                </form>
 
-            <h3 style="margin-top: 40px;">Liên hệ</h3>
-            <p>
-                Mọi thắc mắc hoặc góp ý về dự án, xin vui lòng liên hệ với Trưởng nhóm qua email (nếu có) hoặc kênh liên lạc chính thức của <b>DT9</b>.
-            </p>
+                <h3 style="margin-top: 40px;">Liên hệ</h3>
+                <p>
+                    Mọi thắc mắc hoặc góp ý về dự án, xin vui lòng liên hệ với Trưởng nhóm qua email (nếu có) hoặc kênh
+                    liên lạc chính thức của <b>DT9</b>.
+                </p>
+            </div>
         </div>
-    </div>
 
-    <div id="footer-placeholder"></div>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>AOS.init();</script>
-    <script src="assets/js/gameID.js"></script>
-    <script src="assets/js/rating.js" defer></script>
+        <div id="footer-placeholder"></div>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>AOS.init();</script>
+        <script src="assets/js/rating.js" defer></script>
+        <script src="assets/js/header.js"></script>
+        <script>
 
-    <script src="assets/js/header.js"></script>
-    <script src="assets/js/loadHTML.js"></script>
-    <script>
-        loadHTML('footer.html', 'footer-placeholder'); 
-    </script>
-
-    <script>
-        $(document).ready(function () {
-            // 1. Logic tạo QR (Sử dụng ID)
-            $("#qrButton").click(function () { 
-                let tien = $("#qrAmount").val();
-                let nd = $("#qrContent").val();
-
-                if (!tien || tien < 1000) {
-                    alert('Vui lòng nhập số tiền hợp lệ (tối thiểu 1,000 VND).');
-                    $("#qrImageContainer").html('<p style="text-align: center; opacity: 0.5; margin: 0;">Ảnh QR sẽ hiển thị ở đây</p>');
+            function loadHTML(url, elementId) {
+                const placeholder = document.getElementById(elementId);
+                if (!placeholder) {
+                    console.error(`Lỗi: Không tìm thấy phần tử có ID '${elementId}'`);
                     return;
                 }
 
-                let s = "<img src='https://qr.sepay.vn/img?acc=101882731006&bank=ICB"; 
-                s += "&amount=" + tien + "&des=" + nd + "' style='width: 100%; max-width: 250px; height: auto; border-radius: 4px;'/>";
-                
-                $("#qrImageContainer").html(s);
-            });
+                fetch(url)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error(`Không thể tải ${url}. Mã lỗi: ${response.status}`);
+                        }
+                        return response.text();
+                    })
+                    .then(html => {
+                        placeholder.outerHTML = html;
 
-            // 2. Logic cho các nút click nhanh
-            $(".quick-amount-btn").click(function () {
-                let amount = $(this).data('amount');
-                $("#qrAmount").val(amount);
-                $("#qrButton").click(); // Tự động tạo QR
-            });
+                        // Khởi tạo lại AOS (Animate On Scroll) cho các phần tử mới được thêm vào
+                        if (window.AOS) {
+                            AOS.init();
+                        }
+                    })
+                    .catch(error => {
+                        console.error(`Lỗi khi tải chân trang từ ${url}:`, error);
+                        placeholder.innerHTML = '<footer style="text-align:center; color: #DC2626; padding: 20px; background-color: #1a1c35;">Lỗi khi tải chân trang. Vui lòng kiểm tra console.</footer>';
+                    });
+            }
 
-        });
-    </script>
+
+            loadHTML('footer.html', 'footer-placeholder'); 
+        </script>
+
+        <script>
+            $(document).ready(function () {
+                // 1. Logic tạo QR (Sử dụng ID)
+                $("#qrButton").click(function () {
+                    let tien = $("#qrAmount").val();
+                    let nd = $("#qrContent").val();
+
+                    if (!tien || tien < 1000) {
+                        alert('Vui lòng nhập số tiền hợp lệ (tối thiểu 1,000 VND).');
+                        $("#qrImageContainer").html('<p style="text-align: center; opacity: 0.5; margin: 0;">Ảnh QR sẽ hiển thị ở đây</p>');
+                        return;
+                    }
+
+                    let s = "<img src='https://qr.sepay.vn/img?acc=101882731006&bank=ICB";
+                    s += "&amount=" + tien + "&des=" + nd + "' style='width: 100%; max-width: 250px; height: auto; border-radius: 4px;'/>";
+
+                    $("#qrImageContainer").html(s);
+                });
+
+                // 2. Logic cho các nút click nhanh
+                $(".quick-amount-btn").click(function () {
+                    let amount = $(this).data('amount');
+                    $("#qrAmount").val(amount);
+                    $("#qrButton").click(); // Tự động tạo QR
+                });
+
+            });
+        </script>
 </body>
 
 </html>

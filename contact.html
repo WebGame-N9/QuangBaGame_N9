@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hỗ Trợ Khách Hàng - DT9</title>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-     <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/header.css">
     <link rel="stylesheet" href="assets/css/contact.css">
-   
+
 </head>
 
 <body>
@@ -249,7 +249,8 @@
                         </div>
                     </div>
 
-                    <div class="support-card form-support" id="form-support-section" data-aos="fade-zoom-in" data-aos-delay="400">
+                    <div class="support-card form-support" id="form-support-section" data-aos="fade-zoom-in"
+                        data-aos-delay="400">
                         <h3>Gửi phiếu hỗ trợ</h3>
                         <form id="supportForm">
                             <div style="display: flex; gap: 15px;">
@@ -367,19 +368,47 @@
     </main>
     <div id="footer-placeholder"></div>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="assets/js/loadHTML.js"></script>
     <script src="assets/js/header.js"></script>
+
     <script>
-        loadHTML('footer.html', 'footer-placeholder'); 
+        function loadHTML(url, elementId) {
+            const placeholder = document.getElementById(elementId);
+            if (!placeholder) {
+                console.error(`Lỗi: Không tìm thấy phần tử có ID '${elementId}'`);
+                return;
+            }
+
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`Không thể tải ${url}. Mã lỗi: ${response.status}`);
+                    }
+                    return response.text();
+                })
+                .then(html => {
+                    placeholder.outerHTML = html;
+
+                    // Khởi tạo lại AOS (Animate On Scroll) cho các phần tử mới được thêm vào
+                    if (window.AOS) {
+                        AOS.init();
+                    }
+                })
+                .catch(error => {
+                    console.error(`Lỗi khi tải chân trang từ ${url}:`, error);
+                    placeholder.innerHTML = '<footer style="text-align:center; color: #DC2626; padding: 20px; background-color: #1a1c35;">Lỗi khi tải chân trang. Vui lòng kiểm tra console.</footer>';
+                });
+        }
+
+        loadHTML('footer.html', 'footer-placeholder');
+
     </script>
 
-    
     <script src="assets/js/contact-report.js"></script>
-    
+
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({
-            offset: 120, 
+            offset: 120,
             delay: 0,
             duration: 800,
             easing: 'ease-out-quad',
@@ -388,7 +417,7 @@
             anchorPlacement: 'top-bottom',
         });
     </script>
-    
+
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const faqItems = document.querySelectorAll('.faq-item-wrapper');
