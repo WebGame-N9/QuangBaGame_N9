@@ -168,3 +168,38 @@ main {
 .btn-reply:hover {
     opacity: 0.9;
 }
+
+/* Bổ sung để header không bị tràn trên màn hình nhỏ */
+.main-header {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;           /* quan trọng */
+    min-width: 0;             /* cho phép co lại */
+}
+
+.header-search-container {
+    flex: 1;
+    max-width: 250px;         /* giới hạn chiều rộng ô tìm kiếm */
+    min-width: 120px;
+}
+
+.action-btn {
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+/* Ẩn text trên màn hình rất nhỏ, chỉ giữ icon */
+@media (max-width: 768px) {
+    .action-btn .btn-text {
+        display: none;
+    }
+    .action-btn {
+        padding: 8px 12px;
+    }
+}

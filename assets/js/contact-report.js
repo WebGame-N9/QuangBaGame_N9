@@ -173,7 +173,7 @@ function loadTicketDetails(ticket) {
                       statusClass === 'processing' ? 'fa-sync-alt' : 'fa-clock';
 
     $('.report-title').text(`Phiếu Hỗ Trợ: ${ticket.subject}`);
-    $('title').text(`Chi Tiết Phiếu Hỗ Trợ #${ticket.submission_id} - GameStore`);
+    $('title').text(`Chi Tiết Phiếu Hỗ Trợ #${ticket.submission_id} - DT9`);
 
     // Cập nhật Meta (Status)
     $('.report-meta').html(`
@@ -216,7 +216,7 @@ function loadTicketDetails(ticket) {
         adminMessage = `
             <div class="message-card admin-response">
                 <div class="message-header">
-                    <span class="author">Admin GameStore (${adminName})</span>
+                    <span class="author">Admin DT9 (${adminName})</span>
                     <span class="timestamp">Đã phản hồi: ${responseTime}</span>
                 </div>
                 <div class="message-body">
