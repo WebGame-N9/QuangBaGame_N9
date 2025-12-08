@@ -1,18 +1,17 @@
 // --- CẤU HÌNH API ---
 // Thay thế bằng BIN_ID và Master Key thực tế của bạn từ JSONBin.io
-const BIN_ID = '6935590d43b1c97be9dd6572'; 
+const BIN_ID = '6935590d43b1c97be9dd6572';
 const API_URL = `https://api.jsonbin.io/v3/b/${BIN_ID}`;
-const API_KEY = '$2a$10$dAGf830CRlXglDv0cce8IOz5ayJDKDIW8.uPxvWVXMgR7Wm.UG.7G'; 
+const API_KEY = '$2a$10$dAGf830CRlXglDv0cce8IOz5ayJDKDIW8.uPxvWVXMgR7Wm.UG.7G';
 
 // Biến toàn cục để lưu trữ dữ liệu sau khi GET thành công
 let allGamesData = [];
 
 // --- CẤU HÌNH HIỂN THỊ CỤC BỘ (Dùng ID từ JSON) ---
-// Tương ứng với GameID1 -> 4, GameID2 -> 1, GameID3 -> 2, GameID4 -> 3, GameID5 -> 5
-const BannerGameIDs = [4, 1, 2, 3, 5]; 
+const BannerGameIDs = [4, 1, 2, 3, 5];
 let listGameUpdateIDs = [4, 1, 2, 3, 5];
 let listGameTrendingIDs = [4, 1, 2, 3, 5];
-const listHotEventIDs = [4, 1]; // Genshin và Fortnite
+const listHotEventIDs = [4, 1]; 
 
 const numberUpdate = 4;
 const numberTrending = 3;
@@ -41,7 +40,7 @@ async function fetchGamesData() {
         // Sau khi có dữ liệu, mới bắt đầu xử lý và hiển thị
         initializeGameLists();
         renderHotEvents();
-        
+
         // Khởi tạo Banner
         initializeDots();
         updateBanner();
@@ -49,8 +48,25 @@ async function fetchGamesData() {
             setInterval(nextBanner, 5000);
         }
 
+        hidePreloader(); 
+
     } catch (error) {
         console.error('Lỗi khi tải dữ liệu Game:', error);
+        hidePreloader();
+    }
+}
+
+// --- HÀM TẮT MÀN HÌNH CHỜ ---
+function hidePreloader() {
+    const loader = document.getElementById('loader-wrapper');
+    const body = document.body;
+    
+    if (loader) {
+        loader.classList.add('fade-out');
+        body.classList.remove('loading'); 
+        setTimeout(() => {
+            loader.style.display = 'none';
+        }, 500); 
     }
 }
 
@@ -61,33 +77,31 @@ let trendingList = [];
 let eventList = [];
 
 function getGameDataByID(id) {
-    // Lấy dữ liệu game bằng ID, ID được chuyển thành dạng số
     return allGamesData.find(game => game.id === Number(id));
 }
 
 function initializeGameLists() {
     // 1. Lấy dữ liệu thô cho các danh sách
     bannerList = BannerGameIDs.map(getGameDataByID).filter(item => item !== undefined);
-    
+
     // Đảm bảo các ID cấu hình có trong dữ liệu
     listGameUpdateIDs = listGameUpdateIDs.filter(id => getGameDataByID(id) !== undefined);
     listGameTrendingIDs = listGameTrendingIDs.filter(id => getGameDataByID(id) !== undefined);
-    
+
     // 2. Sắp xếp và render Update
     checkAndSortUpdateList();
-    
+
     // 3. Sắp xếp và render Trending
     sortAndRenderTrending();
-    
+
     // 4. Lấy danh sách Hot Events
     eventList = listHotEventIDs.map(getGameDataByID).filter(item => item !== undefined);
 }
 
 // --- PHẦN SẮP XẾP NGÀY UPDATE ---
 function parseDate(dateStr) {
-    if (!dateStr) return new Date(0); // Trả về ngày rất cũ nếu không có ngày
+    if (!dateStr) return new Date(0); 
     const parts = dateStr.split('/');
-    // parts[0] là ngày, parts[1] là tháng, parts[2] là năm
     return new Date(parts[2], parts[1] - 1, parts[0]);
 }
 
@@ -95,12 +109,10 @@ function checkAndSortUpdateList() {
     listGameUpdateIDs.sort((idA, idB) => {
         const gameA = getGameDataByID(idA);
         const gameB = getGameDataByID(idB);
-        // Sắp xếp giảm dần theo ngày (ngày mới nhất đứng đầu)
         return parseDate(gameB.updateDate) - parseDate(gameA.updateDate);
     });
 
     updateList = listGameUpdateIDs.map(getGameDataByID).filter(item => item !== undefined);
-
     renderUpdateGames();
 }
 
@@ -119,7 +131,6 @@ function parseDownloads(downloadStr) {
     } else if (cleanStr.includes('k')) {
         return number * 1000;
     } else if (cleanStr.includes('units sold')) {
-        // Xử lý riêng cho trường hợp '300M+ Units Sold' của Minecraft
         return number * 1000000;
     }
     return number;
@@ -129,12 +140,10 @@ function sortAndRenderTrending() {
     listGameTrendingIDs.sort((idA, idB) => {
         const gameA = getGameDataByID(idA);
         const gameB = getGameDataByID(idB);
-        // Sắp xếp giảm dần theo lượt tải
         return parseDownloads(gameB.downloads) - parseDownloads(gameA.downloads);
     });
 
     trendingList = listGameTrendingIDs.map(getGameDataByID).filter(item => item !== undefined);
-
     renderTrendingGames();
 }
 
@@ -153,8 +162,7 @@ function updateBanner() {
     let linkElement = bannerContainer.querySelector('a');
     let imgElement;
 
-    // SỬ DỤNG CÚ PHÁP LINK MỚI: game_detail_template.html?id=${gameId}
-    const gameLink = `game_detail_template.html?id=${currentGame.id}`; 
+    const gameLink = `game_detail_template.html?id=${currentGame.id}`;
 
     if (!linkElement) {
         bannerContainer.innerHTML = '';
@@ -170,8 +178,7 @@ function updateBanner() {
         bannerContainer.classList.remove('index_img-placeholder', 'text-3xl');
 
         linkElement.href = gameLink;
-        // Sử dụng game.url (link banner)
-        imgElement.src = currentGame.url || currentGame.thumbnail; 
+        imgElement.src = currentGame.url || currentGame.thumbnail;
         imgElement.alt = currentGame.name;
     } else {
         imgElement = linkElement.querySelector('img');
@@ -195,9 +202,7 @@ function initializeDots() {
         bannerDotsContainer.innerHTML = '';
         bannerList.forEach((_, index) => {
             const dot = document.createElement('div');
-
             dot.className = `w-2 h-2 rounded-full transition duration-300 cursor-pointer ${index === currentBannerIndex ? 'bg-white' : 'bg-gray-500 hover:bg-white'}`;
-
             dot.addEventListener('click', () => {
                 currentBannerIndex = index;
                 updateBanner();
@@ -241,16 +246,14 @@ if (nextButton) nextButton.addEventListener('click', nextBanner);
 // phần update =============================================================================================================
 function renderUpdateGames() {
     const updateContainer = document.querySelector('.index_grid-4-cols');
-
     if (!updateContainer || updateList.length === 0) return;
 
     updateContainer.innerHTML = '';
 
-    updateList.slice(0,numberUpdate).forEach((game, index) => {
-        // SỬ DỤNG game.genres thay vì game.category
+    updateList.slice(0, numberUpdate).forEach((game, index) => {
         const categoryString = game.genres ? game.genres.join(' • ') : 'Đang cập nhật';
-        const gameLink = `game_detail_template.html?id=${game.id}`; 
-        
+        const gameLink = `game_detail_template.html?id=${game.id}`;
+
         const card = document.createElement('div');
         card.className = 'index_bg-card index_card-base index_card-vertical group';
 
@@ -291,16 +294,14 @@ function renderUpdateGames() {
 // phần trending =============================================================================================================
 function renderTrendingGames() {
     const trendingContainer = document.querySelector('.index_grid-3-cols');
-
     if (!trendingContainer || trendingList.length === 0) return;
 
     trendingContainer.innerHTML = '';
 
-    trendingList.slice(0,numberTrending).forEach((game, index) => {
-        // SỬ DỤNG game.genres thay vì game.category
+    trendingList.slice(0, numberTrending).forEach((game, index) => {
         const categoryString = game.genres ? game.genres.join(' • ') : 'Đang cập nhật';
-        const gameLink = `game_detail_template.html?id=${game.id}`; 
-        
+        const gameLink = `game_detail_template.html?id=${game.id}`;
+
         const card = document.createElement('div');
         card.className = 'index_bg-card index_hot-card-horizontal group';
         card.setAttribute('data-aos', 'fade-up');
@@ -355,9 +356,9 @@ function renderHotEvents() {
     const eventContainer = document.querySelector('.index_grid-2-cols');
     if (!eventContainer || eventList.length === 0) return;
     eventContainer.innerHTML = '';
-    eventList.slice(0,numberEvents).forEach((game, index) => {
-        const gameLink = `game_detail_template.html?id=${game.id}`; 
-        
+    eventList.slice(0, numberEvents).forEach((game, index) => {
+        const gameLink = `game_detail_template.html?id=${game.id}`;
+
         const card = document.createElement('div');
         card.className = 'index_event-card-base group relative overflow-hidden rounded-2xl h-48 md:h-64 cursor-pointer';
 
@@ -392,14 +393,13 @@ function renderHotEvents() {
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Khởi tạo AOS trước để các phần tử HTML có thể sử dụng
     AOS.init({
         once: true,
         offset: 100,
         duration: 800,
         easing: 'ease-out-cubic',
     });
-    
+
     // Bắt đầu quá trình tải dữ liệu
     fetchGamesData();
 });

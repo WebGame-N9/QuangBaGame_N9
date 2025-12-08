@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tài khoản - GameStore</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="assets/css/index_variable.css">
+    <link rel="stylesheet" href="assets/css/auth.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        (function () {
+            emailjs.init("aQ0bqU1FBQd2gJwBt");
+            // lưu ý: muốn sài được menu này thì phải nhớ kêu tui add tên máy chủ vào trên gg của tui, thì mấy ông mới sài đăng nhập bằng gmail đc nha
+        })();
+    </script>
+</head>
+
+<body class="auth-body auth_layout">
+    <a href="index.html" class="fixed top-6 left-6 z-50 block hover:opacity-80 transition-opacity" data-aos="fade-down"
+        data-aos-duration="1000">
+        <img src="assets/img/logo.png" alt="GameStore Logo" class="h-10 w-auto object-contain">
+    </a>
+    <div class="auth_orb-container">
+        <div class="auth_orb auth_orb-purple" data-aos="zoom-in" data-aos-duration="2000"></div>
+        <div class="auth_orb auth_orb-blue" data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="200"></div>
+    </div>
+
+    <div class="auth_card auth_bg-card m-20 " data-aos="fade-up" data-aos-duration="1000">
+
+        <div id="auth_tabs" class="auth_tabs flex" data-aos="fade-down" data-aos-delay="300">
+            <button class="auth_tab-btn active" data-target="login_form">
+                Đăng nhập
+            </button>
+            <button class="auth_tab-btn" data-target="register_form">
+                Đăng ký
+            </button>
+            <div class="auth_tab-line"></div>
+        </div>
+
+        <form id="login_form" class="auth_form block runAOSChild">
+            <div class="auth_form-header " data-aos="fade-right" data-aos-delay="400">
+                <h3>Đăng nhập</h3>
+                <p>Chào mừng bạn quay lại!</p>
+            </div>
+
+            <div class="auth_input-group" data-aos="fade-up" data-aos-delay="500">
+                <label>Email hoặc Username <span class="auth_required">*</span></label>
+                <input type="text" id="login_input" placeholder="Nhập email hoặc username" class="auth_input">
+            </div>
+
+            <div class="auth_input-group" data-aos="fade-up" data-aos-delay="600">
+                <label>Mật khẩu <span class="auth_required">*</span></label>
+                <div class="auth_password-wrapper">
+                    <input type="password" id="login_password" placeholder="Nhập mật khẩu" class="auth_input">
+                    <i class="fa-regular fa-eye auth_toggle-password"></i>
+                </div>
+            </div>
+
+            <div class="auth_form-options flex" data-aos="fade-in" data-aos-delay="700">
+                <label class="auth_remember-me flex">
+                    <input type="checkbox">
+                    <span>Ghi nhớ đăng nhập</span>
+                </label>
+                <a href="#" id="btn_forgot_password" class="auth_forgot-link">Quên mật khẩu?</a>
+            </div>
+
+            <button type="button" id="btn_submit_login" class="auth_btn-primary auth_btn-full auth_btn-glow-purple"
+                data-aos="zoom-in" data-aos-delay="800">
+                Đăng nhập
+            </button>
+
+            <div class="auth_divider" data-aos="fade-in" data-aos-delay="900">
+                <div class="auth_line"></div>
+                <div class="auth_text"><span class="auth_bg-card">Hoặc đăng nhập với</span></div>
+            </div>
+
+            <div class="auth_social-login" data-aos="fade-up" data-aos-delay="1000">
+                <button class="auth_social-btn"><img src="https://www.svgrepo.com/show/475656/google-color.svg"> Tiếp
+                    tục với Google</button>
+            </div>
+        </form>
+
+        <form id="register_form" class="auth_form hidden runAOSChild">
+            <div class="auth_form-header" data-aos="fade-right" data-aos-duration="800">
+                <h3>Đăng ký</h3>
+                <p class="auth_highlight">Tạo tài khoản mới!</p>
+            </div>
+
+            <div class="auth_input-group" data-aos="fade-up" data-aos-delay="100">
+                <label>Họ và tên</label>
+                <input type="text" id="reg_fullname" placeholder="Nhập họ và tên" class="auth_input">
+            </div>
+
+            <div class="auth_input-group" data-aos="fade-up" data-aos-delay="200">
+                <label>Email <span class="auth_required">*</span></label>
+                <input type="email" id="reg_email" placeholder="Nhập email" class="auth_input">
+            </div>
+
+            <div class="auth_input-group" data-aos="fade-up" data-aos-delay="300">
+                <label>Username <span class="auth_required">*</span></label>
+                <input type="text" id="reg_username" placeholder="Nhập username" class="auth_input">
+            </div>
+
+            <div class="auth_grid-2-col" data-aos="fade-up" data-aos-delay="400">
+                <div class="auth_input-group">
+                    <label>Mật khẩu <span class="auth_required">*</span></label>
+                    <div class="auth_password-wrapper">
+                        <input type="password" id="reg_password" placeholder="Mật khẩu" class="auth_input">
+                        <i class="fa-regular fa-eye auth_toggle-password"></i>
+                    </div>
+                </div>
+                <div class="auth_input-group">
+                    <label>Xác nhận <span class="auth_required">*</span></label>
+                    <div class="auth_password-wrapper">
+                        <input type="password" id="reg_confirm" placeholder="Nhập lại" class="auth_input">
+                        <i class="fa-regular fa-eye auth_toggle-password"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="auth_terms flex" data-aos="fade-in" data-aos-delay="500">
+                <input type="checkbox" id="reg_terms_check">
+                <span>Tôi đồng ý với <a href="#">Điều khoản</a> và <a href="#">Chính sách</a></span>
+            </div>
+
+            <button type="button" id="btn_submit_register" class="auth_btn-primary auth_btn-full auth_btn-glow-purple"
+                data-aos="zoom-in" data-aos-delay="600">
+                Đăng ký & Gửi OTP
+            </button>
+
+            <div class="auth_section-social" data-aos="fade-up" data-aos-delay="700">
+                <div class="auth_divider">
+                    <div class="auth_line"></div>
+                    <div class="auth_text"><span class="auth_bg-card">Hoặc đăng ký với</span></div>
+                </div>
+                <div class="auth_social-icons flex">
+                    <button><img src="https://www.svgrepo.com/show/475656/google-color.svg"></button>
+                </div>
+            </div>
+        </form>
+
+        <div id="forgot_form" class="auth_form auth_center-mode hidden runAOSChild">
+            <div class="auth_top-nav flex">
+                <button class="auth_nav-btn" data-target="login_form">Đăng nhập</button>
+                <button class="auth_nav-btn" data-target="register_form">Đăng ký</button>
+            </div>
+
+            <div class="auth_icon-box auth_glow-purple">
+                <i class="fa-solid fa-key"></i>
+            </div>
+
+            <div class="auth_form-header">
+                <h3 id="forgot_title">Quên mật khẩu?</h3>
+                <p id="forgot_subtitle">Nhập email để lấy lại mật khẩu.</p>
+            </div>
+
+            <div id="forgot_step_1">
+                <div class="auth_input-group text-left">
+                    <label>Email đăng ký <span class="auth_required">*</span></label>
+                    <input type="email" id="forgot_email" placeholder="Nhập email tài khoản" class="auth_input">
+                </div>
+                <div class="mt-4"></div>
+                <button id="btn_forgot_send_otp" class="auth_btn-primary auth_btn-full auth_btn-glow-purple">
+                    Gửi mã xác nhận
+                </button>
+            </div>
+
+            <div id="forgot_step_2" class="hidden">
+                <div class="auth_otp-container flex justify-center gap-2 mb-4">
+                    <input type="text" maxlength="1" class="auth_input auth_otp-box forgot-otp">
+                    <input type="text" maxlength="1" class="auth_input auth_otp-box forgot-otp">
+                    <input type="text" maxlength="1" class="auth_input auth_otp-box forgot-otp">
+                    <input type="text" maxlength="1" class="auth_input auth_otp-box forgot-otp">
+                    <input type="text" maxlength="1" class="auth_input auth_otp-box forgot-otp">
+                    <input type="text" maxlength="1" class="auth_input auth_otp-box forgot-otp">
+                </div>
+                <button id="btn_forgot_verify_otp" class="auth_btn-success auth_btn-full auth_btn-glow-green">
+                    Xác thực OTP
+                </button>
+            </div>
+
+            <div id="forgot_step_3" class="hidden text-left">
+                <div class="auth_input-group">
+                    <label>Mật khẩu mới</label>
+                    <div class="auth_password-wrapper">
+                        <input type="password" id="new_password" placeholder="Mật khẩu mới" class="auth_input">
+                        <i class="fa-regular fa-eye auth_toggle-password"></i>
+                    </div>
+                </div>
+                <div class="auth_input-group mt-3">
+                    <label>Xác nhận mật khẩu</label>
+                    <div class="auth_password-wrapper">
+                        <input type="password" id="confirm_new_password" placeholder="Nhập lại mật khẩu"
+                            class="auth_input">
+                        <i class="fa-regular fa-eye auth_toggle-password"></i>
+                    </div>
+                </div>
+                <div class="mt-4"></div>
+                <button id="btn_reset_password" class="auth_btn-primary auth_btn-full auth_btn-glow-purple">
+                    Đổi mật khẩu
+                </button>
+            </div>
+
+            <button class="auth_btn-back_login auth_link-text mt-4 block mx-auto">
+                Quay lại đăng nhập
+            </button>
+        </div>
+
+        <div id="2fa_form" class="auth_form auth_center-mode hidden">
+            <div class="auth_icon-box auth_glow-green">
+                <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <div class="auth_form-header">
+                <h3>Xác thực Email</h3>
+                <p>Vui lòng nhập mã 6 số chúng tôi vừa gửi tới Email của bạn.</p>
+            </div>
+
+            <div class="auth_otp-container flex" id="otp_inputs">
+                <input type="text" maxlength="1" class="auth_input auth_otp-box">
+                <input type="text" maxlength="1" class="auth_input auth_otp-box">
+                <input type="text" maxlength="1" class="auth_input auth_otp-box">
+                <input type="text" maxlength="1" class="auth_input auth_otp-box">
+                <input type="text" maxlength="1" class="auth_input auth_otp-box">
+                <input type="text" maxlength="1" class="auth_input auth_otp-box">
+            </div>
+
+            <button id="btn_submit_2fa" class="auth_btn-success auth_btn-full auth_btn-glow-green">
+                Xác nhận
+            </button>
+
+            <button class="auth_btn-back_login auth_link-text-gray">
+                Quay lại
+            </button>
+        </div>
+
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script type="module" src="assets/js/auth.js"></script>
+</body>
+
+</html>
