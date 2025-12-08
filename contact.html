@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hỗ Trợ Khách Hàng - GameStore</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+     <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/contact.css">
+   
+</head>
+
+<body>
+    <header class="main-header">
+        <a href="index.html" class="header-logo-link" data-page="index.html">
+            <div class="header-logo">
+                <img src="assets/img/logo.png" alt="DT9 Logo" class="logo-image">
+                <span class="logo-text">DT9</span>
+            </div>
+        </a>
+
+        <nav class="header-nav">
+            <a href="index.html" class="nav-link" data-page="index.html">Trang chủ</a>
+            <a href="game.html" class="nav-link" data-page="game.html">Trò chơi</a>
+            <a href="news.html" class="nav-link" data-page="news.html">Tin tức</a>
+            <a href="gioi-thieu.html" class="nav-link" data-page="gioi-thieu.html">Giới thiệu</a>
+            <a href="contact.html" class="nav-link" data-page="contact.html">Liên hệ</a>
+        </nav>
+
+        <div class="header-right">
+            <div class="header-search-container">
+                <input type="text" placeholder="Tìm kiếm game..." class="search-input-header">
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+
+            <button class="action-btn download-btn-header">
+                <i class="fas fa-download"></i> <span class="btn-text">Tải Về</span>
+            </button>
+
+            <button class="action-btn account-btn">
+                <i class="fas fa-user-circle"></i> <span class="btn-text">Tài Khoản</span>
+            </button>
+
+            <button class="hamburger-btn" id="hamburger-btn" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+    <main>
+        <div class="mobile-overlay" id="mobile-overlay"></div>
+        <div class="mobile-sidebar" id="mobile-sidebar">
+            <button class="hamburger-btn" style="position: absolute; top: 15px; right: 15px; background-color: #334155;"
+                id="close-sidebar-btn">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <h3 class="text-xl font-bold mb-4 mt-2" style="color: #00bcd4;">Menu</h3>
+
+            <a href="index.html" class="mobile-nav-item" data-page="index.html">Trang chủ</a>
+            <a href="game.html" class="mobile-nav-item" data-page="game.html">Trò chơi</a>
+            <a href="news.html" class="mobile-nav-item" data-page="news.html">Tin tức</a>
+            <a href="gioi-thieu.html" class="mobile-nav-item" data-page="gioi-thieu.html">Giới thiệu</a>
+            <a href="contact.html" class="mobile-nav-item" data-page="contact.html">Liên hệ</a>
+
+            <div class="mobile-nav-actions">
+                <button class="action-btn download-btn-header">
+                    <i class="fas fa-download"></i> Tải Về
+                </button>
+                <button class="action-btn account-btn">
+                    <i class="fas fa-user-circle"></i> Tài Khoản
+                </button>
+            </div>
+
+            <div class="mt-8">
+                <p class="text-sm text-center" style="color: #94a3b8;">© 2025 DT9.VN</p>
+            </div>
+        </div>
+        <div class="contact-container">
+            <div class="contact-header" data-aos="fade-down">
+                <div class="header-title-box">
+                    <h1 style="font-size: 14px; color: var(--text-muted); font-weight: 600; margin-bottom: 5px;">HỖ TRỢ
+                        KHÁCH HÀNG</h1>
+                    <h2>CHÚNG TÔI CÓ THỂ GIÚP GÌ CHO BẠN?</h2>
+                    <p style="color: var(--text-muted); font-size: 14px;">Tìm câu trả lời nhanh cho vấn đề của bạn hoặc
+                        gửi phiếu hỗ trợ cho đội ngũ GameStore.</p>
+                </div>
+            </div>
+
+            <div class="grid-sections">
+                <div class="main-content">
+
+                    <div class="support-card quick-links" data-aos="fade-right">
+                        <div class="support-links">
+                            <a href="#" class="link-item">
+                                <i class="fas fa-book"></i>
+                                <div>
+                                    <strong>Trung tâm trợ giúp</strong>
+                                    <p style="font-size: 12px; color: var(--text-muted);">Tìm thông tin và bài viết phổ
+                                        biến.</p>
+                                </div>
+                            </a>
+                            <a href="#form-support-section" class="link-item">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <strong>Gửi phiếu hỗ trợ</strong>
+                                    <p style="font-size: 12px; color: var(--text-muted);">Liên hệ trực tiếp với đội ngũ
+                                        hỗ trợ.</p>
+                                </div>
+                            </a>
+                            <a href="#history-section" class="link-item">
+                                <i class="fas fa-history"></i>
+                                <div>
+                                    <strong>Lịch sử yêu cầu</strong>
+                                    <p style="font-size: 12px; color: var(--text-muted);">Theo dõi trạng thái các yêu
+                                        cầu đã gửi.</p>
+                                </div>
+                            </a>
+                            <a href="#" class="link-item">
+                                <i class="fas fa-shield-alt"></i>
+                                <div>
+                                    <strong>Chính sách & Điều khoản</strong>
+                                    <p style="font-size: 12px; color: var(--text-muted);">Xem các quy định sử dụng và
+                                        chính sách bảo mật.</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="support-card faqs" data-aos="fade-up" data-aos-delay="200">
+                        <h3>Câu hỏi thường gặp</h3>
+                        <div class="faq-list">
+
+                            <div class="faq-item-wrapper">
+                                <div class="faq-item-question">
+                                    <span>Làm sao để tôi đặt lại mật khẩu?</span>
+                                    <i class="fas fa-chevron-right"></i>
+                                </div>
+                                <div class="faq-answer">
+                                    <p>Để đặt lại mật khẩu, bạn vui lòng truy cập trang Đăng nhập và chọn "Quên mật
+                                        khẩu". Nhập địa chỉ email đã đăng ký và chúng tôi sẽ gửi liên kết đặt lại mật
+                                        khẩu đến hộp thư của bạn. Vui lòng kiểm tra cả thư mục Spam/Junk.</p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item-wrapper">
+                                <div class="faq-item-question">
+                                    <span>Tôi không nhận được email xác nhận</span>
+                                    <i class="fas fa-chevron-right"></i>
+                                </div>
+                                <div class="faq-answer">
+                                    <p>Có một vài nguyên nhân: 1) Email có thể đã nằm trong thư mục **Spam/Junk**. Vui
+                                        lòng kiểm tra thư mục này. 2) Địa chỉ email có thể đã nhập sai. 3) Máy chủ gửi
+                                        email đang bị quá tải (trường hợp hiếm). Nếu bạn đã kiểm tra Spam và vẫn không
+                                        thấy, vui lòng chờ 30 phút. Sau đó, nếu vẫn không nhận được, hãy liên hệ Live
+                                        Chat để được hỗ trợ.</p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item-wrapper">
+                                <div class="faq-item-question">
+                                    <span>Cách hoàn tiền cho game đã mua</span>
+                                    <i class="fas fa-chevron-right"></i>
+                                </div>
+                                <div class="faq-answer">
+                                    <p>Chúng tôi chấp nhận yêu cầu hoàn tiền trong vòng 14 ngày kể từ ngày mua, với điều
+                                        kiện thời gian chơi game **không quá 2 giờ**. Vui lòng sử dụng tính năng "Gửi
+                                        phiếu hỗ trợ" bên dưới và chọn chủ đề "Mua hàng & Hoàn tiền" để gửi yêu cầu cụ
+                                        thể.</p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item-wrapper">
+                                <div class="faq-item-question">
+                                    <span>Game không khởi động được</span>
+                                    <i class="fas fa-chevron-right"></i>
+                                </div>
+                                <div class="faq-answer">
+                                    <p>Vấn đề này thường liên quan đến driver hoặc thiếu các gói thư viện cần thiết. Bạn
+                                        hãy thử các bước sau: 1) Cập nhật driver card đồ họa. 2) Cài đặt lại game. 3)
+                                        Đảm bảo máy tính của bạn đáp ứng cấu hình tối thiểu. Nếu vẫn không được, vui
+                                        lòng cung cấp chi tiết mã lỗi/hình ảnh thông báo khi gửi phiếu hỗ án.</p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item-wrapper">
+                                <div class="faq-item-question">
+                                    <span>Cập nhật phương thức thanh toán</span>
+                                    <i class="fas fa-chevron-right"></i>
+                                </div>
+                                <div class="faq-answer">
+                                    <p>Để cập nhật phương thức thanh toán mặc định hoặc thêm thẻ mới, bạn vào **Tài
+                                        khoản của tôi** > **Quản lý Thanh toán**. Tại đây, bạn có thể chỉnh sửa thông
+                                        tin thẻ hiện có hoặc thêm mới. Nếu bạn đang có đăng ký tự động gia hạn, hãy đảm
+                                        bảo chọn phương thức mới làm mặc định.</p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item-wrapper">
+                                <div class="faq-item-question">
+                                    <span>Tôi có thể hủy đơn hàng đã đặt không?</span>
+                                    <i class="fas fa-chevron-right"></i>
+                                </div>
+                                <div class="faq-answer">
+                                    <p>Nếu đơn hàng là Game Key hoặc sản phẩm kỹ thuật số, bạn chỉ có thể hủy nếu key
+                                        chưa được kích hoạt hoặc chưa được gửi đi. Đối với các sản phẩm vật lý, việc hủy
+                                        phải được thực hiện trong vòng 24 giờ sau khi đặt hàng và trước khi sản phẩm
+                                        được đóng gói.</p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item-wrapper">
+                                <div class="faq-item-question">
+                                    <span>Làm thế nào để thay đổi tên người dùng?</span>
+                                    <i class="fas fa-chevron-right"></i>
+                                </div>
+                                <div class="faq-answer">
+                                    <p>Bạn có thể thay đổi tên người dùng (Username) 1 lần mỗi 60 ngày. Vui lòng truy
+                                        cập **Tài khoản của tôi** > **Thông tin Cá nhân** và tìm mục **Tên người dùng**.
+                                        Nhập tên mới và xác nhận.</p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item-wrapper">
+                                <div class="faq-item-question">
+                                    <span>Yêu cầu cấu hình tối thiểu để chơi game</span>
+                                    <i class="fas fa-chevron-right"></i>
+                                </div>
+                                <div class="faq-answer">
+                                    <p>Yêu cầu cấu hình tối thiểu được liệt kê chi tiết trên trang sản phẩm của mỗi
+                                        game. Vui lòng kiểm tra tab **Cấu hình** trên trang chi tiết game trước khi mua.
+                                        Chúng tôi khuyến khích dùng cấu hình đề nghị (Recommended) để có trải nghiệm tốt
+                                        nhất.</p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item-wrapper">
+                                <div class="faq-item-question">
+                                    <span>Tôi có thể liên hệ hỗ trợ ngoài giờ làm việc không?</span>
+                                    <i class="fas fa-chevron-right"></i>
+                                </div>
+                                <div class="faq-answer">
+                                    <p>Đội ngũ hỗ trợ Live Chat chỉ làm việc trong giờ quy định (xem cột bên phải). Tuy
+                                        nhiên, bạn luôn có thể gửi phiếu hỗ trợ (qua biểu mẫu bên dưới) bất cứ lúc nào,
+                                        và chúng tôi sẽ phản hồi ngay khi đội ngũ bắt đầu làm việc vào ca tiếp theo.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="support-card form-support" id="form-support-section" data-aos="fade-zoom-in" data-aos-delay="400">
+                        <h3>Gửi phiếu hỗ trợ</h3>
+                        <form id="supportForm">
+                            <div style="display: flex; gap: 15px;">
+                                <div class="form-group" style="flex: 1;">
+                                    <label for="hoTen">Họ và tên</label>
+                                    <input type="text" id="hoTen" placeholder="Nhập họ và tên của bạn" required>
+                                </div>
+                                <div class="form-group" style="flex: 1;">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" placeholder="example@email.com" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="loaiVanDe">Loại vấn đề</label>
+                                <select id="loaiVanDe" required>
+                                    <option value="">Chọn loại vấn đề...</option>
+                                    <option value="Thanh toán và Hóa đơn">Thanh toán</option>
+                                    <option value="Lỗi kỹ thuật / Bug">Lỗi kỹ thuật/Game</option>
+                                    <option value="Tài khoản và Đăng nhập">Vấn đề tài khoản</option>
+                                    <option value="Mua hàng và Hoàn tiền">Mua hàng & Hoàn tiền</option>
+                                    <option value="Khác">Khác</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="tieuDe">Tiêu đề</label>
+                                <input type="text" id="tieuDe" placeholder="Tóm tắt ngắn gọn vấn đề của bạn" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="moTaChiTiet">Mô tả chi tiết</label>
+                                <textarea id="moTaChiTiet" rows="4"
+                                    placeholder="Mô tả chi tiết, bước thực hiện, thông báo lỗi (nếu có)..."></textarea>
+                                <div class="small-note">Vui lòng điền đầy đủ thông tin để chúng tôi có thể hỗ trợ bạn
+                                    tốt nhất.</div>
+                            </div>
+
+                            <p class="small-note" style="margin-top: -5px;">* Thông tin của bạn sẽ được bảo mật theo
+                                chính sách bảo mật của GameStore.</p>
+
+                            <div id="submitMessage" style="margin-top: 10px; font-weight: 600;"></div>
+
+                            <button type="submit" class="btn-submit" id="btnSubmit">
+                                <i class="fas fa-paper-plane" style="margin-right: 8px;"></i> Gửi yêu cầu hỗ trợ
+                            </button>
+                        </form>
+                    </div>
+
+                    <div class="support-card form-support" id="history-section" data-aos="fade-up">
+                        <h3>Lịch sử yêu cầu hỗ trợ</h3>
+                        <div class="history-list" id="ticketHistoryList">
+                            <div style="text-align: center; color: var(--text-muted); padding: 10px;">Đang tải lịch sử
+                                phiếu...</div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="sidebar-info">
+
+                    <div class="support-card" data-aos="fade-left">
+                        <div class="info-block" style="background-color: transparent; padding: 0;">
+                            <h3
+                                style="border-bottom: 1px solid var(--border-color); padding-bottom: 10px; margin-bottom: 15px;">
+                                Liên hệ trực tiếp</h3>
+                            <div class="contact-detail">
+                                <i class="fas fa-envelope"></i>
+                                <span>Email:</span>
+                                <a href="mailto:support@gamestore.vn">support@gamestore.vn</a>
+                            </div>
+                            <div class="contact-detail">
+                                <i class="fas fa-phone-alt"></i>
+                                <span>Hotline:</span>
+                                <span>1900 6000 (gọi thường)</span>
+                            </div>
+                            <div class="contact-detail">
+                                <i class="fas fa-comment-alt"></i>
+                                <span>Live Chat:</span>
+                                <span class="status">Online</span>
+                            </div>
+                            <p style="font-size: 12px; color: var(--text-muted); margin-top: 5px;">Hỗ trợ trực tuyến</p>
+                        </div>
+                    </div>
+
+                    <div class="support-card" data-aos="fade-left" data-aos-delay="200">
+                        <h3 style="border-bottom: none; margin-bottom: 15px;">Giờ làm việc</h3>
+                        <div class="working-hours">
+                            <div>
+                                <span>Thứ Hai - Thứ Sáu</span>
+                                <span class="time-range">9:00 - 22:00</span>
+                            </div>
+                            <div>
+                                <span>Thứ Bảy - Chủ Nhật</span>
+                                <span class="time-range">9:00 - 21:00</span>
+                            </div>
+                            <div>
+                                <span>Ngày lễ</span>
+                                <span class="time-range">Theo thông báo</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="support-card" data-aos="fade-left" data-aos-delay="400">
+                        <h3 style="border-bottom: none; margin-bottom: 15px;">Thời gian phản hồi</h3>
+                        <div class="info-block" style="background-color: var(--dark-card-bg); padding: 15px;">
+                            <!-- <div style="font-size: 14px; margin-bottom: 5px;">Trung bình trong **24 giờ** qua</div> -->
+                            <div style="font-size: 16px; font-weight: 700;">T2-T6: 2 giờ - 6 giờ</div>
+                            <div style="font-size: 16px; font-weight: 700;">T7-CN: 6 giờ - 12 giờ</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+    <div id="footer-placeholder"></div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/loadHTML.js"></script>
+    <script src="assets/js/header.js"></script>
+    <script>
+        loadHTML('footer.html', 'footer-placeholder'); 
+    </script>
+
+    
+    <script src="assets/js/contact-report.js"></script>
+    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            offset: 120, 
+            delay: 0,
+            duration: 800,
+            easing: 'ease-out-quad',
+            once: true,
+            mirror: false,
+            anchorPlacement: 'top-bottom',
+        });
+    </script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const faqItems = document.querySelectorAll('.faq-item-wrapper');
+
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-item-question');
+                const answer = item.querySelector('.faq-answer');
+                const icon = item.querySelector('.fas');
+
+                // Ẩn tất cả các câu trả lời ban đầu (cần CSS để hoàn thiện hiệu ứng ẩn/hiện mượt mà)
+                // Tuy nhiên, chúng ta chỉ cần dùng toggle() đơn giản ở đây.
+                answer.style.display = 'none';
+
+                question.addEventListener('click', () => {
+                    // Toggle hiển thị câu trả lời
+                    const isVisible = answer.style.display === 'block';
+
+                    if (isVisible) {
+                        answer.style.display = 'none';
+                        icon.style.transform = 'rotate(0deg)';
+                        item.classList.remove('active');
+                    } else {
+                        // Đóng tất cả các câu trả lời đang mở khác (Accordion behavior)
+                        faqItems.forEach(otherItem => {
+                            if (otherItem !== item) {
+                                otherItem.querySelector('.faq-answer').style.display = 'none';
+                                otherItem.querySelector('.fas').style.transform = 'rotate(0deg)';
+                                otherItem.classList.remove('active');
+                            }
+                        });
+
+                        // Mở câu trả lời hiện tại
+                        answer.style.display = 'block';
+                        icon.style.transform = 'rotate(90deg)';
+                        item.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

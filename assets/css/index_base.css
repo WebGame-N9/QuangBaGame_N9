@@ -1,4 +1,9 @@
 /* Body chung */
+body{
+    padding-top: 67px;
+}
+
+
 body.index-body {
     background-color: var(--index_bg-body);
     color: var(--index_text-default);

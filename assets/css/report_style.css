@@ -1,0 +1,171 @@
+/* Sử dụng lại các biến CSS từ contact.css */
+:root {
+    --bg-dark: #0b0c15;
+    --card-bg: #1a1c35;
+    --primary-color: #6366f1;
+    --secondary-color: #8b5cf6;
+    --text-light: #ffffff;
+    --text-muted: #9ca3af;
+    --border-color: #1f2937;
+    --dark-card-bg: #131420;
+    --success-color: #4ade80;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    min-height: 100vh;
+    padding-top: 75px;
+}
+main {
+    padding: 40px 20px;
+}
+
+.report-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Header và Metadata */
+.report-header {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 20px;
+}
+
+.back-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.report-title {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.report-meta span {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 20px;
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+.report-meta i {
+    color: var(--secondary-color);
+    margin-right: 5px;
+}
+
+.status-badge {
+    padding: 4px 10px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.status-badge.resolved {
+    background-color: var(--success-color);
+    color: var(--bg-dark);
+}
+
+/* Thẻ tin nhắn */
+.message-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 15px;
+}
+
+.message-header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+}
+
+.message-card .author {
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.message-card .timestamp {
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+.message-body p {
+    margin: 0 0 10px 0;
+    line-height: 1.6;
+}
+
+/* Định dạng riêng cho Admin */
+.admin-response .author {
+    color: var(--success-color);
+}
+
+.admin-response {
+    background-color: var(--dark-card-bg); /* Phân biệt rõ hơn */
+    border-left: 5px solid var(--success-color);
+}
+
+.admin-note {
+    font-size: 12px;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-top: 15px !important;
+    padding-top: 10px;
+    border-top: 1px dashed var(--border-color);
+}
+
+/* Khu vực phản hồi */
+.reply-section {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+.reply-section h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.reply-section textarea {
+    width: 100%;
+    padding: 10px;
+    background-color: #0f1020;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    color: var(--text-light);
+    font-size: 14px;
+    box-sizing: border-box;
+    resize: vertical;
+    margin-bottom: 15px;
+}
+
+.btn-reply {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.btn-reply:hover {
+    opacity: 0.9;
+}

@@ -8,11 +8,10 @@ const API_KEY = '$2a$10$dAGf830CRlXglDv0cce8IOz5ayJDKDIW8.uPxvWVXMgR7Wm.UG.7G';
 let allGamesData = [];
 
 // --- CẤU HÌNH HIỂN THỊ CỤC BỘ (Dùng ID từ JSON) ---
-// Tương ứng với GameID1 -> 4, GameID2 -> 1, GameID3 -> 2, GameID4 -> 3, GameID5 -> 5
 const BannerGameIDs = [4, 1, 2, 3, 5]; 
 let listGameUpdateIDs = [4, 1, 2, 3, 5];
 let listGameTrendingIDs = [4, 1, 2, 3, 5];
-const listHotEventIDs = [4, 1]; // Genshin và Fortnite
+const listHotEventIDs = [4, 1];
 
 const numberUpdate = 4;
 const numberTrending = 3;

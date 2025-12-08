@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/game.css">
     <link rel="stylesheet" href="assets/css/gameID.css">
+    <link rel="stylesheet" href="assets/css/header.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         /* Style cho trang nội dung điều khoản dịch vụ, tương tự bao-mat.html */
@@ -54,82 +55,154 @@
 </head>
 
 <body>
-    <div class="main-wrapper">
-        <div class="header-section" data-aos="fade-down">
-            <h1 class="header-title">ĐIỀU KHOẢN DỊCH VỤ</h1>
+    <header class="main-header">
+        <a href="index.html" class="header-logo-link" data-page="index.html">
+            <div class="header-logo">
+                <img src="assets/img/logo.png" alt="DT9 Logo" class="logo-image">
+                <span class="logo-text">DT9</span>
+            </div>
+        </a>
+
+        <nav class="header-nav">
+            <a href="index.html" class="nav-link" data-page="index.html">Trang chủ</a>
+            <a href="game.html" class="nav-link" data-page="game.html">Trò chơi</a>
+            <a href="news.html" class="nav-link" data-page="news.html">Tin tức</a>
+            <a href="gioi-thieu.html" class="nav-link" data-page="gioi-thieu.html">Giới thiệu</a>
+            <a href="contact.html" class="nav-link" data-page="contact.html">Liên hệ</a>
+        </nav>
+
+        <div class="header-right">
+            <div class="header-search-container">
+                <input type="text" placeholder="Tìm kiếm game..." class="search-input-header">
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+
+            <button class="action-btn download-btn-header">
+                <i class="fas fa-download"></i> <span class="btn-text">Tải Về</span>
+            </button>
+
+            <button class="action-btn account-btn">
+                <i class="fas fa-user-circle"></i> <span class="btn-text">Tài Khoản</span>
+            </button>
+
+            <button class="hamburger-btn" id="hamburger-btn" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+    <main>
+        <div class="mobile-overlay" id="mobile-overlay"></div>
+        <div class="mobile-sidebar" id="mobile-sidebar">
+            <button class="hamburger-btn" style="position: absolute; top: 15px; right: 15px; background-color: #334155;"
+                id="close-sidebar-btn">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <h3 class="text-xl font-bold mb-4 mt-2" style="color: #00bcd4;">Menu</h3>
+
+            <a href="index.html" class="mobile-nav-item" data-page="index.html">Trang chủ</a>
+            <a href="game.html" class="mobile-nav-item" data-page="game.html">Trò chơi</a>
+            <a href="news.html" class="mobile-nav-item" data-page="news.html">Tin tức</a>
+            <a href="gioi-thieu.html" class="mobile-nav-item" data-page="gioi-thieu.html">Giới thiệu</a>
+            <a href="contact.html" class="mobile-nav-item" data-page="contact.html">Liên hệ</a>
+
+            <div class="mobile-nav-actions">
+                <button class="action-btn download-btn-header">
+                    <i class="fas fa-download"></i> Tải Về
+                </button>
+                <button class="action-btn account-btn">
+                    <i class="fas fa-user-circle"></i> Tài Khoản
+                </button>
+            </div>
+
+            <div class="mt-8">
+                <p class="text-sm text-center" style="color: #94a3b8;">© 2025 DT9.VN</p>
+            </div>
+        </div>
+        <div class="main-wrapper">
+            <div class="header-section" data-aos="fade-down">
+                <h1 class="header-title">ĐIỀU KHOẢN DỊCH VỤ</h1>
+            </div>
+
+            <div class="content-card" data-aos="fade-up">
+                <h2>Điều khoản sử dụng Dịch vụ của DT9</h2>
+                <p>
+                    Vui lòng đọc kỹ các Điều khoản Dịch vụ này trước khi sử dụng bất kỳ dịch vụ nào do Công ty DT9 cung
+                    cấp,
+                    bao gồm trò chơi Ngọc Rồng Online. Bằng việc truy cập hoặc sử dụng dịch vụ, bạn đồng ý chịu ràng
+                    buộc
+                    bởi các điều khoản và điều kiện dưới đây.
+                </p>
+
+                <h3>1. Chấp nhận Điều khoản</h3>
+                <p>
+                    Việc bạn sử dụng Dịch vụ cấu thành sự chấp nhận vô điều kiện đối với Điều khoản Dịch vụ và Chính
+                    sách
+                    Bảo mật của chúng tôi. Nếu bạn không đồng ý với bất kỳ điều khoản nào, vui lòng không sử dụng Dịch
+                    vụ.
+                </p>
+
+                <h3>2. Quy tắc về Tài khoản và Đăng ký</h3>
+                <ul>
+                    <li>Bạn phải cung cấp thông tin chính xác và đầy đủ khi đăng ký tài khoản.</li>
+                    <li>Bạn có trách nhiệm bảo mật thông tin đăng nhập của mình và chịu trách nhiệm cho mọi hoạt động
+                        xảy
+                        ra dưới tài khoản của bạn.</li>
+                    <li>Chúng tôi có quyền từ chối cung cấp dịch vụ cho bất kỳ cá nhân hoặc tổ chức nào và thay đổi các
+                        tiêu chí đủ điều kiện vào bất kỳ lúc nào.</li>
+                </ul>
+
+                <h3>3. Hành vi bị nghiêm cấm</h3>
+                <p>
+                    Bạn đồng ý không thực hiện các hành vi sau khi sử dụng Dịch vụ:
+                </p>
+                <ul>
+                    <li>Sử dụng các chương trình, công cụ, hoặc thủ thuật bên ngoài (hack/cheat) để can thiệp vào trò
+                        chơi.
+                    </li>
+                    <li>Thực hiện các hành vi lừa đảo, quấy rối, đe dọa hoặc làm tổn hại đến người chơi khác.</li>
+                    <li>Mua bán, trao đổi tài khoản hoặc vật phẩm trong game bằng tiền mặt hoặc tài sản bên ngoài không
+                        được DT9 cho phép.</li>
+                    <li>Tạo hoặc chia sẻ nội dung mang tính chất xúc phạm, phân biệt đối xử, hoặc bất hợp pháp.</li>
+                </ul>
+
+                <h3>4. Quyền sở hữu trí tuệ</h3>
+                <p>
+                    Tất cả nội dung, tính năng và chức năng của Dịch vụ, bao gồm nhưng không giới hạn ở văn bản, đồ họa,
+                    logo, và phần mềm, đều là tài sản độc quyền của DT9 và được bảo vệ bởi luật bản quyền.
+                </p>
+
+                <h3>5. Thay đổi Điều khoản</h3>
+                <p>
+                    DT9 có quyền sửa đổi hoặc thay thế các Điều khoản này bất cứ lúc nào theo quyết định riêng. Chúng
+                    tôi
+                    sẽ thông báo về bất kỳ thay đổi nào bằng cách đăng các điều khoản đã sửa đổi trên trang web. Việc
+                    bạn
+                    tiếp tục sử dụng Dịch vụ sau khi các thay đổi có hiệu lực sẽ cấu thành sự chấp nhận của bạn đối với
+                    các điều khoản mới.
+                </p>
+
+                <h3>6. Liên hệ</h3>
+                <p>
+                    Nếu bạn có bất kỳ câu hỏi nào liên quan đến Điều khoản Dịch vụ, vui lòng liên hệ:
+                </p>
+                <p>
+                    <b>Email:</b> <a href="mailto:support@dt9.vn">support@dt9.vn</a>
+                </p>
+            </div>
         </div>
 
-        <div class="content-card" data-aos="fade-up">
-            <h2>Điều khoản sử dụng Dịch vụ của DT9</h2>
-            <p>
-                Vui lòng đọc kỹ các Điều khoản Dịch vụ này trước khi sử dụng bất kỳ dịch vụ nào do Công ty DT9 cung cấp,
-                bao gồm trò chơi Ngọc Rồng Online. Bằng việc truy cập hoặc sử dụng dịch vụ, bạn đồng ý chịu ràng buộc
-                bởi các điều khoản và điều kiện dưới đây.
-            </p>
+        <div id="footer-placeholder"></div>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script src="assets/js/gameID.js"></script>
+        <script src="assets/js/rating.js" defer></script>
+        <script src="assets/js/header.js"></script>
+        <script src="assets/js/loadHtml.js"></script>
 
-            <h3>1. Chấp nhận Điều khoản</h3>
-            <p>
-                Việc bạn sử dụng Dịch vụ cấu thành sự chấp nhận vô điều kiện đối với Điều khoản Dịch vụ và Chính sách
-                Bảo mật của chúng tôi. Nếu bạn không đồng ý với bất kỳ điều khoản nào, vui lòng không sử dụng Dịch vụ.
-            </p>
-
-            <h3>2. Quy tắc về Tài khoản và Đăng ký</h3>
-            <ul>
-                <li>Bạn phải cung cấp thông tin chính xác và đầy đủ khi đăng ký tài khoản.</li>
-                <li>Bạn có trách nhiệm bảo mật thông tin đăng nhập của mình và chịu trách nhiệm cho mọi hoạt động xảy
-                    ra dưới tài khoản của bạn.</li>
-                <li>Chúng tôi có quyền từ chối cung cấp dịch vụ cho bất kỳ cá nhân hoặc tổ chức nào và thay đổi các
-                    tiêu chí đủ điều kiện vào bất kỳ lúc nào.</li>
-            </ul>
-
-            <h3>3. Hành vi bị nghiêm cấm</h3>
-            <p>
-                Bạn đồng ý không thực hiện các hành vi sau khi sử dụng Dịch vụ:
-            </p>
-            <ul>
-                <li>Sử dụng các chương trình, công cụ, hoặc thủ thuật bên ngoài (hack/cheat) để can thiệp vào trò chơi.
-                </li>
-                <li>Thực hiện các hành vi lừa đảo, quấy rối, đe dọa hoặc làm tổn hại đến người chơi khác.</li>
-                <li>Mua bán, trao đổi tài khoản hoặc vật phẩm trong game bằng tiền mặt hoặc tài sản bên ngoài không
-                    được DT9 cho phép.</li>
-                <li>Tạo hoặc chia sẻ nội dung mang tính chất xúc phạm, phân biệt đối xử, hoặc bất hợp pháp.</li>
-            </ul>
-
-            <h3>4. Quyền sở hữu trí tuệ</h3>
-            <p>
-                Tất cả nội dung, tính năng và chức năng của Dịch vụ, bao gồm nhưng không giới hạn ở văn bản, đồ họa,
-                logo, và phần mềm, đều là tài sản độc quyền của DT9 và được bảo vệ bởi luật bản quyền.
-            </p>
-
-            <h3>5. Thay đổi Điều khoản</h3>
-            <p>
-                DT9 có quyền sửa đổi hoặc thay thế các Điều khoản này bất cứ lúc nào theo quyết định riêng. Chúng tôi
-                sẽ thông báo về bất kỳ thay đổi nào bằng cách đăng các điều khoản đã sửa đổi trên trang web. Việc bạn
-                tiếp tục sử dụng Dịch vụ sau khi các thay đổi có hiệu lực sẽ cấu thành sự chấp nhận của bạn đối với
-                các điều khoản mới.
-            </p>
-
-            <h3>6. Liên hệ</h3>
-            <p>
-                Nếu bạn có bất kỳ câu hỏi nào liên quan đến Điều khoản Dịch vụ, vui lòng liên hệ:
-            </p>
-            <p>
-                <b>Email:</b> <a href="mailto:support@dt9.vn">support@dt9.vn</a>
-            </p>
-        </div>
-    </div>
-
-    <div id="footer-placeholder"></div>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="assets/js/gameID.js"></script>
-    <script src="assets/js/rating.js" defer></script>
-
-    <script src="assets/js/loadHtml.js"></script>
-    
-    <script>
-        // Hàm loadHTML được định nghĩa trong assets/js/loadHtml.js
-        loadHTML('footer.html', 'footer-placeholder');
-    </script>
+        <script>
+            // Hàm loadHTML được định nghĩa trong assets/js/loadHtml.js
+            loadHTML('footer.html', 'footer-placeholder');
+        </script>
 </body>
 
 </html>
