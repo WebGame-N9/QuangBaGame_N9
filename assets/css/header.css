@@ -1,0 +1,186 @@
+/* ======================================= */
+/* TỪ header.html: Style đã được tách ra */
+/* ======================================= */
+
+/* RESET & CHUNG (Chỉ những thứ ảnh hưởng đến Header) */
+body {
+    /* Giả định body có nền tối */
+    background-color: #0b0c15; 
+    color: #f1f5f9;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* ======================================= */
+/* HEADER VÀ NAVIGATION */
+/* ======================================= */
+
+.main-header {
+    background-color: #0b0c15;
+    border-bottom: 1px solid #334155;
+    padding: 16px 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* THAY ĐỔI ĐỂ CỐ ĐỊNH HEADER */
+    position: fixed; /* Cố định vị trí */
+    top: 0; /* Đặt ở đầu trang */
+    left: 0;
+    width: 100%; /* Chiếm toàn bộ chiều rộng */
+    z-index: 100; /* Đảm bảo header nằm trên nội dung khác */
+}
+
+/* LOGO */
+.header-logo-link { text-decoration: none; }
+.header-logo { display: flex; align-items: center; gap: 8px; }
+.logo-icon { width: 35px; height: auto; object-fit: contain; }
+.logo-text {
+    font-size: 24px;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+    color: #00bcd4;
+}
+
+/* NAVIGATION LINKS (DESKTOP) */
+.header-nav { display: flex; align-items: center; gap: 20px; }
+
+.nav-link {
+    color: #f1f5f9;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 0;
+    transition: color 0.2s;
+}
+/* Style cho link active (Chỉ giữ lại style cơ bản, không tô màu nổi bật) */
+.nav-link:hover, .nav-link.active {
+    color: #6366f1; /* Chỉ thay đổi màu khi hover/active (không gạch chân) */
+}
+
+/* NÚT HÀNH ĐỘNG (TÌM KIẾM, TẢI VỀ, TÀI KHOẢN) */
+.header-right { display: flex; align-items: center; gap: 15px; }
+
+/* Thanh tìm kiếm */
+.header-search-container { display: flex; align-items: center; position: relative; width: 250px; }
+.search-input-header {
+    width: 100%;
+    padding: 8px 40px 8px 12px;
+    background-color: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    color: #f1f5f9;
+    font-size: 14px;
+    transition: border-color 0.2s;
+}
+.search-input-header:focus { outline: none; border-color: #6366f1; }
+.search-btn {
+    position: absolute;
+    right: 5px;
+    background: none;
+    border: none;
+    color: #94a3b8;
+    padding: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Nút hành động chung */
+.action-btn {
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.18s, opacity 0.12s;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+}
+.action-btn:hover { transform: translateY(-1px); opacity: 0.95; }
+.download-btn-header {
+    background-image: linear-gradient(90deg, #6366f1 0%, #a78bfa 100%);
+}
+.account-btn { background-color: #334155; }
+
+/* ======================================= */
+/* MOBILE MENU (HAMBURGER & SIDEBAR) */
+/* ======================================= */
+.hamburger-btn {
+    display: none; /* Ẩn trên desktop */
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    border-radius: 8px;
+    border: none;
+    background: none;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.hamburger-btn:hover { background-color: #334155; }
+
+.mobile-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 90; display: none;
+}
+
+.mobile-sidebar {
+    position: fixed; top: 0; right: 0; width: 280px; height: 100%;
+    background-color: #0b0c15;
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-out;
+    z-index: 100;
+    overflow-y: auto;
+}
+
+.mobile-sidebar.open { transform: translateX(0); }
+
+.mobile-nav-item {
+    display: block;
+    padding: 12px 0;
+    border-bottom: 1px solid #334155;
+    color: #f1f5f9;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+/* Style cho link active (Chỉ giữ lại style cơ bản, không tô màu nổi bật) */
+.mobile-nav-item:hover, .mobile-nav-item.active {
+    color: #6366f1;
+}
+
+.mobile-nav-actions {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.mobile-nav-actions .action-btn { width: 100%; justify-content: center; padding: 10px; }
+
+
+/* ======================================= */
+/* MEDIA QUERIES (RESPONSIVE) */
+/* ======================================= */
+@media (max-width: 1023px) {
+    .header-nav { display: none; }
+    .hamburger-btn { display: block; }
+}
+
+@media (max-width: 767px) {
+    .header-search-container { display: none; }
+    .action-btn .btn-text { display: none; }
+    .action-btn { padding: 8px; }
+}
+
+.logo-image {
+    width: 35px;
+    height: auto;
+    object-fit: contain;
+}

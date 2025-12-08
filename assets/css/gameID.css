@@ -1,5 +1,5 @@
 :root {
-    --bg-dark: #0f172a;
+    --bg-dark: #0b0c15;
     --card-bg: #1e293b;
     --primary-color: #6366f1;
     --secondary-color: #a78bfa;
@@ -26,6 +26,13 @@ body {
     min-height: 100vh;
     -webkit-font-smoothing: antialiased;
     /* padding: 16px; */
+}
+
+
+body,
+html {
+    overflow-x: hidden;
+    max-width: 100%;
 }
 
 /* @media (min-width: 768px) {
@@ -138,6 +145,23 @@ body {
         height: 96px;
     }
 }
+
+@media (max-width: 767px) {
+    .gallery-container {
+        overflow-x: hidden;
+    }
+
+    .thumbnail-item>img {
+        width: 100%;
+        height: auto;
+    }
+
+    .gallery-container>.thumbnail-item {
+        width: calc((100% - 32px) / 3);
+    }
+}
+
+
 
 .gallery-container>.thumbnail-item:hover {
     transform: translateY(-2px);
@@ -754,6 +778,39 @@ body {
 .star-rating label:hover~label {
     color: gold;
     /* Màu khi được chọn/hover */
+}
+
+.review-section textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+.star-rating {
+    display: inline-block;
+    direction: rtl;
+}
+
+.star-rating input[type="radio"] {
+    display: none;
+}
+
+.star Groupe-rating label {
+    font-size: 25px;
+    color: #ddd;
+    cursor: pointer;
+    padding: 0 2px;
+    transition: color 0.2s;
+}
+
+.star-rating input[type="radio"]:checked~label,
+.star-rating label:hover,
+.star-rating label:hover~label {
+    color: gold;
 }
 
 .review-section textarea {

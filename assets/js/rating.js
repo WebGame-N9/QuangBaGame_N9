@@ -1,11 +1,5 @@
-// =========================
-//   RATING.JS - PHIÊN BẢN HOÀN CHỈNH & ỔN ĐỊNH 2025
-//   Dành cho tất cả các trang game_ID1.html, game_ID2.html,...
-// =========================
-
-// CẤU HÌNH JSONBIN (thay key của bạn vào đây)
-const REVIEW_BIN_ID = "69343538d0ea881f4016cba7"; // ĐÃ ĐỔI TÊN
-const REVIEW_API_URL = `https://api.jsonbin.io/v3/b/${REVIEW_BIN_ID}/latest`; // ĐÃ ĐỔI TÊN
+const REVIEW_BIN_ID = "69343538d0ea881f4016cba7"; 
+const REVIEW_API_URL = `https://api.jsonbin.io/v3/b/${REVIEW_BIN_ID}/latest`; 
 
 // THAY ĐỔI DÒNG NÀY BẰNG MASTER KEY MỚI CỦA BẠN (bắt đầu bằng $2b$)
 const REVIEW_MASTER_KEY = "$2a$10$dAGf830CRlXglDv0cce8IOz5ayJDKDIW8.uPxvWVXMgR7Wm.UG.7G"; // <<<=== BẮT BUỘC THAY ĐỔI - ĐÃ ĐỔI TÊN
@@ -13,44 +7,24 @@ const REVIEW_MASTER_KEY = "$2a$10$dAGf830CRlXglDv0cce8IOz5ayJDKDIW8.uPxvWVXMgR7W
 // Biến toàn cục lưu game ID
 let gameId = null;
 
-// =========================
-//   LẤY GAME ID TỪ TÊN FILE (game_ID1.html → 1)
-// =========================
-// function extractGameId() {
-//     const match = location.pathname.match(/ID(\d+)/i);
-//     return match ? parseInt(match[1]) : null;
-// }
-
 function extractGameId() {
-    // 1. Lấy từ tham số URL (?id=x)
     const params = new URLSearchParams(window.location.search);
-    const idFromQuery = params.get('id');
-    if (idFromQuery) {
-        return parseInt(idFromQuery);
-    }
-    
-    // 2. Dự phòng: Lấy từ tên file (dành cho game_IDx.html cũ)
-    const match = location.pathname.match(/ID(\d+)/i);
-    return match ? parseInt(match[1]) : null;
+    return parseInt(params.get('id')) || 1;
 }
 
 
-
-// =========================
-//   TẢI ĐÁNH GIÁ CỦA GAME
-// =========================
 async function loadReviews() {
-    const container = document.querySelector(".reviews-list-container");
-    if (!container) return;
+    const container = $(".reviews-list-container"); // DÙNG JQUERY
+    if (container.length === 0) return; // Kiểm tra sự tồn tại
 
     // Hiển thị loading
-    container.innerHTML = `<p>Loading reviews...</p>`;
+    container.html(`<p>Loading reviews...</p>`); // DÙNG JQUERY
 
     try {
         // SỬ DỤNG REVIEW_API_URL VÀ REVIEW_MASTER_KEY
         const response = await fetch(REVIEW_API_URL, { 
             headers: {
-                "X-Master-Key": REVIEW_MASTER_KEY // ĐÃ CẬP NHẬT
+                "X-Master-Key": REVIEW_MASTER_KEY
             }
         });
 
@@ -63,14 +37,15 @@ async function loadReviews() {
         const gameReviews = allReviews.filter(r => Number(r.game_id) === gameId);
 
         if (gameReviews.length === 0) {
-            container.innerHTML = `<p style="color:#aaa; font-style:italic;">Chưa có đánh giá nào. Hãy là người đầu tiên nhé!</p>`;
+            container.html(`<p style="color:#aaa; font-style:italic;">Chưa có đánh giá nào. Hãy là người đầu tiên nhé!</p>`); // DÙNG JQUERY
             return;
         }
 
         // Sắp xếp mới nhất trước
         gameReviews.sort((a, b) => new Date(b.date) - new Date(a.date));
 
-        container.innerHTML = gameReviews.map(review => `
+        // Tạo HTML và chèn vào container (DÙNG JQUERY)
+        container.html(gameReviews.map(review => `
             <div class="review-item" style="border-bottom:1px solid #333; padding:15px 0;">
                 <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
                     <div class="review-user">
@@ -83,11 +58,11 @@ async function loadReviews() {
                 </div>
                 <p style="margin:0; line-height:1.5;">${escapeHtml(review.comment)}</p>
             </div>
-        `).join("");
+        `).join(""));
 
     } catch (err) {
         console.error("Lỗi tải đánh giá:", err);
-        container.innerHTML = `<p style="color:red;">Lỗi tải đánh giá. Vui lòng thử lại sau.</p>`;
+        container.html(`<p style="color:red;">Lỗi tải đánh giá. Vui lòng thử lại sau.</p>`); // DÙNG JQUERY
     }
 }
 
@@ -95,14 +70,15 @@ async function loadReviews() {
 //   GỬI ĐÁNH GIÁ MỚI
 // =========================
 async function submitReview() {
-    const textarea = document.querySelector(".review-section textarea");
-    const scoreInput = document.querySelector('input[name="rating"]:checked');
-    const submitBtn = document.querySelector(".btn-submit-review");
+    // DÙNG JQUERY ĐỂ LẤY ELEMENT
+    const textarea = $("#reviewText"); 
+    const scoreInput = $('input[name="rating"]:checked');
+    const submitBtn = $(".btn-submit-review");
 
-    if (!textarea || !scoreInput) return;
+    if (textarea.length === 0 || scoreInput.length === 0) return;
 
-    const comment = textarea.value.trim();
-    const score = parseInt(scoreInput.value);
+    const comment = textarea.val().trim(); // DÙNG JQUERY
+    const score = parseInt(scoreInput.val()); // DÙNG JQUERY
 
     if (!comment) {
         alert("Vui lòng viết nội dung đánh giá!");
@@ -114,15 +90,15 @@ async function submitReview() {
         return;
     }
 
-    // Vô hiệu hóa nút trong lúc gửi
-    submitBtn.disabled = true;
-    submitBtn.textContent = "Sending...";
+    // Vô hiệu hóa nút trong lúc gửi (DÙNG JQUERY)
+    submitBtn.prop('disabled', true);
+    submitBtn.text("Sending...");
 
     try {
         // 1. Lấy dữ liệu hiện tại
         // SỬ DỤNG REVIEW_API_URL (đang trỏ đến /latest) và REVIEW_MASTER_KEY
         const getRes = await fetch(REVIEW_API_URL, { 
-            headers: { "X-Master-Key": REVIEW_MASTER_KEY } // ĐÃ CẬP NHẬT
+            headers: { "X-Master-Key": REVIEW_MASTER_KEY }
         });
 
         if (!getRes.ok) throw new Error("Không thể lấy dữ liệu");
@@ -144,11 +120,11 @@ async function submitReview() {
 
         // 3. Cập nhật lại bin
         // SỬ DỤNG REVIEW_BIN_ID VÀ REVIEW_MASTER_KEY
-        const putRes = await fetch(`https://api.jsonbin.io/v3/b/${REVIEW_BIN_ID}`, { // ĐÃ CẬP NHẬT BIN_ID
+        const putRes = await fetch(`https://api.jsonbin.io/v3/b/${REVIEW_BIN_ID}`, { 
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
-                "X-Master-Key": REVIEW_MASTER_KEY // ĐÃ CẬP NHẬT
+                "X-Master-Key": REVIEW_MASTER_KEY
             },
             body: JSON.stringify(reviews)
         });
@@ -157,9 +133,9 @@ async function submitReview() {
 
         alert("Cảm ơn bạn! Đánh giá đã được gửi thành công!");
 
-        // Reset form
-        textarea.value = "";
-        document.getElementById("star5").checked = true; // mặc định 5 sao
+        // Reset form (DÙNG JQUERY)
+        textarea.val("");
+        $("#star5").prop("checked", true); // mặc định 5 sao
 
         // Tải lại danh sách
         loadReviews();
@@ -168,8 +144,9 @@ async function submitReview() {
         console.error("Lỗi gửi đánh giá:", err);
         alert("Gửi thất bại. Vui lòng thử lại sau ít phút.");
     } finally {
-        submitBtn.disabled = false;
-        submitBtn.textContent = "Gửi đánh giá";
+        // Mở lại nút (DÙNG JQUERY)
+        submitBtn.prop('disabled', false);
+        submitBtn.text("Gửi đánh giá");
     }
 }
 
@@ -196,9 +173,9 @@ function formatDate(dateStr) {
 }
 
 // =========================
-//   KHỞI TẠO KHI TRANG LOAD XONG
+//   KHỞI TẠO KHI TRANG LOAD XONG (DÙNG JQUERY)
 // =========================
-document.addEventListener("DOMContentLoaded", () => {
+$(document).ready(function() {
     gameId = extractGameId();
 
     if (!gameId) {
@@ -209,20 +186,14 @@ document.addEventListener("DOMContentLoaded", () => {
     // Tải đánh giá ngay khi vào trang
     loadReviews();
 
-    // Sự kiện nút gửi đánh giá
-    const submitBtn = document.querySelector(".btn-submit-review");
-    if (submitBtn) {
-        submitBtn.addEventListener("click", submitReview);
-    }
+    // Sự kiện nút gửi đánh giá (DÙNG JQUERY)
+    $(".btn-submit-review").on("click", submitReview);
 
-    // Cho phép nhấn Enter trong textarea để gửi (Shift+Enter để xuống dòng)
-    const textarea = document.querySelector(".review-section textarea");
-    if (textarea) {
-        textarea.addEventListener("keydown", (e) => {
-            if (e.key === "Enter" && !e.shiftKey) {
-                e.preventDefault();
-                submitReview();
-            }
-        });
-    }
+    // Cho phép nhấn Enter trong textarea để gửi (Shift+Enter để xuống dòng) (DÙNG JQUERY)
+    $("#reviewText").on("keydown", function(e) {
+        if (e.key === "Enter" && !e.shiftKey) {
+            e.preventDefault();
+            submitReview();
+        }
+    });
 });

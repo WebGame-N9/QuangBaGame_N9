@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GameStore - Tải Game Miễn Phí</title>
+    <title>DT9 - Tải Game Miễn Phí</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="assets/css/index_components.css">
     <link rel="stylesheet" href="assets/css/index_utilities.css">
     <link rel="stylesheet" href="assets/css/index_variable.css">
-
+    <link rel="stylesheet" href="assets/css/header.css">
     <link rel="stylesheet" href="assets/css/footer.css">
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
@@ -34,6 +34,69 @@
         <div class="mt-4 text-center">
             <h2 class="text-2xl font-bold tracking-wider text-purple-500 animate-pulse">GAME STORE</h2>
             <p class="text-gray-400 text-sm mt-2">Đang tải dữ liệu...</p>
+        </div>
+    </div>
+        <header class="main-header">
+        <a href="index.html" class="header-logo-link" data-page="index.html">
+            <div class="header-logo">
+                <img src="assets/img/logo.png" alt="DT9 Logo" class="logo-image"> 
+                <span class="logo-text">DT9</span>
+            </div>
+        </a>
+
+        <nav class="header-nav">
+            <a href="index.html" class="nav-link" data-page="index.html">Trang chủ</a>
+            <a href="game.html" class="nav-link" data-page="game.html">Trò chơi</a>
+            <a href="news.html" class="nav-link" data-page="news.html">Tin tức</a>
+            <a href="gioi-thieu.html" class="nav-link" data-page="gioi-thieu.html">Giới thiệu</a>
+            <a href="contact.html" class="nav-link" data-page="contact.html">Liên hệ</a>
+        </nav>
+
+        <div class="header-right">
+            <div class="header-search-container">
+                <input type="text" placeholder="Tìm kiếm game..." class="search-input-header">
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+
+            <button class="action-btn download-btn-header">
+                <i class="fas fa-download"></i> <span class="btn-text">Tải Về</span>
+            </button>
+            
+            <button class="action-btn account-btn">
+                <i class="fas fa-user-circle"></i> <span class="btn-text">Tài Khoản</span>
+            </button>
+
+            <button class="hamburger-btn" id="hamburger-btn" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+    <main>    
+    <div class="mobile-overlay" id="mobile-overlay"></div>
+    <div class="mobile-sidebar" id="mobile-sidebar">
+        <button class="hamburger-btn" style="position: absolute; top: 15px; right: 15px; background-color: #334155;" id="close-sidebar-btn">
+            <i class="fas fa-times"></i>
+        </button>
+        
+        <h3 class="text-xl font-bold mb-4 mt-2" style="color: #00bcd4;">Menu</h3>
+
+        <a href="index.html" class="mobile-nav-item" data-page="index.html">Trang chủ</a>
+        <a href="game.html" class="mobile-nav-item" data-page="game.html">Trò chơi</a>
+        <a href="news.html" class="mobile-nav-item" data-page="news.html">Tin tức</a>
+        <a href="gioi-thieu.html" class="mobile-nav-item" data-page="gioi-thieu.html">Giới thiệu</a>
+        <a href="contact.html" class="mobile-nav-item" data-page="contact.html">Liên hệ</a>
+
+        <div class="mobile-nav-actions">
+            <button class="action-btn download-btn-header">
+                <i class="fas fa-download"></i> Tải Về
+            </button>
+            <button class="action-btn account-btn">
+                <i class="fas fa-user-circle"></i> Tài Khoản
+            </button>
+        </div>
+        
+        <div class="mt-8">
+            <p class="text-sm text-center" style="color: #94a3b8;">© 2025 DT9.VN</p>
         </div>
     </div>
     <main class="index_main-content index_app-container">
@@ -224,6 +287,7 @@
     <div id="footer-placeholder">
     </div>
     <script src="assets/js/loadHtml.js"></script>
+    <script src="assets/js/header.js"></script>
     <script> loadHTML('footer.html', 'footer-placeholder')</script>
 </body>
 

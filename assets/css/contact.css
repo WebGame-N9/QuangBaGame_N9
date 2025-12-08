@@ -1,0 +1,360 @@
+:root {
+    --bg-dark: #0b0c15;
+    --card-bg: #1a1c35;
+    --primary-color: #6366f1;
+    --secondary-color: #8b5cf6;
+    --text-light: #ffffff;
+    --text-muted: #9ca3af;
+    --border-color: #1f2937;
+    --dark-card-bg: #131420;
+    --link-color: #6366f1;
+    --success-color: #4ade80;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    min-height: 100vh;
+    padding-top: 75px;
+}
+
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 15px;
+}
+
+.contact-header {
+    text-align: center;
+    padding: 40px 0 30px;
+    background-color: var(--card-bg);
+    margin-bottom: 20px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.contact-header h2 {
+    font-size: 24px;
+    font-weight: 900;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.grid-sections {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+@media (max-width: 1024px) {
+    .grid-sections {
+        grid-template-columns: 1fr;
+    }
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sidebar-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.support-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.support-card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+.support-links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.support-links .link-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 15px;
+    background-color: var(--dark-card-bg);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    text-decoration: none;
+    color: var(--text-light);
+}
+
+.support-links .link-item:hover {
+    background-color: #1f2331;
+}
+
+.support-links .link-item i {
+    font-size: 20px;
+    color: var(--primary-color);
+}
+
+/* FAQ Styles */
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid var(--border-color);
+}
+
+.faq-item-wrapper {
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* Sử dụng class để xác định phần tử có thể click */
+.faq-item-question {
+    padding: 12px 0;
+    cursor: pointer;
+    transition: color 0.2s;
+    color: var(--text-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+}
+
+.faq-item-question:hover {
+    color: var(--primary-color);
+}
+
+.faq-item-question i {
+    color: var(--text-muted);
+    transition: transform 0.3s, color 0.2s;
+}
+
+/* Class active được thêm/bỏ bằng jQuery */
+.faq-item-question.active i {
+    transform: rotate(90deg);
+    color: var(--primary-color);
+}
+
+
+.faq-answer {
+    /* Ẩn nội dung mặc định */
+    display: none;
+    background-color: var(--dark-card-bg);
+    border-radius: 6px;
+    margin: 0 0 10px 0;
+    padding: 0 15px;
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+.faq-answer p {
+    padding: 15px 0;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Form Styles (giữ nguyên) */
+.form-support .form-group {
+    margin-bottom: 15px;
+}
+
+.form-support label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: var(--text-light);
+}
+
+.form-support input[type="text"],
+.form-support input[type="email"],
+.form-support textarea,
+.form-support select {
+    width: 100%;
+    padding: 10px;
+    background-color: #0f1020;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    color: var(--text-light);
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.form-support textarea {
+    resize: vertical;
+}
+
+.form-support .small-note {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 5px;
+}
+
+.btn-submit {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    margin-top: 15px;
+    width: 100%;
+}
+
+.btn-submit:hover {
+    opacity: 0.9;
+}
+
+/* Sidebar Styles (giữ nguyên) */
+.sidebar-info .info-block {
+    padding: 15px;
+    border-radius: 8px;
+    background-color: var(--dark-card-bg);
+    margin-bottom: 15px;
+}
+
+.sidebar-info .info-block:last-child {
+    margin-bottom: 0;
+}
+
+.contact-detail {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.contact-detail i {
+    color: var(--primary-color);
+}
+
+.contact-detail a {
+    color: var(--text-light);
+    text-decoration: none;
+}
+
+.contact-detail .status {
+    margin-left: 10px;
+    color: var(--success-color);
+    font-weight: 600;
+}
+
+.working-hours div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4px;
+    font-size: 14px;
+}
+
+.working-hours .time-range {
+    color: var(--text-muted);
+}
+
+.history-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.history-item:last-child {
+    border-bottom: none;
+}
+
+.history-item .status-btn {
+    background: #1a1c35;
+    color: #ddd;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.history-item .status-btn.open {
+    background-color: #8b5cf6;
+    color: white;
+}
+
+.history-item .status-btn.resolved {
+    background-color: var(--success-color);
+    color: var(--bg-dark);
+}
+
+.history-item .ticket-info {
+    font-size: 14px;
+}
+
+.history-item .ticket-info span {
+    display: block;
+}
+
+.history-item .ticket-info .title {
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.history-item .ticket-info .id-date {
+    color: var(--text-muted);
+    font-size: 12px;
+}
+
+
+
+
+
+/* Bổ sung để header không bị tràn trên màn hình nhỏ */
+.main-header {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;           /* quan trọng */
+    min-width: 0;             /* cho phép co lại */
+}
+
+.header-search-container {
+    flex: 1;
+    max-width: 250px;         /* giới hạn chiều rộng ô tìm kiếm */
+    min-width: 120px;
+}
+
+.action-btn {
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+/* Ẩn text trên màn hình rất nhỏ, chỉ giữ icon */
+@media (max-width: 768px) {
+    .action-btn .btn-text {
+        display: none;
+    }
+    .action-btn {
+        padding: 8px 12px;
+    }
+}

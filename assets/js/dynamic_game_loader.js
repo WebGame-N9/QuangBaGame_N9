@@ -1,4 +1,3 @@
-// dynamic_game_loader.js
 const BIN_ID = '6935590d43b1c97be9dd6572';
 const API_URL = `https://api.jsonbin.io/v3/b/${BIN_ID}/latest`;
 const API_KEY = '$2a$10$dAGf830CRlXglDv0cce8IOz5ayJDKDIW8.uPxvWVXMgR7Wm.UG.7G';
@@ -6,13 +5,13 @@ const API_KEY = '$2a$10$dAGf830CRlXglDv0cce8IOz5ayJDKDIW8.uPxvWVXMgR7Wm.UG.7G';
 let currentGame = null;
 let allGames = [];
 
-// Lấy ID từ URL: game_detail.html?id=1
+// Ham lấy id tu link de loaqt game co id do
 function getGameIdFromURL() {
     const params = new URLSearchParams(window.location.search);
     return parseInt(params.get('id')) || 1;
 }
 
-// Tạo sao đánh giá trung bình
+// HAm hien thi sao
 function renderStars(rating) {
     const full = '★';
     const half = '½';
@@ -22,8 +21,7 @@ function renderStars(rating) {
     return full.repeat(stars) + (hasHalf ? half : '') + empty.repeat(5 - stars - (hasHalf ? 1 : 0));
 }
 
-// Tạo card game liên quan
-// dynamic_game_loader.js (Phiên bản ĐÃ SỬA)
+
 function createRelatedCard(game) {
     const imgSrc = game.thumbnail;
     // Thêm kiểm tra an toàn: Đảm bảo game.categories là một mảng trước khi gọi join()
@@ -44,7 +42,6 @@ function createRelatedCard(game) {
 }
 $(document).ready(function () {
     const gameId = getGameIdFromURL();
-
     $.ajax({
         url: API_URL,
         method: 'GET',
@@ -125,12 +122,10 @@ $(document).ready(function () {
                 </div>
             `);
 
-            // Đánh giá trung bình
             $('#avgRating').text(currentGame.rating.toFixed(1));
             $('#avgStars').html(renderStars(currentGame.rating));
             $('#reviewCount').text(`Dựa trên ${currentGame.reviewCount.toLocaleString()} đánh giá`);
 
-            // Thảo luận
             $('#discussionTab').html(currentGame.discussionHTML || `
                 <h2 class="section-title">Diễn đàn & Thảo luận</h2>
                 <p class="description-text">Khu vực này dành cho các chủ đề thảo luận của cộng đồng game thủ.</p>
@@ -164,7 +159,6 @@ $(document).ready(function () {
                 }
             });
 
-            // Tab switching
             $('.tab-button').click(function () {
                 const tab = $(this).data('tab');
                 $('.tab-button').removeClass('active');

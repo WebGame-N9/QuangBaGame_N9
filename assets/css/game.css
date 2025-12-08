@@ -9,6 +9,7 @@ body {
     color: #ffffff;
     font-family: 'Inter', sans-serif;
     min-height: 100vh;
+    padding-top: 55px;
 }
 
 .app-container {
@@ -29,7 +30,7 @@ body {
     font-weight: 900;
 }
 
-.hamburger-btn {
+.filter-toggle-btn {
     font-size: 1.25rem;
     padding: 0.5rem;
     border-radius: 50%;
@@ -41,7 +42,7 @@ body {
     display: none;
 }
 
-.hamburger-btn:hover {
+.filter-toggle-btn:hover {
     background-color: #374151;
 }
 
@@ -52,6 +53,13 @@ body {
 }
 
 .sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    /* LOẠI BỎ position: relative; ở đây */
+}
+
+.sidebar-content-wrapper {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
@@ -118,6 +126,7 @@ body {
 .button-group {
     display: flex;
     gap: 1rem;
+    margin-bottom: 100px;
 }
 
 .button-group button {
@@ -170,7 +179,7 @@ body {
 
 .mobile-sidebar-menu {
     position: fixed;
-    top: 0;
+    top: 75px;
     left: 0;
     width: 80%;
     max-width: 350px;
@@ -178,7 +187,7 @@ body {
     z-index: 50;
     transform: translateX(-100%);
     transition: transform 0.3s;
-    padding-top: 5rem;
+    padding-top: 0; 
     overflow-y: auto;
     background-color: #0b0c15;
 }
@@ -188,17 +197,25 @@ body {
 }
 
 .close-btn {
-    display: none;
+    display: none; 
+    position: fixed;
     font-size: 1.25rem;
     padding: 0.5rem;
-    border-radius: 50%;
+    border-radius: 15%;
     border: none;
-    background: none;
+    background: #1a1c35; 
     color: #ffffff;
     cursor: pointer;
-    justify-content: flex-end;
-    padding-right: 1rem;
-    margin-bottom: 1rem;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    z-index: 55;
+    transition: background-color 0.2s;
+}
+
+.close-btn:hover {
+    background-color: #374151;
 }
 
 .game-section h3 {
@@ -227,13 +244,12 @@ body {
 }
 
 .game-card:hover {
-    /* transform: scale(1.02); */
     border-color: #8b5cf6;
 }
 
 .game-image {
     height: 12rem;
-    background-color: #f97316; /* fallback nếu ảnh bị lỗi */
+    background-color: #f97316;
     overflow: hidden;
     border-top-left-radius: 0.75rem;
     border-top-right-radius: 0.75rem;
@@ -243,9 +259,15 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: top; /* CHÍNH: hiển thị phần trên của ảnh */
+    object-position: top;
     display: block;
+  transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out;
 }
+
+.game-card:hover .game-image img {
+    transform: scale(1.1);
+}
+
 
 .game-content {
     padding: 1rem;
@@ -329,20 +351,35 @@ body {
         grid-template-columns: 1fr;
     }
 
-    .hamburger-btn {
+    .filter-toggle-btn {
         display: block;
     }
 
     .game-grid {
         grid-template-columns: repeat(3, 1fr);
     }
-
-    .close-btn {
-        display: flex;
+    
+    /* Cập nhật logic hiển thị sidebar mobile */
+    .mobile-sidebar-menu {
+        display: flex; /* Biến sidebar thành flex container */
+        flex-direction: column; /* Xếp các item theo cột */
+        height: 100%;
+        padding-top: 55px; /* Đã có */
+        /* Giữ lại overflow-y: auto; để nội dung cuộn được */
     }
 
-    .mobile-sidebar-menu {
-        padding: 0;
+    .close-btn {
+        display: flex; 
+        position: fixed; 
+        top: 10px; 
+        left: calc(80% - 10px); 
+        z-index: 60;
+    }
+
+    .sidebar-content-wrapper {
+        padding: 1.5rem;
+        padding-top: 0; 
+        flex-grow: 1; /* Cho phép chiếm hết không gian còn lại (kể cả vùng cuộn) */
     }
 }
 
@@ -363,5 +400,22 @@ body {
         overflow-y: visible;
         background-color: transparent;
         z-index: auto;
+    }
+    
+    .sidebar-content-wrapper {
+        padding: 0;
+        /* Loại bỏ flex-grow ở desktop */
+        flex-grow: 0;
+    }
+    
+    .sidebar {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .close-btn {
+        display: none;
+        position: absolute;
     }
 }
