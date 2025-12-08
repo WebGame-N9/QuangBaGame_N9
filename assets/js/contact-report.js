@@ -166,21 +166,24 @@ function getTicketIdFromUrl() {
  */
 function loadTicketDetails(ticket) {
     // Cập nhật Header
-    const statusClass = ticket.status === 'Đã đóng' ? 'resolved' : ticket.status === 'Đang xử lý' ? 'processing' : 'open';
+    const statusClass = ticket.status === 'Đã đóng' ? 'resolved' : 
+                       ticket.status === 'Đang xử lý' ? 'processing' : 'open';
     const statusText = ticket.status || 'Chưa xác định';
-    const statusIcon = statusClass === 'resolved' ? 'fa-check-circle' : statusClass === 'processing' ? 'fa-sync-alt' : 'fa-clock';
+    const statusIcon = statusClass === 'resolved' ? 'fa-check-circle' : 
+                      statusClass === 'processing' ? 'fa-sync-alt' : 'fa-clock';
 
     $('.report-title').text(`Phiếu Hỗ Trợ: ${ticket.subject}`);
     $('title').text(`Chi Tiết Phiếu Hỗ Trợ #${ticket.submission_id} - GameStore`);
 
-    // Cập nhật Meta (Chỉ giữ lại Status)
+    // Cập nhật Meta (Status)
     $('.report-meta').html(`
         <span class="status-badge ${statusClass}"><i class="fas ${statusIcon}"></i> ${statusText}</span>
     `);
 
-    // Cập nhật nội dung Khách hàng
-    // Thay thế ký tự xuống dòng bằng <br> cho mô tả chi tiết
-    const detailedDescription = ticket.detailed_description ? ticket.detailed_description.replace(/\n/g, '<br>') : 'Không có mô tả chi tiết.';
+    // Nội dung tin nhắn của khách hàng
+    const detailedDescription = ticket.detailed_description 
+        ? ticket.detailed_description.replace(/\n/g, '<br>') 
+        : 'Không có mô tả chi tiết.';
 
     const userMessage = `
         <div class="message-card user-message">
@@ -194,26 +197,42 @@ function loadTicketDetails(ticket) {
             </div>
         </div>`;
 
-    // Cập nhật nội dung Admin
-    const adminResponseContent = ticket.admin_response ? ticket.admin_response.replace(/\n/g, '<br>') : 'Chưa có phản hồi.';
+    // ===== PHẦN QUAN TRỌNG: SỬA PHẢN HỒI ADMIN ĐỂ HIỂN THỊ TÊN THỰC TẾ =====
+    let adminMessage = '';
 
-    const adminMessage = ticket.admin_response ? `
-        <div class="message-card admin-response">
-            <div class="message-header">
-                <span class="author">Admin GameStore (${ticket.assigned_to})</span>
-                <span class="timestamp">Đã phản hồi: ${formatTimestamp(new Date().toISOString())}</span>
-            </div>
-            <div class="message-body">
-                <p>${adminResponseContent}</p>
-                <p class="admin-note">Phiếu đã được đóng tự động sau khi gửi phản hồi.</p>
-            </div>
-        </div>` :
-        `<div style='padding: 20px; color: #9ca3af; border: 1px dashed #333; margin-top: 20px; text-align: center;'>Phiếu này chưa có phản hồi từ Admin. Vui lòng chờ đợi.</div>`;
+    if (ticket.admin_response && ticket.admin_response.trim() !== '') {
+        // Lấy tên admin từ trường assigned_to, nếu trống thì dùng "Admin"
+        const adminName = ticket.assigned_to && ticket.assigned_to.trim() !== '' 
+            ? ticket.assigned_to 
+            : 'Admin';
 
-    // Load toàn bộ nội dung
+        // Nếu có trường response_timestamp thì dùng, nếu không thì hiển thị "Chưa ghi nhận thời gian"
+        const responseTime = ticket.response_timestamp 
+            ? formatTimestamp(ticket.response_timestamp) 
+            : 'Chưa ghi nhận thời gian';
+
+        const adminResponseContent = ticket.admin_response.replace(/\n/g, '<br>');
+
+        adminMessage = `
+            <div class="message-card admin-response">
+                <div class="message-header">
+                    <span class="author">Admin GameStore (${adminName})</span>
+                    <span class="timestamp">Đã phản hồi: ${responseTime}</span>
+                </div>
+                <div class="message-body">
+                    <p>${adminResponseContent}</p>
+                    ${ticket.status === 'Đã đóng' ? '<p class="admin-note">Phiếu đã được đóng sau khi phản hồi.</p>' : ''}
+                </div>
+            </div>`;
+    } else {
+        adminMessage = `<div style="padding: 20px; color: #9ca3af; border: 1px dashed #444; margin-top: 20px; text-align: center; background: #1e293b;">
+            Phiếu này chưa có phản hồi từ Admin. Vui lòng chờ đợi hoặc liên hệ qua fanpage nếu cần hỗ trợ gấp.
+        </div>`;
+    }
+
+    // Gộp nội dung và đẩy vào trang
     $('.report-content').html(userMessage + adminMessage);
 }
-
 
 /**
  * 3. Tải chi tiết phiếu hỗ trợ.

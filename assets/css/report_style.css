@@ -114,8 +114,7 @@ main {
 }
 
 .admin-response {
-    background-color: var(--dark-card-bg); /* Phân biệt rõ hơn */
-    border-left: 5px solid var(--success-color);
+    background-color: var(--dark-card-bg);
 }
 
 .admin-note {
