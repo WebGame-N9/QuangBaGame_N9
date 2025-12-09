@@ -12,7 +12,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <style>
-
+        
     </style>
 </head>
 
@@ -130,16 +130,11 @@
                                 <div style="margin-bottom: 10px;">
                                     <label>Điểm số (1-5):</label>
                                     <div class="star-rating" id="reviewScore">
-                                        <input type="radio" id="star5" name="rating" value="5" checked /><label
-                                            for="star5">★</label>
-                                        <input type="radio" id="star4" name="rating" value="4" /><label
-                                            for="star4">★</label>
-                                        <input type="radio" id="star3" name="rating" value="3" /><label
-                                            for="star3">★</label>
-                                        <input type="radio" id="star2" name="rating" value="2" /><label
-                                            for="star2">★</label>
-                                        <input type="radio" id="star1" name="rating" value="1" /><label
-                                            for="star1">★</label>
+                                        <input type="radio" id="star5" name="rating" value="5" checked /><label for="star5">★</label>
+                                        <input type="radio" id="star4" name="rating" value="4" /><label for="star4">★</label>
+                                        <input type="radio" id="star3" name="rating" value="3" /><label for="star3">★</label>
+                                        <input type="radio" id="star2" name="rating" value="2" /><label for="star2">★</label>
+                                        <input type="radio" id="star1" name="rating" value="1" /><label for="star1">★</label>
                                     </div>
                                 </div>
                                 <textarea rows="3" placeholder="Viết đánh giá của bạn..." id="reviewText"></textarea>
@@ -165,15 +160,13 @@
                 <div class="sidebar-card" data-aos="fade-left">
                     <div>
                         <h2 class="sidebar-title" id="sidebarTitle">Loading...</h2>
+                        <!-- <p class="sidebar-subtitle" id="sidebarSubtitle"></p> -->
                     </div>
                     <button class="download-btn pixel-corners" id="downloadBtn">
                         <div class="button-content">
                             <div class="svg-container">
-                                <svg class="download-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M19.479 10.092c-.212-3.951-3.473-7.092-7.479-7.092-4.005 0-7.267 3.141-7.479 7.092-2.57.463-4.521 2.706-4.521 5.408 0 3.037 2.463 5.5 5.5 5.5h13c3.037 0 5.5-2.463 5.5-5.5 0-2.702-1.951-4.945-4.521-5.408zm-7.479 6.908l-4-4h3v-4h2v4h3l-4 4z">
-                                    </path>
+                                <svg class="download-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                    <path d="M19.479 10.092c-.212-3.951-3.473-7.092-7.479-7.092-4.005 0-7.267 3.141-7.479 7.092-2.57.463-4.521 2.706-4.521 5.408 0 3.037 2.463 5.5 5.5 5.5h13c3.037 0 5.5-2.463 5.5-5.5 0-2.702-1.951-4.945-4.521-5.408zm-7.479 6.908l-4-4h3v-4h2v4h3l-4 4z"></path>
                                 </svg>
                             </div>
                             <div class="text-container">
@@ -181,24 +174,20 @@
                             </div>
                         </div>
                     </button>
-                    <a id="officialLink" href="#" target="_blank" rel="noopener noreferrer"
-                        class="sidebar-button secondary">Trang chính thức</a>
+
+                    <a id="officialLink" href="#" target="_blank" rel="noopener noreferrer" class="sidebar-button secondary">Trang chính thức</a>
+
                     <button class="sidebar-button secondary">♥ Thêm vào danh sách yêu thích</button>
-                    <button class="sidebar-button secondary share-button">↗ Chia sẻ</button>
+                    <button class="sidebar-button secondary">↗ Chia sẻ</button>
                 </div>
 
                 <div class="sidebar-card" data-aos="fade-left" data-aos-delay="200">
                     <div class="details-header">Thông tin chi tiết</div>
-                    <div class="detail-row"><span class="detail-label">Ngày phát hành:</span><span class="detail-value"
-                            id="releaseDate">-</span></div>
-                    <div class="detail-row"><span class="detail-label">Nhà phát triển:</span><span class="detail-value"
-                            id="developer">-</span></div>
-                    <div class="detail-row"><span class="detail-label">Thể loại:</span><span class="detail-value"
-                            id="genres">-</span></div>
-                    <div class="detail-row"><span class="detail-label">Nền tảng:</span><span class="detail-value"
-                            id="platforms">-</span></div>
-                    <div class="detail-row"><span class="detail-label">Cần kết nối mạng:</span><span
-                            class="detail-value" id="onlineRequired">-</span></div>
+                    <div class="detail-row"><span class="detail-label">Ngày phát hành:</span><span class="detail-value" id="releaseDate">-</span></div>
+                    <div class="detail-row"><span class="detail-label">Nhà phát triển:</span><span class="detail-value" id="developer">-</span></div>
+                    <div class="detail-row"><span class="detail-label">Thể loại:</span><span class="detail-value" id="genres">-</span></div>
+                    <div class="detail-row"><span class="detail-label">Nền tảng:</span><span class="detail-value" id="platforms">-</span></div>
+                    <div class="detail-row"><span class="detail-label">Cần kết nối mạng:</span><span class="detail-value" id="onlineRequired">-</span></div>
                 </div>
             </div>
         </div>
@@ -212,10 +201,9 @@
     <script src="assets/js/loadHtml.js"></script>
     <script src="assets/js/rating.js" defer></script>
     <script src="assets/js/dynamic_game_loader.js"></script>
-    <script src="assets/js/header.js"></script>
+        <script src="assets/js/header.js"></script>
     <script>
         loadHTML('footer.html', 'footer-placeholder');
     </script>
 </body>
-
 </html>

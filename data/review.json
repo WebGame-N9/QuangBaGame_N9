@@ -1,0 +1,58 @@
+[
+  {
+    "id": 101,
+    "game_id": 1,
+    "user": "NinjaVN",
+    "score": 5,
+    "comment": "Cơ chế xây dựng độc đáo, chơi cùng bạn bè rất vui!",
+    "date": "2025-10-01"
+  },
+  {
+    "id": 102,
+    "game_id": 2,
+    "user": "SteveCraf",
+    "score": 5,
+    "comment": "Huyền thoại! Thế giới mở sáng tạo vô tận, không bao giờ chán.",
+    "date": "2025-10-02"
+  },
+  {
+    "id": 103,
+    "game_id": 3,
+    "user": "FakerFan",
+    "score": 5,
+    "comment": "Game quốc dân, leo rank hơi mệt nhưng vẫn rất cuốn.",
+    "date": "2025-10-03"
+  },
+  {
+    "id": 104,
+    "game_id": 4,
+    "user": "JettMain",
+    "score": 4,
+    "comment": "Bắn súng kết hợp kỹ năng rất hay, mỗi tội skin hơi đắt.",
+    "date": "2025-10-04"
+  },
+  {
+    "id": 105,
+    "game_id": 5,
+    "user": "Traveler",
+    "score": 5,
+    "comment": "Đồ họa đỉnh cao, cốt truyện lôi cuốn. Waifu xinh!",
+    "date": "2025-10-05"
+  },
+  {
+    "id": 106,
+    "game_id": 6,
+    "user": "RushB",
+    "score": 4,
+    "comment": "Đồ họa CS2 đẹp hơn bản cũ nhiều, nhưng server thi thoảng lag.",
+    "date": "2025-10-06"
+  },
+  {
+    "id": 107,
+    "game_id": 7,
+    "user": "BloxKid",
+    "score": 4,
+    "comment": "Nhiều game hay do cộng đồng làm, giải trí tốt.",
+    "date": "2025-10-07"
+  }
+]

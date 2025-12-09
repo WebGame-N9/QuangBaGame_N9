@@ -26,7 +26,7 @@ function createRelatedCard(game) {
     const imgSrc = game.thumbnail;
     // Thêm kiểm tra an toàn: Đảm bảo game.categories là một mảng trước khi gọi join()
     const categories = Array.isArray(game.genres) ? game.genres : ['Chưa phân loại'];
-
+    
     return `
         <div class="game-card" onclick="window.location.href='game_detail_template.html?id=${game.id}'" data-aos="fade-up">
             <div class="game-image">
@@ -108,16 +108,16 @@ $(document).ready(function () {
                 <div class="config-grid">
                     <div class="config-box">
                         <h3 class="config-title yellow-text">Tối thiểu</h3>
-                        ${Object.entries(currentGame.config.min).map(([k, v]) =>
-                `<div class="config-item"><span class="config-label">${k}:</span> ${v}</div>`
-            ).join('')}
+                        ${Object.entries(currentGame.config.min).map(([k, v]) => 
+                            `<div class="config-item"><span class="config-label">${k}:</span> ${v}</div>`
+                        ).join('')}
                     </div>
                     <br>
                     <div class="config-box">
                         <h3 class="config-title green-text">Đề nghị</h3>
-                        ${Object.entries(currentGame.config.rec).map(([k, v]) =>
-                `<div class="config-item"><span class="config-label">${k}:</span> ${v}</div>`
-            ).join('')}
+                        ${Object.entries(currentGame.config.rec).map(([k, v]) => 
+                            `<div class="config-item"><span class="config-label">${k}:</span> ${v}</div>`
+                        ).join('')}
                     </div>
                 </div>
             `);
@@ -174,34 +174,4 @@ $(document).ready(function () {
             alert("Không thể tải thông tin game. Vui lòng thử lại sau.");
         }
     });
-});
-
-
-$('#downloadBtn').on('click', function () {
-        window.location.href = 'https://www.google.com/';
-});
-
-$('.share-button').on('click', function () {
-    const shareData = {
-        title: document.getElementById('gameTitle').innerText,
-        text: 'Xem trò chơi này trên DT9:',
-        url: window.location.href
-    };
-    if (navigator.share) {
-        navigator.share(shareData)
-            .then(() => {
-                console.log('Chia sẻ thành công!');
-            })
-            .catch((error) => {
-                console.error('Lỗi khi chia sẻ hoặc người dùng hủy bỏ:', error);
-            });
-
-    } else {
-        alert('Trình duyệt không hỗ trợ Web Share API. Đang sao chép URL vào clipboard.');
-        navigator.clipboard.writeText(shareData.url).then(() => {
-            alert('URL đã được sao chép vào clipboard!');
-        }).catch(err => {
-            console.error('Không thể sao chép URL: ', err);
-        });
-    }
 });

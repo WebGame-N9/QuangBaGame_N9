@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameStore Ultimate</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/user.css">
+    <link rel="stylesheet" href="assets/css/header.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/header.js"></script>
+</head>
+
+<body class="bg-gray-900 text-slate-200 ">
+    <header class="main-header">
+        <a href="index.html" class="header-logo-link" data-page="index.html">
+            <div class="header-logo">
+                <img src="assets/img/logo.png" alt="DT9 Logo" class="logo-image">
+                <span class="logo-text">DT9</span>
+            </div>
+        </a>
+
+        <nav class="header-nav">
+            <a href="index.html" class="nav-link" data-page="index.html">Trang chủ</a>
+            <a href="game.html" class="nav-link" data-page="game.html">Trò chơi</a>
+            <a href="news.html" class="nav-link" data-page="news.html">Tin tức</a>
+            <a href="gioi-thieu.html" class="nav-link" data-page="gioi-thieu.html">Giới thiệu</a>
+            <a href="contact.html" class="nav-link" data-page="contact.html">Liên hệ</a>
+        </nav>
+
+        <div class="header-right">
+            <div class="header-search-container">
+                <input type="text" placeholder="Tìm kiếm game..." class="search-input-header">
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+
+            <button class="action-btn download-btn-header">
+                <i class="fas fa-download"></i> <span class="btn-text">Tải Về</span>
+            </button>
+
+            <button class="action-btn account-btn">
+                <i class="fas fa-user-circle"></i> <span class="btn-text">Tài Khoản</span>
+            </button>
+
+            <button class="hamburger-btn" id="hamburger-btn" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+    <main>
+        <div class="mobile-overlay" id="mobile-overlay"></div>
+        <div class="mobile-sidebar" id="mobile-sidebar">
+            <button class="hamburger-btn" style="position: absolute; top: 15px; right: 15px; background-color: #334155;"
+                id="close-sidebar-btn">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <h3 class="text-xl font-bold mb-4 mt-2" style="color: #00bcd4;">Menu</h3>
+
+            <a href="index.html" class="mobile-nav-item" data-page="index.html">Trang chủ</a>
+            <a href="game.html" class="mobile-nav-item" data-page="game.html">Trò chơi</a>
+            <a href="news.html" class="mobile-nav-item" data-page="news.html">Tin tức</a>
+            <a href="gioi-thieu.html" class="mobile-nav-item" data-page="gioi-thieu.html">Giới thiệu</a>
+            <a href="contact.html" class="mobile-nav-item" data-page="contact.html">Liên hệ</a>
+
+            <div class="mobile-nav-actions">
+                <button class="action-btn download-btn-header">
+                    <i class="fas fa-download"></i> Tải Về
+                </button>
+                <button class="action-btn account-btn">
+                    <i class="fas fa-user-circle"></i> Tài Khoản
+                </button>
+            </div>
+
+            <div class="mt-8">
+                <p class="text-sm text-center" style="color: #94a3b8;">© 2025 DT9.VN</p>
+            </div>
+        </div>
+    </main>
+    <div class="flex md:hidden bg-slate-900 border-b border-slate-800 sticky top-0 z-40">
+        <div id="mobile-nav-library" class="mobile-tab-item mobile-tab-active" onclick="router.navigate('library')">
+            <i class="fa-solid fa-gamepad mb-1"></i><br>Thư viện
+        </div>
+        <div id="mobile-nav-wishlist" class="mobile-tab-item" onclick="router.navigate('wishlist')">
+            <i class="fa-solid fa-heart mb-1"></i><br>Yêu thích
+        </div>
+        <div id="mobile-nav-reviews" class="mobile-tab-item" onclick="router.navigate('reviews')">
+            <i class="fa-solid fa-star mb-1"></i><br>Đánh giá
+        </div>
+    </div>
+
+    <div class="main-layout-wrapper flex-1 overflow-hidden p-4 md:p-8">
+
+        <div class="flex h-full" style="gap: 24px;">
+        
+            <aside class="hidden md:flex shrink-0 flex-col aside-user-profile" style="width: 280px;">
+                <div class="py-4 flex items-center gap-3" style="padding-left: 0; border-bottom: 1px solid #1f2937;">
+                    <div id="user-dropdown-wrapper" class="relative">
+                        <img src="https://i.pravatar.cc/150?img=11" class="avatar-img cursor-pointer" alt="Avatar"
+                            onclick="toggleUserDropdown()">
+                        <div id="user-dropdown" class="user-dropdown">
+                            <div class="user-dropdown-item" onclick="backend.logout()">
+                                <i class="fa-solid fa-right-from-bracket"></i>
+                                <span>Đăng xuất</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="font-bold text-white text-sm">GameMaster</div>
+                        <div class="text-xs text-slate-500 my-0.5">ID: 879301</div>
+                        <div class="text-xs text-green-500">● Online</div>
+                    </div>
+                </div>
+
+                <nav class="flex-1 space-y-2 pt-4">
+                    <div id="nav-library" onclick="router.navigate('library')" class="nav-item active"><i
+                            class="fa-solid fa-gamepad w-5"></i> Thư viện</div>
+                    <div id="nav-wishlist" onclick="router.navigate('wishlist')" class="nav-item"><i
+                            class="fa-solid fa-heart w-5"></i> Yêu thích</div>
+                    <div id="nav-reviews" onclick="router.navigate('reviews')" class="nav-item"><i
+                            class="fa-solid fa-star w-5"></i> Lịch sử đánh giá</div>
+                </nav>
+            </aside>
+
+            <main class="flex-1 overflow-y-auto">
+                <div id="section-library" class="fade-in">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                        <div class="p-4 rounded-lg border border-slate-800">
+                            <div class="text-slate-400 text-xs">Tổng game</div>
+                            <div class="text-indigo-400 text-xl font-bold">7</div>
+                        </div>
+                        <div class="p-4 rounded-lg border border-slate-800">
+                            <div class="text-slate-400 text-xs">Giờ chơi</div>
+                            <div class="text-indigo-400 text-xl font-bold">7330h</div>
+                        </div>
+                        <div class="p-4 rounded-lg border border-slate-800">
+                            <div class="text-slate-400 text-xs">Đang chơi</div>
+                            <div class="text-indigo-400 text-xl font-bold">5</div>
+                        </div>
+                        <div class="p-4 rounded-lg border border-slate-800">
+                            <div class="text-slate-400 text-xs">Hoàn thành</div>
+                            <div class="text-indigo-400 text-xl font-bold">3</div>
+                        </div>
+                    </div>
+                    <div id="library-container" class="flex flex-col gap-4"></div>
+                </div>
+
+                <div id="section-wishlist" class="hidden fade-in">
+                    <h2 class="text-2xl font-bold text-white mb-4">Yêu thích</h2>
+                    <div id="wishlist-container" class="flex flex-col gap-4"></div>
+                    <div id="wishlist-empty" class="hidden text-center text-slate-500 py-10">Danh sách trống</div>
+                </div>
+
+                <div id="section-reviews" class="hidden fade-in">
+                    <h2 class="text-2xl font-bold text-white mb-6">Lịch sử đánh giá</h2>
+                    <div id="reviews-container" class="flex flex-col gap-4"></div>
+                    <div id="reviews-empty" class="hidden text-center text-slate-500 py-10">Chưa có đánh giá nào</div>
+                </div>
+                <div style="height: 50px;"></div> 
+            </main>
+        </div>
+    </div>
+      <div id="footer-placeholder"></div>
+    <div id="toast-container"></div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/loadHtml.js"></script>
+    <script>
+        AOS.init({ once: true, duration: 800 });
+        loadHTML('footer.html', 'footer-placeholder'); 
+    </script>
+
+    <script src="assets/js/user.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,9 @@
+[
+  { "id": 1, "hours": 1200, "progress": 80, "liked": true },
+  { "id": 2, "hours": 50, "progress": 10, "liked": false },
+  { "id": 3, "hours": 1500, "progress": 100, "liked": true },
+  { "id": 4, "hours": 320, "progress": 65, "liked": true },
+  { "id": 5, "hours": 450, "progress": 80, "liked": true },
+  { "id": 6, "hours": 2100, "progress": 100, "liked": false },
+  { "id": 7, "hours": 10, "progress": 5, "liked": false }
+]

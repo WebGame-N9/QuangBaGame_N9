@@ -48,4 +48,10 @@ $(function() {
          setTimeout(() => toggleSidebar(false), 150);
     });
 
+    // Sự kiện click nút User
+    $('.account-btn').on('click', () => {
+        window.location.href = 'user.html';
+    });
+
+
 });
