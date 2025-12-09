@@ -128,6 +128,15 @@ const ui = {
           ui.renderLibrary();
           ui.renderWishlist();
           ui.renderReviewsHistory();
+          const params = new URLSearchParams(window.location.search);
+          const tab = params.get("tab");
+
+          if (tab === "wishlist" || tab === "reviews" || tab === "library") {
+            router.navigate(tab);
+          } else {
+            // Mặc định vẫn là Thư viện
+            router.navigate("library");
+          }
         }
       })
 
@@ -170,7 +179,7 @@ const ui = {
                 <div class="flex flex-col items-end gap-3 mt-4 sm:mt-0">
                     <div class="flex gap-2">
                         <button class="btn-play" onclick="backend.play()">Chơi ngay</button>
-                        <button class="btn-secondary" onclick="window.location.href='game_detail.html?id=${
+                        <button class="btn-secondary" onclick="window.location.href='detail.html?id=${
                           libItem.id
                         }'">Chi tiết</button>
                         <button class="btn-secondary" onclick="backend.update('${
@@ -384,11 +393,11 @@ function renderSimilarGames(currentGame) {
 
                 return `
                 <div class="bg-[#1e293b] rounded-xl border border-slate-700 overflow-hidden group hover:border-indigo-500 transition">
-                    <div class="h-32 overflow-hidden cursor-pointer" onclick="window.location.href='game_detail.html?id=${g.id}'">
+                    <div class="h-32 overflow-hidden cursor-pointer" onclick="window.location.href='detail.html?id=${g.id}'">
                         <img src="${g.thumbnail}" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                     </div>
                     <div class="p-4">
-                        <h3 class="font-bold text-white text-lg truncate mb-2 cursor-pointer" onclick="window.location.href='game_detail.html?id=${g.id}'">${g.name}</h3>
+                        <h3 class="font-bold text-white text-lg truncate mb-2 cursor-pointer" onclick="window.location.href='detail.html?id=${g.id}'">${g.name}</h3>
                         <button class="w-full py-2 rounded-lg text-sm font-bold transition ${btnClass}" ${action}>
                             ${btnText}
                         </button>
