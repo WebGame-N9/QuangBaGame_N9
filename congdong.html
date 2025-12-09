@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameStore Community</title>
+    <link rel="stylesheet" href="assets/css/congdong.css">
+    <link rel="stylesheet" href="assets/css/index_variable.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/header.css">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="main-header">
+        <a href="index.html" class="header-logo-link" data-page="index.html">
+            <div class="header-logo">
+                <img src="assets/img/logo.png" alt="DT9 Logo" class="logo-image">
+                <span class="logo-text">DT9</span>
+            </div>
+        </a>
+
+        <nav class="header-nav">
+            <a href="index.html" class="nav-link" data-page="index.html">Trang chủ</a>
+            <a href="game.html" class="nav-link" data-page="game.html">Trò chơi</a>
+            <a href="news.html" class="nav-link" data-page="news.html">Tin tức</a>
+            <a href="gioi-thieu.html" class="nav-link" data-page="gioi-thieu.html">Giới thiệu</a>
+            <a href="contact.html" class="nav-link" data-page="contact.html">Liên hệ</a>
+        </nav>
+
+        <div class="header-right">
+            <div class="header-search-container">
+                <input type="text" placeholder="Tìm kiếm game..." class="search-input-header">
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+
+            <button class="action-btn download-btn-header">
+                <i class="fas fa-download"></i> <span class="btn-text">Tải Về</span>
+            </button>
+
+            <button class="action-btn account-btn">
+                <i class="fas fa-user-circle"></i> <span class="btn-text">Tài Khoản</span>
+            </button>
+
+            <button class="hamburger-btn" id="hamburger-btn" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <div class="congdong_container">
+        <div class="congdong_main-tabs">
+            <button class="congdong_tab-btn active" data-target="forum"><i class="fa-solid fa-comments"></i> Diễn đàn</button>
+        </div>
+
+        <div id="congdong_forum-section" class="congdong_main-section active">
+            <div class="congdong_forum-layout">
+
+                <div class="congdong_forum-content">
+                    <div class="congdong_filter-bar" data-aos="fade-down">
+                        <div class="congdong_filter-group">
+                            <button class="congdong_filter-chip active" data-filter="all">Tất cả</button>
+                            <button class="congdong_filter-chip" data-filter="thao-luan">Thảo luận chung</button>
+                            <button class="congdong_filter-chip" data-filter="huong-dan">Hướng dẫn</button>
+                            <button class="congdong_filter-chip" data-filter="ho-tro">Hỗ trợ kỹ thuật</button>
+                            <button class="congdong_filter-chip" data-filter="review">Đánh giá</button>
+                        </div>
+                        <button class="congdong_btn-create-post"><i class="fa-solid fa-plus"></i> Tạo bài viết</button>
+                    </div>
+
+                    <div class="congdong_post-list" id="congdong_post-list-container"></div>
+
+                    <div class="congdong_pagination" id="congdong_pagination"></div>
+                </div>
+
+                <aside class="congdong_forum-sidebar">
+                    <div class="congdong_widget" data-aos="fade-left" data-aos-delay="100">
+                        <div class="congdong_widget-header">
+                            <i class="fa-solid fa-fire-flame-curved"></i> Chủ đề nổi bật
+                        </div>
+                        <ul class="congdong_trending-list" id="congdong_sidebar-trending">
+                        </ul>
+                    </div>
+
+                    <div class="congdong_widget" data-aos="fade-left" data-aos-delay="200">
+                        <div class="congdong_widget-header">
+                            <i class="fa-solid fa-users"></i> Thành viên tích cực
+                        </div>
+                        <ul class="congdong_member-list" id="congdong_sidebar-members">
+                        </ul>
+                    </div>
+                </aside>
+
+            </div>
+        </div>
+
+        <div id="congdong_create-post-modal" class="congdong_modal">
+            <div class="congdong_modal-content">
+                <span class="congdong_close-modal">&times;</span>
+                <h2><i class="fa-solid fa-pen-to-square"></i> Tạo bài viết mới</h2>
+                <form id="congdong_create-post-form">
+                    <div class="congdong_form-group">
+                        <label>Tiêu đề</label>
+                        <input type="text" id="congdong_post-title" placeholder="Nhập tiêu đề bài viết..." required>
+                    </div>
+                    <div class="congdong_form-group">
+                        <label>Chuyên mục</label>
+                        <select id="congdong_post-category">
+                            <option value="thao-luan">Thảo luận chung</option>
+                            <option value="huong-dan">Hướng dẫn</option>
+                            <option value="ho-tro">Hỗ trợ kỹ thuật</option>
+                            <option value="review">Đánh giá</option>
+                        </select>
+                    </div>
+                    <div class="congdong_form-group">
+                        <label>Nội dung</label>
+                        <textarea id="congdong_post-content" rows="5" placeholder="Chia sẻ nội dung của bạn..." required></textarea>
+                    </div>
+                    <div class="congdong_form-actions">
+                        <button type="button" class="congdong_btn-cancel congdong_close-modal-btn">Hủy</button>
+                        <button type="submit" class="congdong_btn-submit">Đăng bài</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div id="congdong_post-detail-modal" class="congdong_modal">
+            <div class="congdong_modal-content congdong_modal-large">
+                <span class="congdong_close-detail">&times;</span>
+
+                <div class="congdong_detail-header">
+                    <h1 id="congdong_detail-title">Tiêu đề bài viết</h1>
+                    <div class="congdong_detail-meta">
+                        <div class="congdong_author-info">
+                            <div class="congdong_post-avatar congdong_color-1" id="congdong_detail-avatar">A</div>
+                            <div>
+                                <span id="congdong_detail-author" class="congdong_author-name">Author Name</span>
+                                <span id="congdong_detail-time" class="congdong_post-time">2 giờ trước</span>
+                            </div>
+                        </div>
+                        <span id="congdong_detail-category" class="congdong_badge congdong_badge-blue">Thảo luận</span>
+                    </div>
+                </div>
+
+                <div class="congdong_detail-body" id="congdong_detail-content"></div>
+
+                <div class="congdong_detail-actions">
+                    <button class="congdong_action-btn congdong_btn-like-detail">
+                        <i class="fa-regular fa-thumbs-up"></i> <span id="congdong_detail-like-count">0</span> Thích
+                    </button>
+                </div>
+
+                <hr class="congdong_divider">
+
+                <div class="congdong_comments-section">
+                    <h3>Bình luận (<span id="congdong_comment-count">0</span>)</h3>
+                    <div class="congdong_comment-list" id="congdong_comment-list"></div>
+                    <div class="congdong_comment-input-area">
+                        <div class="congdong_post-avatar congdong_color-5">Me</div>
+                        <div class="congdong_input-wrapper">
+                            <textarea id="congdong_new-comment-content" placeholder="Viết bình luận của bạn..."></textarea>
+                            <button id="congdong_btn-send-comment"><i class="fa-solid fa-paper-plane"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script src="assets/js/congdong.js"></script>
+
+    <div id="footer-placeholder" class=""></div>
+    <script src="assets/js/loadHtml.js"></script>
+    <script> loadHTML('footer.html', 'footer-placeholder')</script>
+</body>
+
+</html>
