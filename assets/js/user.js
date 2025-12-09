@@ -74,6 +74,7 @@ window.onclick = function (event) {
   }
 };
 
+
 const backend = {
   logout: () => confirm("Đăng xuất?") && location.reload(),
 

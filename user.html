@@ -4,12 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GameStore Ultimate</title>
+    <title>TD9 Ultimate</title>
+    <link rel="icon" href="assets/img/logo.png" type="image/png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="assets/css/user.css">
     <link rel="stylesheet" href="assets/css/header.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function getCurrentUser() {
+            const user = localStorage.getItem('currentUser');
+            return user ? JSON.parse(user) : null;
+        }
+        (function () {
+            const user = getCurrentUser();
+            if (!user) {
+                window.location.replace('auth.html');
+                throw new Error('Chưa đăng nhập, đang chuyển hướng.');
+            }
+        })(); 
+    </script>
+
     <script src="assets/js/header.js"></script>
 </head>
 
@@ -94,18 +109,24 @@
     <div class="main-layout-wrapper flex-1 overflow-hidden p-4 md:p-8">
 
         <div class="flex h-full" style="gap: 24px;">
-        
+
             <aside class="hidden md:flex shrink-0 flex-col aside-user-profile" style="width: 280px;">
                 <div class="py-4 flex items-center gap-3" style="padding-left: 0; border-bottom: 1px solid #1f2937;">
                     <div id="user-dropdown-wrapper" class="relative">
                         <img src="https://i.pravatar.cc/150?img=11" class="avatar-img cursor-pointer" alt="Avatar"
                             onclick="toggleUserDropdown()">
                         <div id="user-dropdown" class="user-dropdown">
-                            <div class="user-dropdown-item" onclick="backend.logout()">
+                            <div class="user-dropdown-item" onclick="logout()">
                                 <i class="fa-solid fa-right-from-bracket"></i>
                                 <span>Đăng xuất</span>
                             </div>
                         </div>
+                        <script>
+                            function logout() {
+                                localStorage.removeItem('currentUser');
+                                window.location.replace('auth.html');
+                            }
+                        </script>
                     </div>
                     <div>
                         <div class="font-bold text-white text-sm">GameMaster</div>
@@ -158,11 +179,11 @@
                     <div id="reviews-container" class="flex flex-col gap-4"></div>
                     <div id="reviews-empty" class="hidden text-center text-slate-500 py-10">Chưa có đánh giá nào</div>
                 </div>
-                <div style="height: 50px;"></div> 
+                <div style="height: 50px;"></div>
             </main>
         </div>
     </div>
-      <div id="footer-placeholder"></div>
+    <div id="footer-placeholder"></div>
     <div id="toast-container"></div>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="assets/js/loadHtml.js"></script>
