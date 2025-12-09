@@ -21,7 +21,21 @@
 
 </head>
 
-<body id="index_main" class="index-body text-white">
+<body id="index_main" class="index-body text-white loading relative">
+    <div id="loader-wrapper"
+        class="fixed inset-0 z-[9999] bg-[#1a1a1a] flex flex-col items-center justify-center transition-all duration-500">
+        <div class="relative w-24 h-24">
+            <div class="absolute w-full h-full border-4 border-gray-700 rounded-full"></div>
+            <div
+                class="absolute w-full h-full border-4 border-purple-600 rounded-full animate-spin border-t-transparent">
+            </div>
+        </div>
+
+        <div class="mt-4 text-center">
+            <h2 class="text-2xl font-bold tracking-wider text-purple-500 animate-pulse">GAME STORE</h2>
+            <p class="text-gray-400 text-sm mt-2">Đang tải dữ liệu...</p>
+        </div>
+    </div>
         <header class="main-header">
         <a href="index.html" class="header-logo-link" data-page="index.html">
             <div class="header-logo">
@@ -139,7 +153,7 @@
                         <i class="fa-solid fa-download mr-1"></i> Tải ngay
                     </a>
                 </div>
-                 <!-- Mẫu ---------------------------------------------------------------------------------------------->
+                <!-- Mẫu ---------------------------------------------------------------------------------------------->
             </div>
         </section>
 
