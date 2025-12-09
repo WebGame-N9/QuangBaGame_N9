@@ -1,0 +1,439 @@
+/* Định nghĩa các biến CSS */
+:root {
+    --bg-dark: #0b0c15;
+    --card-bg: #1a1c35;
+    --primary-color: #6366f1;
+    --secondary-color: #8b5cf6;
+    --text-light: #ffffff;
+    --text-muted: #94a3b8; /* Cập nhật: Sử dụng màu từ mobile sidebar */
+    --border-color: #1f2937;
+    --slate-800: #1a1c35;
+    --orange-badge: #f97316;
+    --hover-bg: #374151;
+    --download-btn-color: linear-gradient(90deg, #6366f1 0%, #8b5cf6 100%);
+}
+
+/* Thêm thuộc tính cuộn mượt mà cho toàn bộ trang */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Thiết lập font và màu nền chung */
+body {
+    padding-top: 75px;
+    font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    min-height: 100vh;
+}
+
+/* Main Wrapper - Container chính */
+.main-wrapper {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 1.5rem 1rem;
+}
+
+/* Main Title */
+.main-title {
+    font-size: 1.875rem; /* text-3xl */
+    font-weight: 700; /* font-bold */
+    margin-bottom: 1.5rem; /* mb-6 */
+    border-bottom: 1px solid #334155; /* border-slate-700 */
+    padding-bottom: 0.75rem; /* pb-3 */
+}
+
+/* Layout Grid */
+.grid-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+    /* Sidebar 1 phần, Nội dung chính 3 phần */
+    .grid-layout {
+        grid-template-columns: 1fr 3fr;
+    }
+}
+
+/* Left Section / Right Section */
+.left-section {}
+.right-section {}
+
+/* Đặt sidebar cố định trên desktop */
+@media (min-width: 1024px) {
+    .sticky-sidebar-wrapper {
+        position: sticky;
+        top: 100px;
+        display: flex; /* flex */
+        flex-direction: column; /* flex-col */
+        gap: 1.5rem; /* gap-6 */
+    }
+}
+
+/* Sidebar Card (Mục Lục/CTA) */
+.sidebar-card-dt9 {
+    background-color: var(--slate-800);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.sidebar-card-dt9 h3 {
+    font-size: 1.25rem; /* text-xl */
+    font-weight: 700; /* font-bold */
+    color: var(--text-light);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+/* Mục Lục Bài Viết */
+.article-index-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    line-height: 1.5; /* space-y-2 (khoảng cách giữa các li) */
+}
+
+.article-index-list li {
+    margin-top: 0.5rem;
+}
+
+.index-link {
+    color: #94a3b8; /* text-slate-300 */
+    font-size: 0.875rem; /* text-sm */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.index-link:hover, .index-link-active {
+    color: var(--primary-color); /* hover:text-[#6366f1] */
+    font-weight: 600; /* font-semibold */
+    text-decoration: underline;
+}
+
+.index-link-active {
+    color: var(--primary-color);
+}
+
+/* Sidebar CTA Card */
+.sidebar-cta-card {
+    text-align: center; /* text-center */
+    padding: 1.5rem; /* p-6 */
+}
+
+.sidebar-cta-card h3 {
+    margin-bottom: 1rem; /* mb-4 */
+    border-bottom: none; /* border-none */
+    padding-bottom: 0; /* pb-0 */
+}
+
+.cta-description {
+    color: #94a3b8; /* text-slate-400 */
+    margin-bottom: 1.5rem; /* mb-6 */
+    font-size: 0.875rem; /* text-sm */
+}
+
+.cta-button {
+    width: 100%; /* w-full */
+    color: white;
+    background: var(--download-btn-color);
+    padding: 0.75rem 1rem; /* py-3 px-4 */
+    border-radius: 0.5rem; /* rounded-lg */
+    font-weight: 700; /* font-bold */
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 6px -1px rgba(99, 102, 241, 0.3); /* shadow-lg shadow-[#6366f1]/30 */
+}
+
+.cta-button:hover {
+    transform: translateY(-2px); /* hover:-translate-y-0.5 */
+    box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.5), 0 4px 6px -2px rgba(99, 102, 241, 0.3);
+}
+
+/* Advertisement Area */
+.advertisement-area {
+    width: 100%;
+    height: 12rem; /* h-48 */
+    background-color: #1e293b; /* bg-slate-800 */
+    border-radius: 0.5rem; /* rounded-lg */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border-color);
+    color: #94a3b8; /* text-slate-400 */
+    font-size: 0.875rem; /* text-sm */
+}
+
+
+/* Section Separator */
+.section-separator {
+    padding-top: 2.5rem; /* 40px */
+    margin-top: -2.5rem; /* -40px */
+}
+
+/* Section Title (H2) */
+.section-title {
+    font-size: 1.5rem; /* text-2xl */
+    font-weight: 700; /* font-bold */
+    margin-bottom: 1rem; /* mb-4 */
+}
+
+/* Featured Article Banner */
+.featured-banner-wrapper {
+    margin-bottom: 2rem; /* mb-8 */
+}
+
+.featured-banner-image {
+    display: block; /* block w-full */
+    width: 100%;
+    height: 325px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    position: relative;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* Lớp phủ cho ảnh banner */
+.featured-banner-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(11, 12, 21, 0.9), rgba(11, 12, 21, 0.1));
+    border-radius: 8px;
+}
+
+.banner-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    z-index: 10;
+}
+
+.tag-badge {
+    display: inline-block;
+    background-color: var(--orange-badge);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.featured-title-link:hover .featured-title {
+    color: var(--secondary-color);
+}
+
+.featured-title {
+    font-size: 1.875rem;
+    font-weight: 900;
+    line-height: 1.2;
+    color: var(--text-light); 
+    transition: color 0.3s;
+}
+
+.featured-summary {
+    font-size: 0.875rem;
+    color: #94a3b8;
+    margin-top: 0.5rem;
+    display: -webkit-box; 
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .featured-summary {
+        display: none; /* hidden md:block */
+    }
+}
+
+.article-meta-group {
+    font-size: 0.875rem; /* text-sm */
+    color: #94a3b8; /* text-slate-400 */
+    margin-top: 0.75rem; /* mt-3 */
+    display: flex; /* flex */
+    align-items: center; /* items-center */
+    gap: 1rem; /* gap-4 */
+}
+
+.article-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem; /* gap-1 */
+}
+
+.article-meta-item i {
+    color: var(--primary-color); /* text-[#6366f1] */
+}
+
+/* Article Card Grid */
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+@media (min-width: 640px) {
+    .news-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .news-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Article Card (Tin Tức mới) */
+.article-card {
+    background-color: var(--slate-800);
+    border-radius: 0.75rem;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, border-color 0.3s;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.article-card:hover {
+    transform: scale(1.03); /* Chỉnh sửa nhẹ nhàng hơn so với 1.05 gốc */
+    border-color: var(--secondary-color);
+}
+
+.article-card-img {
+    height: 12rem;
+    overflow: hidden;
+}
+
+.article-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s;
+}
+
+.article-card:hover .article-card-img img {
+    transform: scale(1.1);
+}
+
+.article-card-content {
+    padding: 1rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.article-card-title {
+    display: block;
+    font-weight: 700;
+    font-size: 1.125rem;
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+    color: var(--text-light);
+    transition: color 0.3s;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.article-card:hover .article-card-title {
+    color: var(--primary-color);
+}
+
+.article-card-summary {
+    font-size: 0.875rem; /* text-sm */
+    color: #94a3b8; /* text-slate-400 */
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* line-clamp-3 */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    flex-grow: 1; /* Để meta luôn ở dưới cùng */
+}
+
+.article-meta {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 0.75rem; /* Điều chỉnh khoảng cách */
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.article-meta i {
+    margin-right: 0.25rem;
+    color: #94a3b8; /* Dùng màu muted cho icon trong meta của card */
+}
+
+/* Pagination */
+.pagination-container {
+    display: flex; /* flex */
+    justify-content: center; /* justify-center */
+    align-items: center; /* items-center */
+    gap: 0.5rem; /* gap-2 */
+    margin-top: 2rem; /* mt-8 */
+}
+
+.pagination-btn {
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.5rem;
+    border: none;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pagination-btn-default {
+    background-color: #1a1c35; /* Dùng màu card-bg */
+    color: var(--text-muted);
+}
+
+.pagination-btn-default:hover {
+    background-color: var(--hover-bg); /* Màu hover tối */
+    color: var(--text-light);
+}
+
+.pagination-btn-active {
+    background: var(--download-btn-color);
+    color: white;
+    cursor: default;
+}
+
+.pagination-btn-active:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+/* Footer (cho phần mobile sidebar) */
+.sidebar-footer {
+    margin-top: 2rem; /* mt-8 */
+    text-align: center;
+}
+
+.sidebar-footer p {
+    font-size: 0.875rem; /* text-sm */
+    color: #94a3b8; /* text-slate-400 */
+}

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="article-page-title">Chi Tiết Tin Tức: Đang Tải...</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="assets/css/news.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/post.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+
+    <header class="main-header">
+        <a href="index.html" class="header-logo-link" data-page="index.html">
+            <div class="header-logo">
+                <img src="assets/img/logo.png" alt="DT9 Logo" class="logo-image">
+                <span class="logo-text">DT9</span>
+            </div>
+        </a>
+
+        <nav class="header-nav">
+            <a href="index.html" class="nav-link" data-page="index.html">Trang chủ</a>
+            <a href="game.html" class="nav-link" data-page="game.html">Trò chơi</a>
+            <a href="news.html" class="nav-link nav-active" data-page="news.html">Tin tức</a>
+            <a href="gioi-thieu.html" class="nav-link" data-page="gioi-thieu.html">Giới thiệu</a>
+            <a href="contact.html" class="nav-link" data-page="contact.html">Liên hệ</a>
+        </nav>
+
+        <div class="header-right">
+            <div class="header-search-container">
+                <input type="text" placeholder="Tìm kiếm game..." class="search-input-header">
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+
+            <button class="action-btn download-btn-header">
+                <i class="fas fa-download"></i> <span class="btn-text">Tải Về</span>
+            </button>
+
+            <button class="action-btn account-btn">
+                <i class="fas fa-user-circle"></i> <span class="btn-text">Tài Khoản</span>
+            </button>
+
+            <button class="hamburger-btn" id="hamburger-btn" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+
+    <main class="main-wrapper">
+        <div class="grid-layout">
+
+            <div class="left-section">
+                <div class="sticky-sidebar-wrapper">
+                    <div class="sidebar-card-dt9" data-aos="fade-right">
+                        <h3>Bài Viết Gần Đây</h3>
+                        <ul class="article-index-list">
+                            <li><a href="#" class="index-link">Đang tải danh sách...</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-card-dt9 sidebar-cta-card" data-aos="fade-right" data-aos-delay="200">
+                        <h3>Chia Sẻ Bài Viết</h3>
+                        <p class="cta-description">Nếu thấy hay, hãy chia sẻ ngay!</p>
+                        <div class="share-buttons">
+                            <a id="shareFacebook" class="facebook">
+                                <i class="fab fa-facebook-f mr-2"></i> Facebook
+                            </a>
+                            <a id="shareTwitter" class="twitter">
+                                <i class="fab fa-twitter mr-2"></i> Twitter
+                            </a>
+                            <a id="shareEmail" class="email">
+                                <i class="fas fa-envelope mr-2"></i> Email
+                            </a>
+                        </div>
+                        <script>
+                            const url = encodeURIComponent(window.location.href);
+                            const title = encodeURIComponent(document.title);
+
+                            document.getElementById("shareFacebook").href =
+                                `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+
+                            document.getElementById("shareTwitter").href =
+                                `https://twitter.com/intent/tweet?url=${url}&text=${title}`;
+
+                            document.getElementById("shareEmail").href =
+                                `mailto:?subject=${title}&body=Chia sẻ bài viết này: ${url}`;
+                        </script>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-section">
+
+                <div id="loading-indicator"
+                    style="display:none; text-align: center; font-size: 1.5em; margin-top: 50px; padding: 50px; background: #2d3748; color: white; border-radius: 8px;">
+                    <i class="fas fa-spinner fa-spin mr-3"></i> Đang tải dữ liệu bài viết...
+                </div>
+                <div id="article-detail-container">
+                    <article class="article-detail-header" data-aos="fade-up">
+                      
+
+                        <a href="news.html"
+                            class="inline-flex items-center gap-2 mb-4 text-blue-400 hover:text-blue-300 transition">
+                            <i class="fas fa-arrow-left"></i> Quay lại Tin Tức
+                        </a>  <br>
+
+                        <span class="tag-badge" id="article-category">LOADING...</span>
+                        <h1 class="featured-title" id="article-title"
+                            style="font-size: 2.5rem; line-height: 1.1; margin-top: 0.5rem; margin-bottom: 1rem;">
+                            Đang tải tiêu đề...
+                        </h1>
+                        <div class="article-meta-group" style="margin-bottom: 1.5rem;">
+                            <span class="article-meta-item" id="article-date"><i class="fas fa-calendar-alt"></i>
+                                --/--/----</span>
+                            <span class="article-meta-item" id="article-author"><i class="fas fa-user"></i>
+                                Loading...</span>
+                            <span class="article-meta-item" id="article-tags"><i class="fas fa-tags"></i>
+                                Loading...</span>
+                        </div>
+                    </article>
+
+                    <div class="featured-image-container mb-6" data-aos="fade-up" data-aos-delay="200">
+                        <img id="article-featured-image"
+                            src="https://placehold.co/1200x500/cccccc/ffffff?text=Loading+Image" alt="Hình ảnh bài viết"
+                            style="border-radius: 8px;">
+                    </div>
+
+                    <div class="article-content-container" data-aos="fade-up" data-aos-delay="300">
+
+                        <p id="article-summary" class="summary-text">Đang tải nội dung tóm tắt...</p>
+
+                        <div id="dynamic-article-content">
+                        </div>
+
+                    </div>
+
+                    <div class="related-articles">
+                        <h2 class="section-title">Bài Viết Liên Quan</h2>
+                        <div class="news-grid">
+                            <a href="tin-tuc-chi-tiet.html?id=2" class="article-card" data-aos="zoom-in">
+                                <div class="article-card-img">
+                                    <img src="https://placehold.co/400x180/293a55/ffffff?text=Elden+Ring+DLC"
+                                        alt="Elden Ring DLC Shadow of the Erdtree">
+                                </div>
+                                <div class="article-card-content">
+                                    <h3 class="article-card-title">Elden Ring DLC: Shadow of the Erdtree Gây Chấn Động
+                                    </h3>
+                                    <p class="article-card-summary">Bản mở rộng lớn nhất của Elden Ring đã ra mắt, mang
+                                        đến một thế giới mới đầy thách thức...</p>
+                                    <div class="article-meta">
+                                        <span><i class="fas fa-calendar-alt"></i> 08/12/2025</span>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a href="tin-tuc-chi-tiet.html?id=5" class="article-card" data-aos="zoom-in"
+                                data-aos-delay="100">
+                                <div class="article-card-img">
+                                    <img src="https://placehold.co/400x180/555029/ffffff?text=Cyberpunk+Patch"
+                                        alt="Cyberpunk Patch">
+                                </div>
+                                <div class="article-card-content">
+                                    <h3 class="article-card-title">Cyberpunk 2077 tung bản vá 2.3: Tối ưu hiệu năng</h3>
+                                    <p class="article-card-summary">CD Projekt Red tiếp tục cải thiện Cyberpunk 2077 với
+                                        bản vá 2.3 tập trung vào sửa lỗi...</p>
+                                    <div class="article-meta">
+                                        <span><i class="fas fa-calendar-alt"></i> 05/12/2025</span>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a href="tin-tuc-chi-tiet.html?id=3" class="article-card" data-aos="zoom-in"
+                                data-aos-delay="200">
+                                <div class="article-card-img">
+                                    <img src="https://placehold.co/400x180/295555/ffffff?text=Esports+Moba"
+                                        alt="Esports Moba Championship">
+                                </div>
+                                <div class="article-card-content">
+                                    <h3 class="article-card-title">Kết Quả Chung Kết MOBA Championship Mùa Thu</h3>
+                                    <p class="article-card-summary">Những trận đấu kịch tính và pha xử lý mãn nhãn đã
+                                        khép lại mùa giải MOBA Championship...</p>
+                                    <div class="article-meta">
+                                        <span><i class="fas fa-calendar-alt"></i> 07/12/2025</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/loadHtml.js"></script>
+    <script src="assets/js/header.js"></script>
+    <script src="assets/js/post.js"></script>
+</body>
+
+</html>

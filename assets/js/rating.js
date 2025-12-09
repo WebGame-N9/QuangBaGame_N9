@@ -2,7 +2,7 @@ const REVIEW_BIN_ID = "69343538d0ea881f4016cba7";
 const REVIEW_API_URL = `https://api.jsonbin.io/v3/b/${REVIEW_BIN_ID}/latest`; 
 
 // THAY ĐỔI DÒNG NÀY BẰNG MASTER KEY MỚI CỦA BẠN (bắt đầu bằng $2b$)
-const REVIEW_MASTER_KEY = "$2a$10$dAGf830CRlXglDv0cce8IOz5ayJDKDIW8.uPxvWVXMgR7Wm.UG.7G"; // <<<=== BẮT BUỘC THAY ĐỔI - ĐÃ ĐỔI TÊN
+const REVIEW_MASTER_KEY = "$2a$10$dAGf830CRlXglDv0cce8IOz5ayJDKDIW8.uPxvWVXMgR7Wm.UG.7G";
 
 // Biến toàn cục lưu game ID
 let gameId = null;
