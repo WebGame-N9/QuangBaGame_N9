@@ -1,0 +1,857 @@
+[
+  {
+    "id": 1,
+    "title": "Cần tư vấn build PC 20 triệu cả màn hình để chiến Black Myth: Wukong",
+    "author": "GamingPcBuilder",
+    "avatar_color": "congdong_color-1",
+    "avatar_text": "GA",
+    "time": "15 phút trước",
+    "category": "ho-tro",
+    "excerpt": "Ngân sách em có hạn, muốn trải nghiệm Wukong ở mức High setting 1080p. Anh em tư vấn giúp cấu hình...",
+    "content": "<p><strong>Em chào các bác,</strong></p><p>Tình hình là em gom lúa được tầm 20 củ khoai. Em đang phân vân giữa đội xanh (Intel + Nvidia) hay đội đỏ (AMD). Nhu cầu chủ yếu là chơi game AAA như Wukong, God of War. Xin các cao nhân cho em một cấu hình chi tiết ạ.</p>",
+    "likes": 12,
+    "comments": 4,
+    "views": 320,
+    "commentsList": [
+      {
+        "author": "TechExpert",
+        "text": "Tầm này làm con i3-14100F và RTX 3060 12GB là chiến được 1080p High Setting Wukong ngon lành nha.",
+        "time": "5 phút trước"
+      },
+      {
+        "author": "AMDfan",
+        "text": "Chơi AMD ngon hơn. Ryzen 5 5600 + RX 6700XT là best p/p rồi, dư tiền mua màn 144Hz luôn.",
+        "time": "10 phút trước"
+      },
+      {
+        "author": "Admin",
+        "text": "Bạn nên ưu tiên RAM 32GB để tối ưu cho game AAA hiện nay.",
+        "time": "12 phút trước"
+      },
+      {
+        "author": "Newbie123",
+        "text": "Nhớ chọn nguồn 650W trở lên cho an toàn nhé.",
+        "time": "14 phút trước"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Góc ức chế: Tại sao Riot cứ buff Yasuo mãi thế?",
+    "author": "AntiHasagi",
+    "avatar_color": "congdong_color-5",
+    "avatar_text": "AN",
+    "time": "30 phút trước",
+    "category": "thao-luan",
+    "excerpt": "Cầm tướng tay ngắn đi mid mà gặp đấng là xác định ôm trụ. Meta này nát quá rồi...",
+    "content": "<p><strong>Không hiểu cân bằng tướng kiểu gì?</strong></p><p>Vừa vào game nó lướt E cái vèo, chém Q đau điếng, lại còn cái tường gió chặn hết skill. Đánh rank Vàng gặp Yasuo thông thạo 7 bên kia là auto thua. Có ai đồng cảm không?</p>",
+    "likes": 89,
+    "comments": 3,
+    "views": 1500,
+    "commentsList": [
+      {
+        "author": "YasuoMain",
+        "text": "Quan trọng là người chơi chứ tướng nào mà chả mạnh. Đánh sát thủ thì phải chấp nhận rủi ro chứ.",
+        "time": "5 phút trước"
+      },
+      {
+        "author": "RiotHater",
+        "text": "Đúng là Riot thiên vị, nhìn đồ Sát Lực mạnh thế kia cơ mà.",
+        "time": "10 phút trước"
+      },
+      {
+        "author": "AntiFan",
+        "text": "Mình pick Malphite là auto thắng nhé, cho nó bay!",
+        "time": "15 phút trước"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Tổng hợp Code Blox Fruit mới nhất tháng 12/2025 (Còn hạn)",
+    "author": "RobloxHunter",
+    "avatar_color": "congdong_color-2",
+    "avatar_text": "RO",
+    "time": "1 giờ trước",
+    "category": "huong-dan",
+    "excerpt": "Share cho anh em bộ code x2 exp và reset stats vừa săn được sáng nay...",
+    "content": "<p><strong>Nhập nhanh kẻo hết nhé anh em:</strong></p><ul><li>CODE1: ADMIN_GIVEAWAY (X2 Exp 1h)</li><li>CODE2: SECRET_ISLAND (Reset Stats)</li><li>CODE3: BELI_FREE_999</li></ul><p>Anh em like bài viết để mình có động lực săn tiếp nhé!</p>",
+    "likes": 450,
+    "comments": 2,
+    "views": 5600,
+    "commentsList": [
+      {
+        "author": "FruitUser",
+        "text": "Cảm ơn thớt! Code 1 dùng ngon, vừa farm lên level!",
+        "time": "30 phút trước"
+      },
+      {
+        "author": "NewbieGame",
+        "text": "Code 3 mình nhập không được, có bị sai không bạn?",
+        "time": "45 phút trước"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Lỗi màn hình đen khi Alt-Tab ra ngoài trong CS2",
+    "author": "TechSupport",
+    "avatar_color": "congdong_color-3",
+    "avatar_text": "TE",
+    "time": "2 giờ trước",
+    "category": "ho-tro",
+    "excerpt": "Mỗi lần đang bắn mà tab ra check Facebook là y như rằng game treo luôn...",
+    "content": "<p><strong>Cứu em với các bác ơi.</strong></p><p>Em để chế độ Fullscreen, độ phân giải 4:3 stretched. Cấu hình máy dư sức chơi nhưng cứ Alt-Tab là đen sì màn hình, phải restart máy. Em đã update driver mới nhất rồi vẫn bị.</p>",
+    "likes": 8,
+    "comments": 3,
+    "views": 150,
+    "commentsList": [
+      {
+        "author": "CSSkill",
+        "text": "Bạn thử chuyển sang chế độ Fullscreen Windowed xem sao, mình dùng chế độ này Alt-Tab thoải mái.",
+        "time": "1 giờ trước"
+      },
+      {
+        "author": "DriverIssue",
+        "text": "Lỗi này thường do xung đột driver NVIDIA. Thử cài lại driver cũ hơn bản mới nhất.",
+        "time": "1 giờ 30 phút trước"
+      },
+      {
+        "author": "WindowsTip",
+        "text": "Nhớ kiểm tra cài đặt 'Game Mode' trong Windows nữa nhé!",
+        "time": "1 giờ 50 phút trước"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Review nhanh bàn phím cơ Rainy75: Vua phím cơ giá rẻ?",
+    "author": "KeycapAddict",
+    "avatar_color": "congdong_color-4",
+    "avatar_text": "KE",
+    "time": "3 giờ trước",
+    "category": "review",
+    "excerpt": "Build nhôm nguyên khối, âm thocky, mạch xuôi, giá chỉ hơn 2 triệu. Có thật sự ngon như lời đồn?",
+    "content": "<p><strong>Sau 1 tuần trải nghiệm thì mình thấy:</strong></p><p>Ưu điểm: Build cực đầm, cầm nặng tay. Switch tím gõ nổ đanh rất sướng. Kết nối 3 mode ổn định.</p><p>Nhược điểm: Phần mềm keymap hơi ngu, LED không được sáng lắm. Tầm giá này thì vô đối thật.</p>",
+    "likes": 156,
+    "comments": 2,
+    "views": 2100,
+    "commentsList": [
+      {
+        "author": "KeyboardFan",
+        "text": "Mình đang dùng con này, công nhận ngon trong tầm giá. Âm gõ phê thật.",
+        "time": "2 giờ trước"
+      },
+      {
+        "author": "Modder",
+        "text": "Thử mod foam với thay keycap pudding sẽ sáng LED hơn đó bạn.",
+        "time": "2 giờ 30 phút trước"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Tìm đồng đội leo rank Thách Đấu Liên Quân (Đêm nay)",
+    "author": "JungleKing",
+    "avatar_color": "congdong_color-1",
+    "avatar_text": "JU",
+    "time": "4 giờ trước",
+    "category": "thao-luan",
+    "excerpt": "Mình main Nakroth đi rừng, cần tìm 1 Mid và 1 SP cứng tay, có mic giao tiếp...",
+    "content": "<p><strong>Tuyển team try hard xuyên đêm.</strong></p><p>Yêu cầu: Rank hiện tại Cao Thủ 20 sao trở lên. Biết di chuyển, không toxic, không chửi thề khi thua. Ai rảnh inbox mình test trình nhé.</p>",
+    "likes": 34,
+    "comments": 1,
+    "views": 400,
+    "commentsList": [
+      {
+        "author": "SupportGod",
+        "text": "Mình main SP, rank 25 sao, chơi Alice/Zip. Inbox zalo mình nhé.",
+        "time": "3 giờ trước"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Hướng dẫn tối ưu FPS Genshin Impact trên điện thoại yếu",
+    "author": "MobileGamer",
+    "avatar_color": "congdong_color-5",
+    "avatar_text": "MO",
+    "time": "5 giờ trước",
+    "category": "huong-dan",
+    "excerpt": "Máy nóng, giật lag khi vào La Hoàn? Thử ngay setting này để mượt hơn...",
+    "content": "<p><strong>Setting đề xuất cho máy chip Snapdragon đầu 7 hoặc Helio:</strong></p><p>1. Đồ họa: Thấp nhất (Lowest).</p><p>2. FPS: Khóa ở 30 hoặc 45 (đừng để 60 nếu máy nóng).</p><p>3. Tắt Bloom và Motion Blur đi, cái này ngốn GPU lắm.</p>",
+    "likes": 210,
+    "comments": 2,
+    "views": 3200,
+    "commentsList": [
+      {
+        "author": "GamerVN",
+        "text": "Mẹo hay! Mình tắt Bloom thấy máy đỡ nóng hẳn.",
+        "time": "4 giờ trước"
+      },
+      {
+        "author": "LowSpec",
+        "text": "Mình còn phải dùng thêm app tối ưu nữa mới chơi được 30FPS ổn định.",
+        "time": "4 giờ 30 phút trước"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Hỏi về cốt truyện Elden Ring: Rốt cuộc Marika muốn gì?",
+    "author": "LoreMaster",
+    "avatar_color": "congdong_color-2",
+    "avatar_text": "LO",
+    "time": "6 giờ trước",
+    "category": "thao-luan",
+    "excerpt": "Đọc hết item description rồi vẫn lú cái đoạn Marika đập vỡ Elden Ring...",
+    "content": "<p><strong>Có phải bả muốn thoát khỏi sự kiểm soát của Greater Will không?</strong></p><p>Hay là do đau khổ vì cái chết của Godwyn? Anh em nào rành lore vào đàm đạo chút, game gì mà cốt truyện giấu như mèo giấu ***.</p>",
+    "likes": 98,
+    "comments": 3,
+    "views": 1800,
+    "commentsList": [
+      {
+        "author": "LoreFan",
+        "text": "Mình nghĩ bà ấy muốn tự do khỏi Greater Will, nhưng lại không thể tự tay phá vỡ Ring. Nửa kia Radagon của bả lại muốn hàn gắn Ring.",
+        "time": "5 giờ trước"
+      },
+      {
+        "author": "Theories",
+        "text": "Đừng quên vai trò của Ranni, có lẽ Marika đã gián tiếp giúp Ranni phá hủy hệ thống của Greater Will.",
+        "time": "5 giờ 30 phút trước"
+      },
+      {
+        "author": "GameExpert",
+        "text": "Cũng có thể là sự đau khổ vì Godwyn. Game này nhiều cách hiểu lắm.",
+        "time": "5 giờ 50 phút trước"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "title": "Cảnh báo lừa đảo: Mua acc Valorant trên Facebook",
+    "author": "ScamAlert",
+    "avatar_color": "congdong_color-3",
+    "avatar_text": "SC",
+    "time": "7 giờ trước",
+    "category": "thao-luan",
+    "excerpt": "Vừa bị scam mất 500k tiền cọc mua acc có skin Rồng. Anh em cẩn thận...",
+    "content": "<p><strong>Thủ đoạn của nó là gửi ảnh CCCD giả để làm tin.</strong></p><p>Mình chuyển khoản xong nó block luôn. Check profile thì thấy clone mới tạo. Mọi người mua bán nhớ giao dịch trực tiếp hoặc qua trung gian uy tín nhé, đừng ham rẻ.</p>",
+    "likes": 300,
+    "comments": 2,
+    "views": 4500,
+    "commentsList": [
+      {
+        "author": "VictimClub",
+        "text": "Cùng cảnh ngộ. Mua bán Acc phải qua trung gian uy tín thôi.",
+        "time": "6 giờ trước"
+      },
+      {
+        "author": "Admin",
+        "text": "Cảm ơn thông tin cảnh báo hữu ích của bạn. Mọi người nên cẩn thận.",
+        "time": "6 giờ 30 phút trước"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "title": "Share giáo án Đấu Trường Chân Lý mùa mới: Bài Reroll Siêu Nhân",
+    "author": "TftGod",
+    "avatar_color": "congdong_color-4",
+    "avatar_text": "TF",
+    "time": "8 giờ trước",
+    "category": "huong-dan",
+    "excerpt": "Meta này spam bài này auto vào top 4, dễ chơi dễ trúng thưởng...",
+    "content": "<p><strong>Cách chơi:</strong></p><p>Đầu game không lên cấp, tích tiền đến round 3-1 thì roll mạnh tay kiếm tướng 1 vàng 3 sao. Đồ ưu tiên: Cuồng đao, Diệt khổng lồ. Bài này khắc chế cứng mấy nhà chơi phép nhé.</p>",
+    "likes": 120,
+    "comments": 1,
+    "views": 980,
+    "commentsList": [
+      {
+        "author": "TftUser",
+        "text": "Mình test thử rồi, hiệu quả thật, cảm ơn giáo án.",
+        "time": "7 giờ trước"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "title": "Máy tính tự khởi động lại khi chơi game nặng",
+    "author": "NewbiePC",
+    "avatar_color": "congdong_color-1",
+    "avatar_text": "NE",
+    "time": "9 giờ trước",
+    "category": "ho-tro",
+    "excerpt": "Lướt web xem phim thì không sao, cứ vào game tầm 15p là sập nguồn...",
+    "content": "<p><strong>Em check nhiệt độ CPU tầm 70 độ, VGA 75 độ thì có cao không ạ?</strong></p><p>Nguồn em dùng là con nguồn cỏ 500W mua kèm case cũ. Có khi nào do nguồn sụt áp không các bác? Em lo cháy linh kiện quá.</p>",
+    "likes": 15,
+    "comments": 3,
+    "views": 410,
+    "commentsList": [
+      {
+        "author": "PSU_Expert",
+        "text": "99% là do nguồn sụt áp, đặc biệt là nguồn 500W cũ. Nhiệt độ của bạn vẫn ổn, nên thay nguồn chất lượng 650W trở lên.",
+        "time": "8 giờ trước"
+      },
+      {
+        "author": "HardwareCheck",
+        "text": "Thử chạy Stress Test riêng cho CPU và GPU. Nếu chạy riêng ổn mà chạy chung sập thì chắc chắn là nguồn.",
+        "time": "8 giờ 30 phút trước"
+      },
+      {
+        "author": "RepairMan",
+        "text": "Mở case vệ sinh bụi bẩn nữa nhé, đôi khi bụi quá cũng làm máy tự ngắt.",
+        "time": "8 giờ 45 phút trước"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "title": "Review Game: Hades II - Siêu phẩm Roguelike trở lại",
+    "author": "IndieLover",
+    "avatar_color": "congdong_color-5",
+    "avatar_text": "IN",
+    "time": "10 giờ trước",
+    "category": "review",
+    "excerpt": "Sau 20 giờ chơi Early Access, mình khẳng định đây là ứng cử viên GOTY...",
+    "content": "<p><strong>Gameplay cuốn hơn phần 1 rất nhiều.</strong></p><p>Hệ thống vũ khí mới đa dạng, cốt truyện vẫn sâu sắc như thường lệ. Đặc biệt nhạc game (OST) quá đỉnh. Tuy nhiên game hơi khó với người mới, chết đi sống lại trăm lần là bình thường.</p>",
+    "likes": 240,
+    "comments": 2,
+    "views": 2200,
+    "commentsList": [
+      {
+        "author": "GOTYFan",
+        "text": "Tuyệt vời, mình chờ bản chính thức để chơi ngay.",
+        "time": "9 giờ trước"
+      },
+      {
+        "author": "RoguelikeUser",
+        "text": "Melinoë có vẻ khó chơi hơn Zagreus nhưng skill đẹp hơn.",
+        "time": "9 giờ 30 phút trước"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "title": "Có nên mua PS5 thời điểm này hay đợi bản Pro?",
+    "author": "ConsoleGamer",
+    "avatar_color": "congdong_color-2",
+    "avatar_text": "CO",
+    "time": "11 giờ trước",
+    "category": "thao-luan",
+    "excerpt": "Thấy tin đồn PS5 Pro sắp ra cuối năm nay, anh em cho lời khuyên với...",
+    "content": "<p><strong>Mình đang máu chơi GTA 6 (sắp ra).</strong></p><p>Sợ mua bản thường giờ này sang năm lại lỗi thời. Mà bản Pro thì chắc giá chát lắm. Anh em nào có kinh nghiệm săn máy tư vấn giúp mình thời điểm xuống tiền hợp lý với.</p>",
+    "likes": 67,
+    "comments": 4,
+    "views": 1100,
+    "commentsList": [
+      {
+        "author": "PSFan",
+        "text": "Mua ngay đi bạn. Bản Pro ra thì giá rất chát, mà bản thường giờ vẫn cân được mọi game.",
+        "time": "10 giờ trước"
+      },
+      {
+        "author": "ProLover",
+        "text": "Đợi Pro đi, đồ điện tử nên mua mới nhất. GTA 6 chắc chắn sẽ có patch tối ưu cho bản Pro.",
+        "time": "10 giờ 30 phút trước"
+      },
+      {
+        "author": "ValueGamer",
+        "text": "Mua cũ bản thường là lựa chọn tối ưu nhất nếu muốn tiết kiệm.",
+        "time": "10 giờ 45 phút trước"
+      },
+      {
+        "author": "Admin",
+        "text": "Tin đồn vẫn chỉ là tin đồn. PS5 Slim hiện tại là đủ cho đa số game thủ.",
+        "time": "10 giờ 50 phút trước"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "title": "Hướng dẫn fix lỗi 'Connection Failed' trong Minecraft LAN",
+    "author": "MineCrafter",
+    "avatar_color": "congdong_color-3",
+    "avatar_text": "MI",
+    "time": "12 giờ trước",
+    "category": "huong-dan",
+    "excerpt": "Chơi chung mạng Wifi mà không tìm thấy phòng của nhau? Làm theo cách này...",
+    "content": "<p><strong>Bước 1: Tắt tường lửa (Firewall) trên cả 2 máy.</strong></p><p>Bước 2: Dùng lệnh 'ipconfig' trong CMD để lấy địa chỉ IPv4. Kết nối trực tiếp qua IP đó (Direct Connect). Đảm bảo cả 2 dùng chung phiên bản game và mod nhé.</p>",
+    "likes": 88,
+    "comments": 2,
+    "views": 760,
+    "commentsList": [
+      {
+        "author": "LanUser",
+        "text": "Mình làm theo cách 2 là được, cảm ơn bạn nhiều!",
+        "time": "11 giờ trước"
+      },
+      {
+        "author": "Blocker",
+        "text": "Cũng có thể do phần mềm diệt virus chặn nữa đấy.",
+        "time": "11 giờ 30 phút trước"
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "title": "Thất vọng về cộng đồng Dota 2 Việt Nam hiện tại",
+    "author": "OldDota",
+    "avatar_color": "congdong_color-4",
+    "avatar_text": "OL",
+    "time": "13 giờ trước",
+    "category": "thao-luan",
+    "excerpt": "Dead game thì không hẳn, nhưng newbie vào chơi là bị chửi cho nghỉ game luôn...",
+    "content": "<p><strong>Game đã khó tiếp cận, người chơi cũ còn toxic.</strong></p><p>Mình rủ thằng em vào chơi thử, nó lóng ngóng mua sai đồ tí mà bị team chửi không ra gì. Bảo sao giới trẻ giờ toàn qua chơi Liên Minh với Liên Quân. Buồn cho một tựa game hay.</p>",
+    "likes": 180,
+    "comments": 3,
+    "views": 3500,
+    "commentsList": [
+      {
+        "author": "ToxicFree",
+        "text": "Khổ thân, game MOBA nào cũng toxic nhưng Dota 2 có vẻ nặng hơn.",
+        "time": "12 giờ trước"
+      },
+      {
+        "author": "DotaFan",
+        "text": "Bạn nên tắt chat và voice chat đi chơi cho khỏe. Trải nghiệm cá nhân là trên hết.",
+        "time": "12 giờ 30 phút trước"
+      },
+      {
+        "author": "Newcomer",
+        "text": "Mình mới chơi thấy khó thật, toàn bot.",
+        "time": "12 giờ 50 phút trước"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "title": "Xin list game Offline hay cho máy cấu hình yếu (Ram 4GB)",
+    "author": "LowSpecGamer",
+    "avatar_color": "congdong_color-1",
+    "avatar_text": "LO",
+    "time": "14 giờ trước",
+    "category": "ho-tro",
+    "excerpt": "Laptop em đời tống, chỉ chơi được mấy game nhẹ nhàng, ưu tiên cốt truyện...",
+    "content": "<p><strong>Em đã chơi qua Stardew Valley với Terraria rồi ạ.</strong></p><p>Muốn tìm mấy game kiểu hành động hoặc giải đố nhẹ nhàng. Đồ họa pixel cũng được miễn là gameplay hay. Cảm ơn các bác nhiều.</p>",
+    "likes": 56,
+    "comments": 3,
+    "views": 890,
+    "commentsList": [
+      {
+        "author": "RetroFan",
+        "text": "Thử chơi The Binding of Isaac, Hotline Miami, hoặc Limbo nhé.",
+        "time": "13 giờ trước"
+      },
+      {
+        "author": "StoryLover",
+        "text": "Undertale và To the Moon có cốt truyện rất hay, máy 4GB chiến tốt.",
+        "time": "13 giờ 30 phút trước"
+      },
+      {
+        "author": "ActionGamer",
+        "text": "Cấu hình yếu thì thử mấy game cũ như GTA Vice City/San Andreas.",
+        "time": "13 giờ 45 phút trước"
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "title": "Đánh giá chuột Logitech G102 Lightsync: Quốc dân hay rác?",
+    "author": "MouseReview",
+    "avatar_color": "congdong_color-5",
+    "avatar_text": "MO",
+    "time": "15 giờ trước",
+    "category": "review",
+    "excerpt": "Giá rẻ, LED đẹp, nhưng bệnh Double Click huyền thoại có còn không?",
+    "content": "<p><strong>Trong tầm giá 400k thì khó có con nào qua mặt được nó.</strong></p><p>Cảm giác cầm nắm tốt, mắt đọc ngon cho FPS. Tuy nhiên sau 6 tháng sử dụng mình bắt đầu thấy hiện tượng click đúp nhẹ. Anh em mua về nên xác định thay switch xịn hơn dùng cho bền.</p>",
+    "likes": 110,
+    "comments": 2,
+    "views": 1900,
+    "commentsList": [
+      {
+        "author": "G102User",
+        "text": "Mình xài 2 năm chưa bị click đúp, chắc do hên xui.",
+        "time": "14 giờ trước"
+      },
+      {
+        "author": "BudgetGear",
+        "text": "Tầm tiền đó thì không chê được, chỉ sợ click đúp thôi.",
+        "time": "14 giờ 30 phút trước"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "title": "Cách khắc phục lỗi ping cao khi chơi server SEA buổi tối",
+    "author": "NetworkPro",
+    "avatar_color": "congdong_color-2",
+    "avatar_text": "NE",
+    "time": "16 giờ trước",
+    "category": "huong-dan",
+    "excerpt": "Mạng 4 chữ hay 7 chữ dạo này cứ tối là lag không chơi nổi...",
+    "content": "<p><strong>Giải pháp tạm thời: Dùng VPN hoặc GearUP Booster.</strong></p><p>Cơ chế là nó định tuyến lại đường truyền tránh đi qua cáp quang biển đang đứt. Mình test thử giảm từ 150ms xuống còn 40ms ổn định. Có phí nhưng đáng đồng tiền.</p>",
+    "likes": 75,
+    "comments": 2,
+    "views": 1200,
+    "commentsList": [
+      {
+        "author": "ISP_Hater",
+        "text": "Sáng chơi thì ngon, cứ tối là lag kinh khủng, bó tay với nhà mạng.",
+        "time": "15 giờ trước"
+      },
+      {
+        "author": "BoosterUser",
+        "text": "Mình dùng GearUP rồi, công nhận hiệu quả, chơi FIFA mượt hơn hẳn.",
+        "time": "15 giờ 30 phút trước"
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "title": "Tìm bạn nữ chơi game cùng cho vui (Không toxic)",
+    "author": "LonelyBoy",
+    "avatar_color": "congdong_color-3",
+    "avatar_text": "LO",
+    "time": "17 giờ trước",
+    "category": "thao-luan",
+    "excerpt": "Mình chơi tạp nhiều game: Play Together, Goose Goose Duck, Human Fall Flat...",
+    "content": "<p><strong>Chơi game một mình buồn quá.</strong></p><p>Mình sinh năm 2k2, giọng miền Nam, tính tình vui vẻ hòa đồng. Bạn nữ nào rảnh tối nay vào discord chơi chung cho xôm tụ nhé. Không yêu cầu kỹ năng, vui là chính.</p>",
+    "likes": 20,
+    "comments": 3,
+    "views": 550,
+    "commentsList": [
+      {
+        "author": "GamerGirl",
+        "text": "Mình chơi Goose Goose Duck nè, nhưng giờ hơi bận. Inbox nhé.",
+        "time": "16 giờ trước"
+      },
+      {
+        "author": "WingMan",
+        "text": "Chủ thớt nhanh tay, cơ hội có người yêu là đây.",
+        "time": "16 giờ 30 phút trước"
+      },
+      {
+        "author": "Admin",
+        "text": "Chúc bạn tìm được đồng đội vui vẻ!",
+        "time": "16 giờ 50 phút trước"
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "title": "Build đội hình F2P cho Honkai: Star Rail đi MOC 12",
+    "author": "WaifuCollector",
+    "avatar_color": "congdong_color-4",
+    "avatar_text": "WA",
+    "time": "18 giờ trước",
+    "category": "huong-dan",
+    "excerpt": "Không cần trấn, không cần tinh hồn cao, vẫn clear full sao...",
+    "content": "<p><strong>Team đề xuất: Dr. Ratio (Free) + Tingyun + Pela + Healer.</strong></p><p>Tận dụng cơ chế Debuff của Pela để Ratio ném phấn bao thốn. Đồ thì cứ mix 2-2 lấy chỉ số đẹp là được, không cần set chuẩn đâu. Video rotation mình để bên dưới.</p>",
+    "likes": 230,
+    "comments": 2,
+    "views": 2800,
+    "commentsList": [
+      {
+        "author": "StarRailUser",
+        "text": "Team này đánh ổn thật, mình clear MOC 12 full sao nhờ Dr. Ratio free.",
+        "time": "17 giờ trước"
+      },
+      {
+        "author": "F2PUser",
+        "text": "Tingyun là support quốc dân, phải có trong mọi team F2P.",
+        "time": "17 giờ 30 phút trước"
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "title": "Màn hình 144Hz và 60Hz: Sự khác biệt có đáng tiền?",
+    "author": "ScreenTest",
+    "avatar_color": "congdong_color-1",
+    "avatar_text": "SC",
+    "time": "19 giờ trước",
+    "category": "thao-luan",
+    "excerpt": "Nhiều người bảo mắt thường không phân biệt được, nhưng mình thấy khác hẳn...",
+    "content": "<p><strong>Một khi đã dùng 144Hz thì không quay lại được 60Hz.</strong></p><p>Thao tác chuột mượt hơn hẳn, đặc biệt trong game bắn súng như CS2 hay Valorant. Địch di chuyển không còn bị bóng mờ. Anh em nào đang đắn đo thì nâng cấp ngay đi, đáng từng xu.</p>",
+    "likes": 190,
+    "comments": 4,
+    "views": 3100,
+    "commentsList": [
+      {
+        "author": "FPSLover",
+        "text": "144Hz là tối thiểu cho game FPS rồi, ai bảo không thấy khác là chưa chơi đủ nhiều.",
+        "time": "18 giờ trước"
+      },
+      {
+        "author": "MovieFan",
+        "text": "Xem phim 24fps thì 60Hz hay 144Hz cũng như nhau thôi, khác biệt lớn nhất là khi chơi game.",
+        "time": "18 giờ 30 phút trước"
+      },
+      {
+        "author": "BudgetGamer",
+        "text": "Mình vừa mua con 165Hz, cảm giác mượt mà không thể tin được.",
+        "time": "18 giờ 45 phút trước"
+      },
+      {
+        "author": "Admin",
+        "text": "Để tận dụng 144Hz, card đồ họa cũng phải đủ mạnh để đẩy được FPS lên cao nhé.",
+        "time": "18 giờ 50 phút trước"
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "title": "Lỗi không vào được Steam: Error Code -118",
+    "author": "SteamUser",
+    "avatar_color": "congdong_color-5",
+    "avatar_text": "ST",
+    "time": "20 giờ trước",
+    "category": "ho-tro",
+    "excerpt": "Tự nhiên hôm nay bật máy lên không load được Store, Friend list cũng off...",
+    "content": "<p><strong>Có bác nào bị giống em không?</strong></p><p>Em đã thử đổi DNS Google, tắt tường lửa, cài lại Steam vẫn không được. Hay là nhà mạng chặn Steam rồi các bác nhỉ? Hoang mang quá kho game cả chục triệu trong đó.</p>",
+    "likes": 55,
+    "comments": 3,
+    "views": 1400,
+    "commentsList": [
+      {
+        "author": "Fixer",
+        "text": "Lỗi này thường do cache của trình duyệt Steam. Bạn vào Settings -> Web Browser -> Delete Web Browser Cache.",
+        "time": "19 giờ trước"
+      },
+      {
+        "author": "NetworkCheck",
+        "text": "Thử khởi động lại router mạng xem sao. Đôi khi là lỗi mạng cục bộ thôi.",
+        "time": "19 giờ 30 phút trước"
+      },
+      {
+        "author": "Admin",
+        "text": "Rất có thể là lỗi định tuyến quốc tế, nên đợi thêm một thời gian hoặc thử VPN.",
+        "time": "19 giờ 50 phút trước"
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "title": "Top 5 Game Mobile cày cuốc đáng chơi nhất 2025",
+    "author": "MobileReview",
+    "avatar_color": "congdong_color-2",
+    "avatar_text": "MO",
+    "time": "21 giờ trước",
+    "category": "review",
+    "excerpt": "Dành cho anh em thích cày đồ, trade tự do, không hút máu...",
+    "content": "<p><strong>1. Albion Online (Sandbox, cày cuốc cực mạnh).</strong></p><p>2. Black Desert Mobile (Đồ họa đẹp, auto farm tiện).</p><p>3. Toram Online (Cộng đồng vui, không pay to win).</p><p>Chi tiết ưu nhược điểm từng game mình phân tích trong bài viết.</p>",
+    "likes": 167,
+    "comments": 2,
+    "views": 2300,
+    "commentsList": [
+      {
+        "author": "MMOUser",
+        "text": "Albion Online chơi vui thật, nhưng phải kiên nhẫn cày mới mạnh được.",
+        "time": "20 giờ trước"
+      },
+      {
+        "author": "BDOFan",
+        "text": "Black Desert Mobile giờ đỡ hút máu hơn hồi mới ra rồi, đồ họa vẫn đỉnh.",
+        "time": "20 giờ 30 phút trước"
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "title": "Chia sẻ kinh nghiệm săn sale game trên Steam giá rẻ bèo",
+    "author": "SaleHunter",
+    "avatar_color": "congdong_color-3",
+    "avatar_text": "SA",
+    "time": "22 giờ trước",
+    "category": "huong-dan",
+    "excerpt": "Đừng mua game nguyên giá (Full price) trừ khi bạn quá giàu...",
+    "content": "<p><strong>Bí kíp:</strong></p><p>1. Luôn check trang SteamDB để xem lịch sử giá thấp nhất.</p><p>2. Đợi các đợt Summer Sale, Winter Sale giảm tới 70-90%.</p><p>3. Mua gói Bundle sẽ rẻ hơn mua lẻ. Vừa múc được con Witcher 3 bản GOTY có 100k, quá hời.</p>",
+    "likes": 310,
+    "comments": 2,
+    "views": 4100,
+    "commentsList": [
+      {
+        "author": "BargainHunter",
+        "text": "Tuyệt vời, cảm ơn bạn đã chia sẻ mẹo SteamDB.",
+        "time": "21 giờ trước"
+      },
+      {
+        "author": "Collector",
+        "text": "Nên mua game khi giảm giá 75% trở lên thôi, không thì không đáng.",
+        "time": "21 giờ 30 phút trước"
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "title": "PC không nhận tai nghe khi cắm cổng trước case",
+    "author": "AudioFix",
+    "avatar_color": "congdong_color-4",
+    "avatar_text": "AU",
+    "time": "23 giờ trước",
+    "category": "ho-tro",
+    "excerpt": "Cắm cổng sau mainboard thì nghe bình thường, cổng trước im re...",
+    "content": "<p><strong>Khả năng cao là chưa cắm dây Audio HD trên main.</strong></p><p>Hoặc do setting trong Realtek Audio Console. Bác thử vào phần cài đặt, tích vào ô 'Disable front panel jack detection' xem có lên tiếng không nhé. Lỗi này hay gặp lắm.</p>",
+    "likes": 42,
+    "comments": 2,
+    "views": 650,
+    "commentsList": [
+      {
+        "author": "CaseFix",
+        "text": "Lỗi này 90% là do chưa cắm dây hoặc cắm lỏng F-Audio trên mainboard.",
+        "time": "22 giờ trước"
+      },
+      {
+        "author": "SoftwareFix",
+        "text": "Kiểm tra lại driver Audio, nên cài lại bản mới nhất từ trang chủ mainboard.",
+        "time": "22 giờ 30 phút trước"
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "title": "Phốt: Shop Acc XYZ bán nick xong back lại",
+    "author": "Victim123",
+    "avatar_color": "congdong_color-1",
+    "avatar_text": "VI",
+    "time": "1 ngày trước",
+    "category": "thao-luan",
+    "excerpt": "Vừa đổi mật khẩu được 2 ngày thì bị chủ cũ lấy lại bằng mail gốc...",
+    "content": "<p><strong>Mình mua acc Genshin 2 triệu bên shop này.</strong></p><p>Cam kết bảo hành trọn đời mà giờ nhắn tin shop bảo 'Lỗi do người dùng làm lộ thông tin'. Thái độ lồi lõm cực kỳ. Anh em tránh xa cái shop này ra nhé, có bằng chứng đầy đủ đây.</p>",
+    "likes": 420,
+    "comments": 3,
+    "views": 6700,
+    "commentsList": [
+      {
+        "author": "ScamExpert",
+        "text": "Acc có mail gốc thì không bao giờ an toàn. Kinh nghiệm xương máu là vậy.",
+        "time": "23 giờ trước"
+      },
+      {
+        "author": "WarnUser",
+        "text": "Cảm ơn bạn đã cảnh báo, shop này mình cũng thấy phốt nhiều rồi.",
+        "time": "1 ngày trước"
+      },
+      {
+        "author": "Admin",
+        "text": "Người dùng nên giao dịch qua các sàn trung gian có uy tín để tránh rủi ro mất acc.",
+        "time": "1 ngày trước"
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "title": "Hướng dẫn mod skin Minecraft Java Edition đơn giản",
+    "author": "BlockMaster",
+    "avatar_color": "congdong_color-5",
+    "avatar_text": "BL",
+    "time": "1 ngày trước",
+    "category": "huong-dan",
+    "excerpt": "Tự tạo skin độc lạ hoặc tải skin đẹp về cài vào game trong 1 nốt nhạc...",
+    "content": "<p><strong>Cách dễ nhất là dùng TLauncher (nếu chơi lậu) hoặc trang chủ Minecraft (bản quyền).</strong></p><p>Vào trang Novaskin vẽ xong tải file .png về. Upload lên profile của bạn là xong. Vào game nhớ bật hiển thị skin nhé.</p>",
+    "likes": 95,
+    "comments": 2,
+    "views": 1100,
+    "commentsList": [
+      {
+        "author": "MineUser",
+        "text": "Novaskin là trang web mod skin tốt nhất rồi, cực kỳ dễ dùng.",
+        "time": "1 ngày trước"
+      },
+      {
+        "author": "ModLover",
+        "text": "Nhớ kiểm tra độ phân giải của skin trước khi tải nhé.",
+        "time": "1 ngày trước"
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "title": "FC Online: Chiến thuật 4-2-1-3 khắc chế lối đá taca dada",
+    "author": "FifaPro",
+    "avatar_color": "congdong_color-2",
+    "avatar_text": "FI",
+    "time": "1 ngày trước",
+    "category": "huong-dan",
+    "excerpt": "Leo rank Thách đấu dễ dàng với sơ đồ phòng ngự phản công cực sắc...",
+    "content": "<p><strong>Chỉnh chiến thuật đơn:</strong></p><p>Hai hậu vệ biên (LB/RB) để 'Không tham gia tấn công'. Tiền đạo cắm (ST) chọn 'Xẻ nách'. Đá đội hình này thủ cực chắc, gặp mấy ông spam tạt cánh đánh đầu là tắt điện ngay.</p>",
+    "likes": 134,
+    "comments": 2,
+    "views": 2500,
+    "commentsList": [
+      {
+        "author": "FifaUser",
+        "text": "Chiến thuật này thủ khỏe thật, mình leo rank ổn định hơn hẳn.",
+        "time": "1 ngày trước"
+      },
+      {
+        "author": "TacticsMan",
+        "text": "Lưu ý, nếu đối thủ chơi ban bật trung lộ nhanh thì 4-2-1-3 hơi yếu ở giữa sân.",
+        "time": "1 ngày trước"
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "title": "Có nên mua ghế Gaming hay ghế Công thái học?",
+    "author": "BackPain",
+    "avatar_color": "congdong_color-3",
+    "avatar_text": "BA",
+    "time": "2 ngày trước",
+    "category": "thao-luan",
+    "excerpt": "Ngồi máy tính 10 tiếng/ngày, lưng đau quá rồi. Ghế gaming nhìn ngầu nhưng...",
+    "content": "<p><strong>Khuyên thật lòng: Mua công thái học (Ergonomic) đi.</strong></p><p>Ghế gaming chủ yếu bán thương hiệu và màu mè, ngồi lâu bí nóng và không đỡ cột sống tốt đâu. Mình đổi sang con ghế lưới công thái học giá rẻ hơn mà ngồi sướng hơn hẳn, hết đau lưng.</p>",
+    "likes": 250,
+    "comments": 4,
+    "views": 5200,
+    "commentsList": [
+      {
+        "author": "OfficeUser",
+        "text": "Đồng ý, ghế công thái học là cứu tinh của dân văn phòng/gaming lâu năm.",
+        "time": "1 ngày trước"
+      },
+      {
+        "author": "GamingLover",
+        "text": "Ghế gaming thì chỉ đẹp, còn ngồi lâu thì thua xa ghế lưới.",
+        "time": "1 ngày trước"
+      },
+      {
+        "author": "Admin",
+        "text": "Lựa chọn ghế lưới để thoáng mát cũng là một điểm cộng lớn.",
+        "time": "1 ngày trước"
+      },
+      {
+        "author": "BudgetBuyer",
+        "text": "Ghế công thái học loại tốt thì đắt, nhưng đáng đầu tư cho sức khỏe.",
+        "time": "2 ngày trước"
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "title": "Review Palworld sau 1 tháng: Đã hết hot chưa?",
+    "author": "TrendCatcher",
+    "avatar_color": "congdong_color-4",
+    "avatar_text": "TR",
+    "time": "2 ngày trước",
+    "category": "review",
+    "excerpt": "Game 'Pokemon cầm súng' từng làm mưa làm gió giờ ra sao...",
+    "content": "<p><strong>Lượng người chơi giảm nhưng cộng đồng vẫn đông.</strong></p><p>Dev chăm update fix lỗi, sắp có thêm đảo mới và boss mới. Tuy gameplay về late hơi lặp lại (grind tài nguyên) nhưng vẫn rất vui khi chơi co-op cùng bạn bè. Vẫn đáng mua nhé.</p>",
+    "likes": 112,
+    "comments": 2,
+    "views": 1800,
+    "commentsList": [
+      {
+        "author": "PalUser",
+        "text": "Game vẫn vui, nhưng cần thêm nội dung end-game mới hấp dẫn hơn.",
+        "time": "1 ngày trước"
+      },
+      {
+        "author": "CoopFan",
+        "text": "Chơi co-op thì cực kỳ cuốn, săn boss chung vui hơn hẳn.",
+        "time": "1 ngày trước"
+      }
+    ]
+  }
+]
