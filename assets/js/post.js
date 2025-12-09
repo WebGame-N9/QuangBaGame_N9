@@ -10,7 +10,7 @@ function getUrlParameter(name) {
 function createArticleContent(article, inContentImages) {
     let contentHtml = `<p><strong>${article.summary}</strong></p>`;
     if (article.contentDetails) {
-       
+
         contentHtml += `
             <h2>1. Chi Tiết Nội Dung Chính</h2>
             <div class="article-body">${article.contentDetails}</div>
@@ -35,17 +35,22 @@ function createArticleContent(article, inContentImages) {
     $('#dynamic-article-content').html(contentHtml);
 }
 
-function loadRecentArticles(allArticles, currentArticleId) {
+// Sửa đổi: Hàm tải danh sách Bài Viết Liên Quan (2 bài gần ID nhất) VÀ danh sách Bài Viết Gần Đây (4 bài gần ID nhất)
+function loadRelatedAndRecentArticles(allArticles, currentArticleId) {
     const currentId = parseInt(currentArticleId);
     const filteredArticles = allArticles.filter(a => a.id !== currentId);
+
+    // Sắp xếp theo độ gần ID, sau đó theo ID giảm dần nếu bằng nhau
     filteredArticles.sort((a, b) => {
         const diffA = Math.abs(a.id - currentId);
         const diffB = Math.abs(b.id - currentId);
         if (diffA === diffB) {
-            return b.id - a.id;
+            return b.id - a.id; // Nếu độ gần bằng nhau, bài viết có ID lớn hơn (mới hơn) sẽ lên trước
         }
-        return diffA - diffB;
+        return diffA - diffB; // Bài viết có độ gần nhỏ hơn (gần nhất) lên trước
     });
+
+    // --- 1. Bài Viết Gần Đây (Sidebar) ---
     const recentArticles = filteredArticles.slice(0, 4);
     let recentHtml = '';
     recentArticles.forEach(article => {
@@ -61,11 +66,35 @@ function loadRecentArticles(allArticles, currentArticleId) {
         recentHtml = `<li><a href="#" class="index-link">Không có bài viết liên quan nào.</a></li>`;
     }
     $('.article-index-list').html(recentHtml);
+
+
+    const relatedArticles = filteredArticles.slice(0, 3); 
+    let relatedHtml = '';
+    relatedArticles.forEach((article, index) => {
+        relatedHtml += `
+            <a href="tin-tuc-chi-tiet.html?id=${article.id}" class="article-card" data-aos="zoom-in" data-aos-delay="${index * 100}">
+                <div class="article-card-img">
+                    <img src="${article.images.thumbnail}" alt="${article.title}"> 
+                    </div>
+                <div class="article-card-content">
+                    <h3 class="article-card-title">${article.title}</h3>
+                    <p class="article-card-summary">${article.summary}</p>
+                    <div class="article-meta">
+                        <span><i class="fas fa-calendar-alt"></i> ${article.date}</span>
+                    </div>
+                </div>
+            </a>
+        `;
+    });
+    if (relatedArticles.length === 0) {
+        relatedHtml = `<p>Không có bài viết liên quan nào.</p>`;
+    }
+    $('#related-articles-grid').html(relatedHtml);
 }
 
 
 function showLoading() {
-    $('#loading-indicator').text('Đang tải dữ liệu...'); 
+    $('#loading-indicator').text('Đang tải dữ liệu...');
     $('#loading-indicator').show();
     $('#article-detail-container').hide();
 }
@@ -77,7 +106,7 @@ function hideLoading() {
 
 function loadArticleDetail() {
     showLoading();
-    
+
     const articleId = getUrlParameter('id') || 1;
     const binId = '6937b4ded0ea881f401c3bd2';
     const masterKey = '$2a$10$dAGf830CRlXglDv0cce8IOz5ayJDKDIW8.uPxvWVXMgR7Wm.UG.7G';
@@ -89,12 +118,13 @@ function loadArticleDetail() {
             'X-Master-Key': masterKey
         },
         success: function (data) {
-            hideLoading(); 
+            hideLoading();
             const allArticles = data.record.articles;
             const article = allArticles.find(a => a.id == articleId);
 
             if (article) {
-                loadRecentArticles(allArticles, articleId);
+                // Thay thế loadRecentArticles bằng hàm mới
+                loadRelatedAndRecentArticles(allArticles, articleId);
                 $('#article-page-title').text(`Chi Tiết Tin Tức: ${article.title}`);
                 $('#article-category').text(article.category);
                 $('#article-title').text(article.title);
@@ -103,15 +133,16 @@ function loadArticleDetail() {
                 $('#article-tags').html(`<i class="fas fa-tags"></i> ${article.tags.join(', ')}`);
                 $('#article-featured-image').attr('src', article.images.featured);
                 $('#article-featured-image').attr('alt', `Featured Image: ${article.title}`);
-                $('#article-summary').text(article.summary);             
-                createArticleContent(article, article.images.in_content);             
+                $('#article-summary').text(article.summary);
+                createArticleContent(article, article.images.in_content);
                 AOS.refresh();
             } else {
                 $('#article-title').text('Lỗi 404: Không tìm thấy bài viết');
                 $('#article-summary').text('Bài viết bạn đang tìm kiếm không tồn tại hoặc đã bị gỡ bỏ.');
                 $('#article-featured-image').attr('src', 'https://placehold.co/1200x500/dc3545/ffffff?text=404+Not+Found');
-                $('#dynamic-article-content').html(''); 
-                loadRecentArticles(allArticles, -1);
+                $('#dynamic-article-content').html('');
+                // Gọi hàm với ID không tồn tại để hiển thị thông báo "Không có bài viết liên quan"
+                loadRelatedAndRecentArticles(allArticles, -1);
             }
         },
         error: function (xhr, status, error) {
@@ -132,6 +163,6 @@ $(document).ready(function () {
         once: true,
     });
 
-    
-    loadHTML('footer.html', 'footer-placeholder'); 
+
+    loadHTML('footer.html', 'footer-placeholder');
 });
