@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameStore Ultimate</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/user.css">
+</head>
+
+<body class="bg-gray-900 text-slate-200 h-screen flex flex-col overflow-hidden">
+
+
+
+    <div class="flex md:hidden bg-[#020617] border-b border-slate-800 sticky top-0 z-40">
+        <div id="mobile-nav-library" class="mobile-tab-item mobile-tab-active" onclick="router.navigate('library')">
+            <i class="fa-solid fa-gamepad mb-1"></i><br>Thư viện
+        </div>
+        <div id="mobile-nav-wishlist" class="mobile-tab-item" onclick="router.navigate('wishlist')">
+            <i class="fa-solid fa-heart mb-1"></i><br>Yêu thích
+        </div>
+        <div id="mobile-nav-reviews" class="mobile-tab-item" onclick="router.navigate('reviews')">
+            <i class="fa-solid fa-star mb-1"></i><br>Đánh giá
+        </div>
+    </div>
+
+    <div class="flex flex-1 overflow-hidden relative">
+        <aside class="hidden md:flex w-64 bg-[#020617] border-r border-slate-800 flex-col shrink-0">
+            <div class="py-4 flex items-center px-6 border-b border-slate-800 gap-3">
+                <div id="user-dropdown-wrapper" class="relative">
+                    <img src="https://i.pravatar.cc/150?img=11" class="avatar-img cursor-pointer" alt="Avatar"
+                        onclick="toggleUserDropdown()">
+                    <div id="user-dropdown" class="user-dropdown">
+                        <div class="user-dropdown-item" onclick="backend.logout()">
+                            <i class="fa-solid fa-right-from-bracket"></i>
+                            <span>Đăng xuất</span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="font-bold text-white text-sm">GameMaster</div>
+                    <div class="text-xs text-slate-500 my-0.5">ID: 879301</div>
+                    <div class="text-xs text-green-500">● Online</div>
+                </div>
+            </div>
+
+            <nav class="flex-1 p-4 space-y-2">
+                <div id="nav-library" onclick="router.navigate('library')" class="nav-item active"><i
+                        class="fa-solid fa-gamepad w-5"></i> Thư viện</div>
+                <div id="nav-wishlist" onclick="router.navigate('wishlist')" class="nav-item"><i
+                        class="fa-solid fa-heart w-5"></i> Yêu thích</div>
+                <div id="nav-reviews" onclick="router.navigate('reviews')" class="nav-item"><i
+                        class="fa-solid fa-star w-5"></i> Lịch sử đánh giá</div>
+            </nav>
+        </aside>
+
+        <main class="flex-1 bg-[#111827] overflow-y-auto p-4 md:p-8">
+
+            <div id="section-library" class="max-w-5xl mx-auto fade-in">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                    <div class="bg-[#1e1b4b] border border-indigo-900/50 p-4 rounded-lg">
+                        <div class="text-slate-400 text-xs">Tổng game</div>
+                        <div class="text-indigo-400 text-xl font-bold">7</div>
+                    </div>
+                    <div class="bg-[#1e1b4b] border border-indigo-900/50 p-4 rounded-lg">
+                        <div class="text-slate-400 text-xs">Giờ chơi</div>
+                        <div class="text-indigo-400 text-xl font-bold">7330h</div>
+                    </div>
+                    <div class="bg-[#1e1b4b] border border-indigo-900/50 p-4 rounded-lg">
+                        <div class="text-slate-400 text-xs">Đang chơi</div>
+                        <div class="text-indigo-400 text-xl font-bold">5</div>
+                    </div>
+                    <div class="bg-[#1e1b4b] border border-indigo-900/50 p-4 rounded-lg">
+                        <div class="text-slate-400 text-xs">Hoàn thành</div>
+                        <div class="text-indigo-400 text-xl font-bold">3</div>
+                    </div>
+                </div>
+                <div id="library-container" class="flex flex-col"></div>
+            </div>
+
+            <div id="section-wishlist" class="hidden max-w-5xl mx-auto fade-in">
+                <h2 class="text-2xl font-bold text-white mb-4">Yêu thích</h2>
+                <div id="wishlist-container" class="flex flex-col gap-4"></div>
+                <div id="wishlist-empty" class="hidden text-center text-slate-500 py-10">Danh sách trống</div>
+            </div>
+
+            <div id="section-reviews" class="hidden max-w-5xl mx-auto fade-in">
+                <h2 class="text-2xl font-bold text-white mb-6">Lịch sử đánh giá</h2>
+                <div id="reviews-container" class="flex flex-col gap-4"></div>
+                <div id="reviews-empty" class="hidden text-center text-slate-500 py-10">Chưa có đánh giá nào</div>
+            </div>
+
+        </main>
+    </div>
+
+    <div id="toast-container"></div>
+
+    <script src="assets/js/user.js"></script>
+</body>
+
+</html>
