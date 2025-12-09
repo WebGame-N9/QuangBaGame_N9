@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đang Tải Game...</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        :root {
+            --bg-dark: #0f172a; /* slate-900 */
+            --card-bg: #1e293b; /* slate-800 */
+            --primary-color: #8b5cf6; /* violet-500 */
+            --success-color: #10b981; /* emerald-500 */
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: #f1f5f9; /* slate-100 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+        .download-container {
+            max-width: 500px;
+            width: 90%;
+            background-color: var(--card-bg);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            border: 1px solid #334155;
+            animation: fadeIn 0.8s ease-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .game-title-placeholder {
+            min-height: 1.5rem; /* Giữ chỗ cho tiêu đề khi đang tải */
+            background-color: #334155;
+            border-radius: 0.5rem;
+            width: 80%;
+            margin: 0 auto 1rem;
+        }
+        .loading-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: #e2e8f0;
+        }
+        .countdown {
+            font-size: 4rem;
+            font-weight: 900;
+            color: var(--primary-color);
+            text-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+            transition: color 0.3s;
+        }
+        .progress-bar-container {
+            height: 8px;
+            width: 100%;
+            background-color: #334155;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 1.5rem;
+        }
+        .progress-bar {
+            height: 100%;
+            width: 0%;
+            background-color: var(--primary-color);
+            transition: width 1s linear;
+        }
+        .download-complete {
+            display: none;
+            color: var(--success-color);
+            font-weight: 700;
+            margin-top: 1.5rem;
+            font-size: 1.25rem;
+            animation: pulseSuccess 1.5s infinite;
+        }
+        @keyframes pulseSuccess {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.8; }
+        }
+        .download-btn {
+            background: linear-gradient(90deg, #6366f1 0%, #8b5cf6 100%);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.75rem;
+            font-weight: 700;
+            margin-top: 2rem;
+            cursor: pointer;
+            transition: transform 0.2s, opacity 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .download-btn:hover {
+            opacity: 0.95;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+<div class="download-container">
+    <div id="loading-spinner" class="mb-4">
+        <i class="fas fa-spinner fa-spin text-5xl text-violet-400"></i>
+    </div>
+    
+    <div id="game-info">
+        <h1 id="game-name" class="loading-text text-xl md:text-2xl">Đang tải dữ liệu game...</h1>
+        <!-- Placeholder cho tên game -->
+        <div id="name-placeholder" class="game-title-placeholder animate-pulse"></div>
+    </div>
+    
+    <div id="download-content" class="hidden">
+        <p class="text-lg text-slate-400 mb-4" id="countdown-message">
+            Tải game <span id="display-game-name" class="text-white font-bold"></span> sau 
+        </p>
+        
+        <div id="countdown" class="countdown">10</div>
+        
+        <div class="progress-bar-container">
+            <div id="progress-bar" class="progress-bar"></div>
+        </div>
+        
+        <div id="download-complete" class="download-complete">
+            <i class="fas fa-check-circle mr-2"></i> Tải xuống hoàn tất!
+        </div>
+        
+        <a id="download-link" href="#" class="download-btn hidden">
+            <i class="fas fa-file-download"></i> Bắt đầu Tải xuống
+        </a>
+        
+        <p id="error-message" class="hidden text-red-500 mt-4 text-sm font-semibold"></p>
+    </div>
+    
+</div>
+
+<script type="module">
+    // Các biến cố định cho API từ game.js
+    const BIN_ID = '6935590d43b1c97be9dd6572'; 
+    const API_URL = `https://api.jsonbin.io/v3/b/${BIN_ID}`;
+    const API_KEY = '$2a$10$dAGf830CRlXglDv0cce8IOz5ayJDKDIW8.uPxvWVXMgR7Wm.UG.7G';
+
+    // Hàm lấy ID game từ URL (download.html?id=...)
+    function getGameIdFromUrl() {
+        const urlParams = new URLSearchParams(window.location.search);
+        return parseInt(urlParams.get('id'));
+    }
+
+    // Hàm giả lập tải dữ liệu game (từ game.js)
+    async function fetchGameData(gameId) {
+        console.log("Đang lấy dữ liệu Game ID:", gameId);
+        try {
+            const response = await fetch(API_URL, {
+                method: 'GET',
+                headers: {
+                    'X-Master-Key': API_KEY,
+                }
+            });
+
+            if (!response.ok) {
+                throw new Error(`Lỗi HTTP: ${response.status}`);
+            }
+
+            const data = await response.json();
+            const allGamesData = data.record;
+            
+            // Tìm game theo ID
+            const game = allGamesData.find(g => g.id === gameId);
+            
+            if (game) {
+                game.download_link = `https://fakeurl.com/download/${game.id}/${game.name.replace(/\s/g, '_')}.zip`;
+            }
+
+            return game;
+
+        } catch (error) {
+            console.error('Lỗi khi tải dữ liệu Game:', error);
+            $('#error-message').text('Lỗi kết nối hoặc không tìm thấy dữ liệu game.').removeClass('hidden');
+            return null;
+        }
+    }
+
+    // Hàm đếm ngược
+    function startCountdown(gameName, downloadLink) {
+        const duration = 10;
+        let timeLeft = duration;
+        const countdownElement = $('#countdown');
+        const progressBar = $('#progress-bar');
+        
+        // Cập nhật giao diện ban đầu
+        $('#loading-spinner').addClass('hidden');
+        $('#name-placeholder').addClass('hidden');
+        $('#game-name').text(`Sẵn sàng tải: ${gameName}`).removeClass('loading-text');
+        $('#display-game-name').text(gameName);
+        $('#download-content').removeClass('hidden');
+        
+        const timer = setInterval(() => {
+            timeLeft -= 1;
+            
+            // Cập nhật số đếm
+            countdownElement.text(timeLeft);
+            
+            // Cập nhật thanh tiến trình (từ 0% -> 100%)
+            const progress = ((duration - timeLeft) / duration) * 100;
+            progressBar.css('width', `${progress}%`);
+            
+            if (timeLeft <= 0) {
+                clearInterval(timer);
+                
+                // Kết thúc đếm ngược
+                countdownElement.text('0');
+                progressBar.css('width', '100%');
+                $('#countdown-message').text('Đã chuẩn bị xong. Vui lòng nhấn nút bên dưới.');
+                $('#download-complete').removeClass('hidden');
+                
+                // Hiển thị nút tải về
+                const downloadButton = $('#download-link');
+                downloadButton.attr('href', downloadLink);
+                downloadButton.removeClass('hidden');
+
+                console.log(`Đã sẵn sàng tải xuống: ${downloadLink}`);
+            }
+        }, 1000);
+    }
+
+    // Khởi chạy ứng dụng
+    $(document).ready(async function () {
+        const gameId = getGameIdFromUrl();
+
+        if (!gameId) {
+            $('#loading-spinner').addClass('hidden');
+            $('#name-placeholder').addClass('hidden');
+            $('#game-name').text('Lỗi: Thiếu Game ID trong URL.').addClass('text-red-500');
+            return;
+        }
+
+        const game = await fetchGameData(gameId);
+
+        if (game) {
+            // Dữ liệu game đã có, bắt đầu đếm ngược
+            startCountdown(game.name, game.download_link);
+        } else {
+            // Không tìm thấy game hoặc lỗi API
+            $('#loading-spinner').addClass('hidden');
+            $('#name-placeholder').addClass('hidden');
+            $('#game-name').text('Không tìm thấy Game ID này.').addClass('text-red-500');
+            $('#error-message').text('Không thể tìm thấy thông tin game với ID đã cung cấp.').removeClass('hidden');
+        }
+    });
+
+</script>
+
+</body>
+</html>
