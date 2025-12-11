@@ -74,7 +74,7 @@ function createGameCard(game) {
                     </p>
                 </div>
                 <button class="btn-download">
-                    <i class="fa-solid fa-download"></i> Chi tiết
+                    <i class="fa-solid fa-info-circle"></i> Chi tiết
                 </button>
             </div>
         </div>

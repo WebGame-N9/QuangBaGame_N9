@@ -81,7 +81,7 @@
 
 .auth_tab-btn.active {
     background: linear-gradient(to right, #9f5cff, #ff2d78);
-    --webkit-background-clip: text;
+    -webkit-background-clip: text;
     color: transparent;
 
 }
