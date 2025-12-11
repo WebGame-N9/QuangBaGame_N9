@@ -15,12 +15,10 @@ function updateUserLikesOnServer() {
         console.warn("Không đủ dữ liệu để cập nhật server (currentUser hoặc users)");
         return;
     }
-    
-    // Đồng bộ liked_game_ids từ db.wishlist hiện tại
+
     const newLikedGameIds = db.wishlist.map(g => g.id);
     db.currentUser.user_data_summary.liked_game_ids = newLikedGameIds;
 
-    // Tạo bản sao toàn bộ mảng users, thay thế đúng user hiện tại
     const updatedUsersData = {
         users: db.users.map(u => 
             u.user_profile.user_id === CURRENT_USER_ID ? db.currentUser : u
@@ -29,7 +27,6 @@ function updateUserLikesOnServer() {
 
     console.log("Đang gửi cập nhật Wishlist lên server:", newLikedGameIds);
 
-    // GỬI THẬT LÊN JSONBIN
     fetch(JSONBIN_USER_UPDATE_URL, {
         method: 'PUT',
         headers: {
@@ -54,9 +51,6 @@ function updateUserLikesOnServer() {
     });
 }
 
-// ============================================================
-// 1. CÁC HÀM XỬ LÝ GIAO DIỆN & BACKEND & ROUTER
-// ============================================================
 window.onclick = function (event) {
   if (
     !event.target.closest("#notify-container-desktop") &&
@@ -100,7 +94,7 @@ const backend = {
     if (document.getElementById("wishlist-container")) ui.renderWishlist();
     
     saveLikesToStorage(); 
-    updateUserLikesOnServer(); // Gọi cập nhật server thật
+    updateUserLikesOnServer();
   },
   play: () => console.log("Play clicked"),
   update: (name) => {
@@ -169,9 +163,6 @@ function loadLikesFromStorage() {
   }
 }
 
-// ============================================================
-// 2. HÀM XỬ LÝ DỮ LIỆU CHÍNH
-// ============================================================
 function processUserData(allGamesData, allReviewsData, usersData) {
     const user = usersData.users.find(u => u.user_profile.user_id === CURRENT_USER_ID);
     if (!user) {
@@ -232,10 +223,6 @@ function processUserData(allGamesData, allReviewsData, usersData) {
 
     return true;
 }
-
-// ============================================================
-// 3. UI & INIT
-// ============================================================
 
 const ui = {
   init: () => {
@@ -391,9 +378,6 @@ const ui = {
   },
 };
 
-// ============================================================
-// 4. LOGIC TRANG CHI TIẾT (game_detail.html)
-// ============================================================
 
 function renderDetailPage() {
   const params = new URLSearchParams(window.location.search);

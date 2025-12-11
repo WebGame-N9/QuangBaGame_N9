@@ -5,7 +5,7 @@
     --primary-color: #6366f1;
     --secondary-color: #8b5cf6;
     --text-light: #ffffff;
-    --text-muted: #94a3b8; /* Cập nhật: Sử dụng màu từ mobile sidebar */
+    --text-muted: #94a3b8;
     --border-color: #1f2937;
     --slate-800: #1a1c35;
     --orange-badge: #f97316;
@@ -13,12 +13,10 @@
     --download-btn-color: linear-gradient(90deg, #6366f1 0%, #8b5cf6 100%);
 }
 
-/* Thêm thuộc tính cuộn mượt mà cho toàn bộ trang */
 html {
     scroll-behavior: smooth;
 }
 
-/* Thiết lập font và màu nền chung */
 body {
     padding-top: 75px;
     font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
@@ -27,23 +25,20 @@ body {
     min-height: 100vh;
 }
 
-/* Main Wrapper - Container chính */
 .main-wrapper {
     max-width: 1280px;
     margin: 0 auto;
     padding: 1.5rem 1rem;
 }
 
-/* Main Title */
 .main-title {
-    font-size: 1.875rem; /* text-3xl */
-    font-weight: 700; /* font-bold */
-    margin-bottom: 1.5rem; /* mb-6 */
-    border-bottom: 1px solid #334155; /* border-slate-700 */
-    padding-bottom: 0.75rem; /* pb-3 */
+    font-size: 1.875rem;
+    font-weight: 700; 
+    margin-bottom: 1.5rem; 
+    border-bottom: 1px solid #334155;
+    padding-bottom: 0.75rem; 
 }
 
-/* Layout Grid */
 .grid-layout {
     display: grid;
     grid-template-columns: 1fr;
@@ -51,28 +46,24 @@ body {
 }
 
 @media (min-width: 1024px) {
-    /* Sidebar 1 phần, Nội dung chính 3 phần */
     .grid-layout {
         grid-template-columns: 1fr 3fr;
     }
 }
 
-/* Left Section / Right Section */
 .left-section {}
 .right-section {}
 
-/* Đặt sidebar cố định trên desktop */
 @media (min-width: 1024px) {
     .sticky-sidebar-wrapper {
         position: sticky;
         top: 100px;
-        display: flex; /* flex */
-        flex-direction: column; /* flex-col */
-        gap: 1.5rem; /* gap-6 */
+        display: flex; 
+        flex-direction: column;
+        gap: 1.5rem;
     }
 }
 
-/* Sidebar Card (Mục Lục/CTA) */
 .sidebar-card-dt9 {
     background-color: var(--slate-800);
     border-radius: 0.75rem;
@@ -82,20 +73,19 @@ body {
 }
 
 .sidebar-card-dt9 h3 {
-    font-size: 1.25rem; /* text-xl */
-    font-weight: 700; /* font-bold */
+    font-size: 1.25rem; 
+    font-weight: 700; 
     color: var(--text-light);
     border-bottom: 1px solid var(--border-color);
     padding-bottom: 0.75rem;
     margin-bottom: 1rem;
 }
 
-/* Mục Lục Bài Viết */
 .article-index-list {
     list-style: none;
     padding: 0;
     margin: 0;
-    line-height: 1.5; /* space-y-2 (khoảng cách giữa các li) */
+    line-height: 1.5;
 }
 
 .article-index-list li {
@@ -103,15 +93,15 @@ body {
 }
 
 .index-link {
-    color: #94a3b8; /* text-slate-300 */
-    font-size: 0.875rem; /* text-sm */
+    color: #94a3b8;
+    font-size: 0.875rem; 
     text-decoration: none;
     transition: color 0.3s;
 }
 
 .index-link:hover, .index-link-active {
-    color: var(--primary-color); /* hover:text-[#6366f1] */
-    font-weight: 600; /* font-semibold */
+    color: var(--primary-color); 
+    font-weight: 600;
     text-decoration: underline;
 }
 

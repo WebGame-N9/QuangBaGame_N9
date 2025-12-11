@@ -11,15 +11,15 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
         :root {
-            --bg-dark: #0f172a; /* slate-900 */
-            --card-bg: #1e293b; /* slate-800 */
-            --primary-color: #8b5cf6; /* violet-500 */
-            --success-color: #10b981; /* emerald-500 */
+            --bg-dark: #0f172a; 
+            --card-bg: #1e293b;
+            --primary-color: #8b5cf6;
+            --success-color: #10b981;
         }
         body {
             font-family: 'Inter', sans-serif;
             background-color: var(--bg-dark);
-            color: #f1f5f9; /* slate-100 */
+            color: #f1f5f9; 
             display: flex;
             justify-content: center;
             align-items: center;
@@ -43,7 +43,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
         .game-title-placeholder {
-            min-height: 1.5rem; /* Giữ chỗ cho tiêu đề khi đang tải */
+            min-height: 1.5rem;
             background-color: #334155;
             border-radius: 0.5rem;
             width: 80%;
@@ -196,8 +196,6 @@
         let timeLeft = duration;
         const countdownElement = $('#countdown');
         const progressBar = $('#progress-bar');
-        
-        // Cập nhật giao diện ban đầu
         $('#loading-spinner').addClass('hidden');
         $('#name-placeholder').addClass('hidden');
         $('#game-name').text(`Sẵn sàng tải: ${gameName}`).removeClass('loading-text');
@@ -206,34 +204,23 @@
         
         const timer = setInterval(() => {
             timeLeft -= 1;
-            
-            // Cập nhật số đếm
             countdownElement.text(timeLeft);
-            
-            // Cập nhật thanh tiến trình (từ 0% -> 100%)
             const progress = ((duration - timeLeft) / duration) * 100;
             progressBar.css('width', `${progress}%`);
             
             if (timeLeft <= 0) {
                 clearInterval(timer);
-                
-                // Kết thúc đếm ngược
                 countdownElement.text('0');
                 progressBar.css('width', '100%');
                 $('#countdown-message').text('Đã chuẩn bị xong. Vui lòng nhấn nút bên dưới.');
                 $('#download-complete').removeClass('hidden');
-                
-                // Hiển thị nút tải về
                 const downloadButton = $('#download-link');
                 downloadButton.attr('href', downloadLink);
                 downloadButton.removeClass('hidden');
-
                 console.log(`Đã sẵn sàng tải xuống: ${downloadLink}`);
             }
         }, 1000);
     }
-
-    // Khởi chạy ứng dụng
     $(document).ready(async function () {
         const gameId = getGameIdFromUrl();
 
@@ -243,14 +230,11 @@
             $('#game-name').text('Lỗi: Thiếu Game ID trong URL.').addClass('text-red-500');
             return;
         }
-
         const game = await fetchGameData(gameId);
 
         if (game) {
-            // Dữ liệu game đã có, bắt đầu đếm ngược
             startCountdown(game.name, game.download_link);
         } else {
-            // Không tìm thấy game hoặc lỗi API
             $('#loading-spinner').addClass('hidden');
             $('#name-placeholder').addClass('hidden');
             $('#game-name').text('Không tìm thấy Game ID này.').addClass('text-red-500');

@@ -1,7 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap');
 
-/* Global Reset/Base */
 * {
     box-sizing: border-box;
 }
@@ -16,33 +15,27 @@ body {
     padding-top: 75px;
 }
 
-/* --- Layout Sections & Structure --- */
 
-/* Sidebar background và CỐ ĐỊNH vị trí */
 .aside-user-profile {
     background-color: #1a1c35 !important;
-    border-radius: 0.75rem; /* Bo tròn góc sidebar */
-    /* CỐ ĐỊNH SIDEBAR: */
+    border-radius: 0.75rem;
     position: sticky;
-    /* top: 32px bằng với padding-top của main-layout-wrapper (md:p-8) */
     top: 32px; 
-    /* Chiều cao bằng viewport trừ đi padding trên/dưới 2 bên (p-8 = 32px*2 = 64px) */
     height: calc(100vh - 64px); 
-    overflow-y: hidden; /* Ngăn sidebar tự cuộn */
+    overflow-y: hidden;
 }
 
 
 /* Main content background */
 main.flex-1 {
     background-color: transparent !important; 
-    padding-top: 8px; /* Thêm padding nhẹ trên cùng để cân bằng với sidebar */
+    padding-top: 8px; 
 }
 
 .border-slate-800, .border-slate-700 {
-    border-color: #1f2937 !important; /* Consistent dark border color from game.css */
+    border-color: #1f2937 !important;
 }
 
-/* FADE-IN Animation for main sections */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -57,7 +50,7 @@ main.flex-1 {
     animation: fadeIn 0.4s ease-out;
 }
 
-/* --- Avatar & Navigation --- */
+
 
 /* Avatar */
 .avatar-img {
@@ -65,7 +58,7 @@ main.flex-1 {
     height: 40px;
     border-radius: 50%;
     object-fit: cover;
-    border: 2px solid #8b5cf6; /* Use primary accent color from game.css gradient end */
+    border: 2px solid #8b5cf6;
     cursor: pointer;
 }
 
@@ -74,29 +67,25 @@ main.flex-1 {
     display: flex;
     align-items: center;
     gap: 12px;
-    /* Giữ 20px padding ngang để tạo khoảng cách bên trong sidebar */
     padding: 12px 20px; 
     width: 100%;
     border-radius: 8px;
-    color: #94a3b8; /* Soft grey text color */
+    color: #94a3b8;
     transition: 0.2s;
     cursor: pointer;
 }
 
 .nav-item:hover {
     color: #ffffff;
-    background: rgba(139, 92, 246, 0.1); /* Subtle hover effect using accent color */
+    background: rgba(139, 92, 246, 0.1); 
 }
 
 .nav-item.active {
-    background: #252a4e; /* Darker accent background */
-    color: #8b5cf6; /* Primary accent color */
+    background: #252a4e; 
+    color: #8b5cf6;
     font-weight: 600;
 }
 
-/* --- Buttons --- */
-
-/* Primary Button (btn-play) */
 .btn-play {
     background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
     color: white;
@@ -114,11 +103,10 @@ main.flex-1 {
     opacity: 0.95;
 }
 
-/* Secondary Button (for Chi tiết/Cập nhật in library) */
 .btn-secondary {
-    background: #334155; /* Darker background */
-    color: #ffffff; /* White text for better contrast */
-    border: 1px solid #475569; /* Darker border */
+    background: #334155; 
+    color: #ffffff; 
+    border: 1px solid #475569; 
     padding: 8px 16px;
     border-radius: 8px;
     font-weight: 500;
@@ -131,7 +119,7 @@ main.flex-1 {
     border-color: #8b5cf6;
 }
 
-/* Heart Button (for Wishlist/Like) */
+
 .btn-heart {
     width: 36px;
     height: 36px;
@@ -140,13 +128,13 @@ main.flex-1 {
     align-items: center;
     justify-content: center;
     color: #94a3b8;
-    background: #1f2937; /* Darker background for consistency */
+    background: #1f2937; 
     transition: 0.2s;
     cursor: pointer;
     border: none;
 }
 .btn-heart:hover {
-    color: #f87171; /* Brighter red on hover */
+    color: #f87171;
     background: #334155;
 }
 .btn-heart.liked {
@@ -154,21 +142,18 @@ main.flex-1 {
     background: #334155;
 }
 
-/* --- Card Components (Library/Wishlist/Reviews) --- */
 
-/* Library Info Cards (Small stat boxes) - Targeting Tailwind classes directly */
 .grid-cols-2 > div, .grid-cols-4 > div {
-    background-color: #1a1c35 !important; /* Use consistent card background from game.css */
+    background-color: #1a1c35 !important; 
     border-color: #334155 !important;
 }
-/* Stat number color - Targeting Tailwind class directly */
+
 .text-indigo-400 {
-    color: #8b5cf6 !important; /* Use primary accent color */
+    color: #8b5cf6 !important; 
 }
 
-/* Library Game Card - Overriding Tailwind styles */
 .game-card {
-    background: #1a1c35 !important; /* Consistent card background */
+    background: #1a1c35 !important; 
     border-radius: 12px;
     padding: 16px;
     display: flex;
@@ -184,9 +169,8 @@ main.flex-1 {
     border-color: #8b5cf6;
 }
 
-/* Review Card - Overriding Tailwind styles */
 .review-card {
-    background: #1a1c35 !important; /* Consistent dark card background */
+    background: #1a1c35 !important; 
     border: 1px solid #1f2937 !important;
     border-radius: 12px;
     padding: 20px;
@@ -196,12 +180,10 @@ main.flex-1 {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
 }
 
-/* Progress Bar */
+
 .progress-gradient {
     background: linear-gradient(90deg, #22d3ee 0%, #8b5cf6 100%);
 }
-
-/* --- Toast Notification --- */
 
 #toast-container {
     position: fixed;
@@ -215,12 +197,12 @@ main.flex-1 {
 }
 
 .toast-msg {
-    background: #1a1c35; /* Consistent dark card background */
+    background: #1a1c35; 
     color: white;
     padding: 12px 20px;
     border-radius: 8px;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5); /* Stronger shadow */
-    border-left: 4px solid #8b5cf6; /* Accent color */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5); 
+    border-left: 4px solid #8b5cf6; 
     font-size: 0.9rem;
     animation: slideIn 0.3s ease-out;
     pointer-events: auto;
@@ -242,7 +224,6 @@ main.flex-1 {
     }
 }
 
-/* --- Mobile Tab Bar --- */
 
 .mobile-tab-item {
     flex: 1;
@@ -261,19 +242,17 @@ main.flex-1 {
     margin-bottom: 4px;
 }
 .mobile-tab-active {
-    color: #8b5cf6; /* Accent color */
+    color: #8b5cf6;
     border-bottom-color: #8b5cf6;
-    background-color: rgba(139, 92, 246, 0.1); /* Subtle background accent */
-}
+    background-color: rgba(139, 92, 246, 0.1); 
 
-/* --- User Dropdown --- */
 
 .user-dropdown {
     position: absolute;
     top: calc(100% + 10px);
     left: 0;
     width: 200px;
-    background-color: #1a1c35; /* Consistent card background */
+    background-color: #1a1c35; 
     border: 1px solid #334155;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
@@ -290,7 +269,7 @@ main.flex-1 {
     align-items: center;
     gap: 10px;
     padding: 10px;
-    color: #ef4444; /* Red color for logout */
+    color: #ef4444;
     border-radius: 6px;
     cursor: pointer;
     transition: 0.2s;
@@ -298,5 +277,7 @@ main.flex-1 {
 }
 .user-dropdown-item:hover {
     background-color: #334155;
-    color: #f87171; /* Brighter red on hover */
+    color: #f87171; 
+}
+
 }

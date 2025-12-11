@@ -1,14 +1,7 @@
-// ======================================================================
-// Cấu hình JSONBin API chung
-// ======================================================================
-// LƯU Ý QUAN TRỌNG: CÁC THÔNG SỐ NÀY ĐƯỢC LẤY TỪ FILE contact.html BAN ĐẦU
 const JSONBIN_MASTER_KEY = '$2a$10$dAGf830CRlXglDv0cce8IOz5ayJDKDIW8.uPxvWVXMgR7Wm.UG.7G';
 const BIN_ID = '6936d50aae596e708f8b72dd';
 const JSONBIN_URL = `https://api.jsonbin.io/v3/b/${BIN_ID}`;
 
-// ======================================================================
-// Hàm định dạng ngày giờ (Dùng chung cho cả hai trang)
-// ======================================================================
 function formatTimestamp(timestamp, includeTime = true) {
     if (!timestamp) return 'Không có dữ liệu';
     const date = new Date(timestamp);
@@ -20,15 +13,11 @@ function formatTimestamp(timestamp, includeTime = true) {
     return datePart;
 }
 
-// ======================================================================
-// LOGIC CHO TRANG contact.html
-// ======================================================================
-
-/**
+/*
  * 1. Tải lịch sử yêu cầu hỗ trợ từ JSONBin.
  */
 function fetchTicketHistory() {
-    if (document.getElementById('ticketHistoryList')) { // Chỉ chạy nếu đang ở trang contact.html
+    if (document.getElementById('ticketHistoryList')) {
         const historyList = $('#ticketHistoryList');
         historyList.html('<div style="text-align: center; color: #ffc107; padding: 10px;"><i class="fas fa-sync fa-spin"></i> Đang tải dữ liệu...</div>');
 
@@ -148,11 +137,6 @@ function handleSupportFormSubmit() {
         });
     });
 }
-
-// ======================================================================
-// LOGIC CHO TRANG report.html
-// ======================================================================
-
 /**
  * Lấy ID phiếu từ URL
  */
@@ -166,11 +150,11 @@ function getTicketIdFromUrl() {
  */
 function loadTicketDetails(ticket) {
     // Cập nhật Header
-    const statusClass = ticket.status === 'Đã đóng' ? 'resolved' : 
-                       ticket.status === 'Đang xử lý' ? 'processing' : 'open';
+    const statusClass = ticket.status === 'Đã đóng' ? 'resolved' :
+        ticket.status === 'Đang xử lý' ? 'processing' : 'open';
     const statusText = ticket.status || 'Chưa xác định';
-    const statusIcon = statusClass === 'resolved' ? 'fa-check-circle' : 
-                      statusClass === 'processing' ? 'fa-sync-alt' : 'fa-clock';
+    const statusIcon = statusClass === 'resolved' ? 'fa-check-circle' :
+        statusClass === 'processing' ? 'fa-sync-alt' : 'fa-clock';
 
     $('.report-title').text(`Phiếu Hỗ Trợ: ${ticket.subject}`);
     $('title').text(`Chi Tiết Phiếu Hỗ Trợ #${ticket.submission_id} - DT9`);
@@ -181,8 +165,8 @@ function loadTicketDetails(ticket) {
     `);
 
     // Nội dung tin nhắn của khách hàng
-    const detailedDescription = ticket.detailed_description 
-        ? ticket.detailed_description.replace(/\n/g, '<br>') 
+    const detailedDescription = ticket.detailed_description
+        ? ticket.detailed_description.replace(/\n/g, '<br>')
         : 'Không có mô tả chi tiết.';
 
     const userMessage = `
@@ -201,14 +185,12 @@ function loadTicketDetails(ticket) {
     let adminMessage = '';
 
     if (ticket.admin_response && ticket.admin_response.trim() !== '') {
-        // Lấy tên admin từ trường assigned_to, nếu trống thì dùng "Admin"
-        const adminName = ticket.assigned_to && ticket.assigned_to.trim() !== '' 
-            ? ticket.assigned_to 
+        const adminName = ticket.assigned_to && ticket.assigned_to.trim() !== ''
+            ? ticket.assigned_to
             : 'Admin';
 
-        // Nếu có trường response_timestamp thì dùng, nếu không thì hiển thị "Chưa ghi nhận thời gian"
-        const responseTime = ticket.response_timestamp 
-            ? formatTimestamp(ticket.response_timestamp) 
+        const responseTime = ticket.response_timestamp
+            ? formatTimestamp(ticket.response_timestamp)
             : 'Chưa ghi nhận thời gian';
 
         const adminResponseContent = ticket.admin_response.replace(/\n/g, '<br>');
@@ -239,13 +221,12 @@ function loadTicketDetails(ticket) {
  */
 function fetchTicketDetails() {
     const ticketId = getTicketIdFromUrl();
-    if (!ticketId) return; // Chỉ chạy nếu đang ở trang report.html
+    if (!ticketId) return;
 
     // Cập nhật tiêu đề tạm thời
     $('.report-title').text(`Đang tải phiếu: #${ticketId}...`);
     $('.report-content').html("<p style='color: #9ca3af; padding: 20px;'>Đang tải dữ liệu, vui lòng chờ...</p>");
 
-    // Gửi yêu cầu AJAX để đọc JSONBin
     $.ajax({
         url: JSONBIN_URL,
         type: 'GET',
@@ -278,17 +259,12 @@ function fetchTicketDetails() {
 }
 
 
-// ======================================================================
-// MAIN - Kích hoạt các hàm khi DOM sẵn sàng
-// ======================================================================
 $(document).ready(function () {
-    // Kích hoạt logic cho trang contact.html
     if (document.getElementById('ticketHistoryList')) {
         fetchTicketHistory();
         handleSupportFormSubmit();
     }
 
-    // Kích hoạt logic cho trang report.html
     if (getTicketIdFromUrl()) {
         fetchTicketDetails();
     }

@@ -5,8 +5,6 @@ function getUrlParameter(name) {
     var results = regex.exec(location.search);
     return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
 };
-
-// Hàm tạo nội dung chi tiết bài viết (Sử dụng contentDetails từ JSON)
 function createArticleContent(article, inContentImages) {
     let contentHtml = `<p><strong>${article.summary}</strong></p>`;
     if (article.contentDetails) {
@@ -35,22 +33,19 @@ function createArticleContent(article, inContentImages) {
     $('#dynamic-article-content').html(contentHtml);
 }
 
-// Sửa đổi: Hàm tải danh sách Bài Viết Liên Quan (2 bài gần ID nhất) VÀ danh sách Bài Viết Gần Đây (4 bài gần ID nhất)
 function loadRelatedAndRecentArticles(allArticles, currentArticleId) {
     const currentId = parseInt(currentArticleId);
     const filteredArticles = allArticles.filter(a => a.id !== currentId);
 
-    // Sắp xếp theo độ gần ID, sau đó theo ID giảm dần nếu bằng nhau
     filteredArticles.sort((a, b) => {
         const diffA = Math.abs(a.id - currentId);
         const diffB = Math.abs(b.id - currentId);
         if (diffA === diffB) {
-            return b.id - a.id; // Nếu độ gần bằng nhau, bài viết có ID lớn hơn (mới hơn) sẽ lên trước
+            return b.id - a.id;
         }
-        return diffA - diffB; // Bài viết có độ gần nhỏ hơn (gần nhất) lên trước
+        return diffA - diffB;
     });
 
-    // --- 1. Bài Viết Gần Đây (Sidebar) ---
     const recentArticles = filteredArticles.slice(0, 4);
     let recentHtml = '';
     recentArticles.forEach(article => {
@@ -68,7 +63,7 @@ function loadRelatedAndRecentArticles(allArticles, currentArticleId) {
     $('.article-index-list').html(recentHtml);
 
 
-    const relatedArticles = filteredArticles.slice(0, 3); 
+    const relatedArticles = filteredArticles.slice(0, 3);
     let relatedHtml = '';
     relatedArticles.forEach((article, index) => {
         relatedHtml += `
@@ -123,7 +118,6 @@ function loadArticleDetail() {
             const article = allArticles.find(a => a.id == articleId);
 
             if (article) {
-                // Thay thế loadRecentArticles bằng hàm mới
                 loadRelatedAndRecentArticles(allArticles, articleId);
                 $('#article-page-title').text(`Chi Tiết Tin Tức: ${article.title}`);
                 $('#article-category').text(article.category);
@@ -141,7 +135,6 @@ function loadArticleDetail() {
                 $('#article-summary').text('Bài viết bạn đang tìm kiếm không tồn tại hoặc đã bị gỡ bỏ.');
                 $('#article-featured-image').attr('src', 'https://placehold.co/1200x500/dc3545/ffffff?text=404+Not+Found');
                 $('#dynamic-article-content').html('');
-                // Gọi hàm với ID không tồn tại để hiển thị thông báo "Không có bài viết liên quan"
                 loadRelatedAndRecentArticles(allArticles, -1);
             }
         },
@@ -162,7 +155,5 @@ $(document).ready(function () {
         duration: 800,
         once: true,
     });
-
-
     loadHTML('footer.html', 'footer-placeholder');
 });

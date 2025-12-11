@@ -11,5 +11,5 @@ ul, ol {
 
 a {
     text-decoration: none; 
-    color: inherit; /* Màu sắc theo thẻ cha, không bị màu xanh mặc định */
+    color: inherit;
 }

@@ -1,10 +1,6 @@
-const REVIEW_BIN_ID = "69343538d0ea881f4016cba7"; 
-const REVIEW_API_URL = `https://api.jsonbin.io/v3/b/${REVIEW_BIN_ID}/latest`; 
-
-// THAY ĐỔI DÒNG NÀY BẰNG MASTER KEY MỚI CỦA BẠN (bắt đầu bằng $2b$)
+const REVIEW_BIN_ID = "69343538d0ea881f4016cba7";
+const REVIEW_API_URL = `https://api.jsonbin.io/v3/b/${REVIEW_BIN_ID}/latest`;
 const REVIEW_MASTER_KEY = "$2a$10$dAGf830CRlXglDv0cce8IOz5ayJDKDIW8.uPxvWVXMgR7Wm.UG.7G";
-
-// Biến toàn cục lưu game ID
 let gameId = null;
 
 function extractGameId() {
@@ -16,13 +12,10 @@ function extractGameId() {
 async function loadReviews() {
     const container = $(".reviews-list-container"); // DÙNG JQUERY
     if (container.length === 0) return; // Kiểm tra sự tồn tại
-
-    // Hiển thị loading
     container.html(`<p>Loading reviews...</p>`); // DÙNG JQUERY
 
     try {
-        // SỬ DỤNG REVIEW_API_URL VÀ REVIEW_MASTER_KEY
-        const response = await fetch(REVIEW_API_URL, { 
+        const response = await fetch(REVIEW_API_URL, {
             headers: {
                 "X-Master-Key": REVIEW_MASTER_KEY
             }
@@ -66,12 +59,9 @@ async function loadReviews() {
     }
 }
 
-// =========================
-//   GỬI ĐÁNH GIÁ MỚI
-// =========================
+
 async function submitReview() {
-    // DÙNG JQUERY ĐỂ LẤY ELEMENT
-    const textarea = $("#reviewText"); 
+    const textarea = $("#reviewText");
     const scoreInput = $('input[name="rating"]:checked');
     const submitBtn = $(".btn-submit-review");
 
@@ -90,14 +80,11 @@ async function submitReview() {
         return;
     }
 
-    // Vô hiệu hóa nút trong lúc gửi (DÙNG JQUERY)
     submitBtn.prop('disabled', true);
     submitBtn.text("Sending...");
 
     try {
-        // 1. Lấy dữ liệu hiện tại
-        // SỬ DỤNG REVIEW_API_URL (đang trỏ đến /latest) và REVIEW_MASTER_KEY
-        const getRes = await fetch(REVIEW_API_URL, { 
+        const getRes = await fetch(REVIEW_API_URL, {
             headers: { "X-Master-Key": REVIEW_MASTER_KEY }
         });
 
@@ -106,21 +93,17 @@ async function submitReview() {
         const json = await getRes.json();
         let reviews = json.record || [];
 
-        // 2. Thêm đánh giá mới
         const newReview = {
             id: Date.now(),
             game_id: gameId,
-            user: "Khách", // Có thể mở rộng thêm form nhập tên sau
+            user: "Khách",
             score: score,
             comment: comment,
             date: new Date().toISOString().split("T")[0] // YYYY-MM-DD
         };
 
         reviews.push(newReview);
-
-        // 3. Cập nhật lại bin
-        // SỬ DỤNG REVIEW_BIN_ID VÀ REVIEW_MASTER_KEY
-        const putRes = await fetch(`https://api.jsonbin.io/v3/b/${REVIEW_BIN_ID}`, { 
+        const putRes = await fetch(`https://api.jsonbin.io/v3/b/${REVIEW_BIN_ID}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
@@ -133,26 +116,20 @@ async function submitReview() {
 
         alert("Cảm ơn bạn! Đánh giá đã được gửi thành công!");
 
-        // Reset form (DÙNG JQUERY)
         textarea.val("");
         $("#star5").prop("checked", true); // mặc định 5 sao
 
-        // Tải lại danh sách
         loadReviews();
 
     } catch (err) {
         console.error("Lỗi gửi đánh giá:", err);
         alert("Gửi thất bại. Vui lòng thử lại sau ít phút.");
     } finally {
-        // Mở lại nút (DÙNG JQUERY)
         submitBtn.prop('disabled', false);
         submitBtn.text("Gửi đánh giá");
     }
 }
 
-// =========================
-//   HÀM HỖ TRỢ
-// =========================
 function escapeHtml(text) {
     const div = document.createElement("div");
     div.textContent = text;
@@ -168,14 +145,11 @@ function formatDate(dateStr) {
     if (days === 0) return "Hôm nay";
     if (days === 1) return "Hôm qua";
     if (days < 30) return `${days} ngày trước`;
-    if (days < 365) return `${Math.floor(days/30)} tháng trước`;
-    return `${Math.floor(days/365)} năm trước`;
+    if (days < 365) return `${Math.floor(days / 30)} tháng trước`;
+    return `${Math.floor(days / 365)} năm trước`;
 }
 
-// =========================
-//   KHỞI TẠO KHI TRANG LOAD XONG (DÙNG JQUERY)
-// =========================
-$(document).ready(function() {
+$(document).ready(function () {
     gameId = extractGameId();
 
     if (!gameId) {
@@ -183,14 +157,11 @@ $(document).ready(function() {
         return;
     }
 
-    // Tải đánh giá ngay khi vào trang
     loadReviews();
 
-    // Sự kiện nút gửi đánh giá (DÙNG JQUERY)
     $(".btn-submit-review").on("click", submitReview);
 
-    // Cho phép nhấn Enter trong textarea để gửi (Shift+Enter để xuống dòng) (DÙNG JQUERY)
-    $("#reviewText").on("keydown", function(e) {
+    $("#reviewText").on("keydown", function (e) {
         if (e.key === "Enter" && !e.shiftKey) {
             e.preventDefault();
             submitReview();

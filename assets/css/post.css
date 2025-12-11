@@ -29,19 +29,15 @@
         background-color: transparent;
     }
 
-    /* Đảm bảo nội dung bài viết hiển thị đẹp và dễ đọc */
     .article-content-container h2 {
         font-size: 1.5rem;
         font-weight: 700;
         margin-top: 2rem;
         margin-bottom: 0.75rem;
         color: var(--primary-color);
-        /* Sử dụng màu tím nhấn */
         border-left: 4px solid var(--secondary-color);
-        /* Sử dụng màu xanh tím nhấn */
         padding-left: 1rem;
         text-shadow: 0 0 5px rgba(139, 92, 246, 0.3);
-        /* Thêm chút hiệu ứng neon nhẹ */
     }
 
     .article-content-container p {
@@ -60,30 +56,23 @@
     .article-content-container li {
         margin-bottom: 0.5rem;
         color: var(--text-dark);
-        /* Màu chữ mờ hơn cho list item */
     }
 
     .article-content-container li strong {
         color: var(--text-light);
-        /* Bôi đậm nổi bật hơn */
     }
 
     .article-content-container img {
         width: 100%;
         height: auto;
         border-radius: 0.75rem;
-        /* Khớp với border-radius trong game.css */
         margin: 1.5rem 0;
         box-shadow: 0 4px 20px rgba(139, 92, 246, 0.2);
-        /* Đổi màu shadow sang tông tím */
         border: 1px solid var(--border-color);
-        /* Thêm viền nhẹ */
     }
 
-    /* Điều chỉnh style cho Sidebar Card (DT9) trong left-section */
     .sidebar-card-dt9 {
         background-color: var(--bg-card);
-        /* Lấy màu nền card từ game.css */
         border-radius: 0.75rem;
         padding: 1.5rem;
         border: 1px solid var(--border-color);

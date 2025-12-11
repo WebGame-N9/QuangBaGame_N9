@@ -5,13 +5,11 @@ const API_KEY = '$2a$10$dAGf830CRlXglDv0cce8IOz5ayJDKDIW8.uPxvWVXMgR7Wm.UG.7G';
 let currentGame = null;
 let allGames = [];
 
-// Ham lấy id tu link de loaqt game co id do
 function getGameIdFromURL() {
     const params = new URLSearchParams(window.location.search);
     return parseInt(params.get('id')) || 1;
 }
 
-// HAm hien thi sao
 function renderStars(rating) {
     const full = '★';
     const half = '½';
@@ -24,7 +22,6 @@ function renderStars(rating) {
 
 function createRelatedCard(game) {
     const imgSrc = game.thumbnail;
-    // Thêm kiểm tra an toàn: Đảm bảo game.categories là một mảng trước khi gọi join()
     const categories = Array.isArray(game.genres) ? game.genres : ['Chưa phân loại'];
 
     return `
@@ -55,13 +52,10 @@ $(document).ready(function () {
                 return;
             }
 
-            // Cập nhật tiêu đề
             $('#pageTitle').text(currentGame.name + " - Chi tiết Game");
             $('#gameTitle').text(currentGame.name);
             $('#sidebarTitle').text(currentGame.name);
             $('#sidebarSubtitle').text(`${currentGame.developer} | ${currentGame.genres.join(', ')}`);
-
-            // Thông tin sidebar
             $('#officialLink').attr('href', currentGame.officialWebsite);
             $('#releaseDate').text(currentGame.releaseDate);
             $('#developer').text(currentGame.developer);
@@ -88,7 +82,6 @@ $(document).ready(function () {
             });
             $('#galleryThumbnails').html(galleryHTML);
 
-            // Tổng quan
             $('#overviewTab').html(`
                 <div>
                     <h2 class="section-title">Về ${currentGame.name}</h2>
@@ -102,7 +95,6 @@ $(document).ready(function () {
                 </div>
             `);
 
-            // Cấu hình
             $('#configTab').html(`
                 <h2 class="section-title">Yêu cầu cấu hình</h2>
                 <div class="config-grid">
@@ -138,15 +130,11 @@ $(document).ready(function () {
                     </ul>
                 </div>
             `);
-
-            // Game liên quan (ngẫu nhiên, loại trừ game hiện tại)
             const related = allGames
                 .filter(g => g.id !== gameId)
                 .sort(() => 0.5 - Math.random())
                 .slice(0, 2);
             $('#related-games-list').html(related.map(createRelatedCard).join(''));
-
-            // Setup gallery click
             $('#galleryThumbnails').on('click', '.thumbnail-item', function () {
                 $('.thumbnail-item').removeClass('active');
                 $(this).addClass('active');

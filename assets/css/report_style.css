@@ -27,7 +27,6 @@ main {
     margin: 0 auto;
 }
 
-/* Header và Metadata */
 .report-header {
     background-color: var(--card-bg);
     border: 1px solid var(--border-color);
